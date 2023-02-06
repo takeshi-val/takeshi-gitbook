@@ -2,7 +2,8 @@
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
-kichain is an interoperable Proof-of-Stake chain in the Cosmos ecosystem. kichain JavaScript smart contract platform enables 15M+ developers across the globe to rapidly build and deploy dapps on-chain.
+The Ki Foundation’s mission is about bridging the gap
+between traditional wealth and Decentralized Finance.
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Wasm**: ON
 

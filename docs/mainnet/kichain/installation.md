@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: kichain-2 | **Latest Version Tag**: pismoA | **Custom Port**: 27
+**Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Custom Port**: 27
 
 ### Setup validator name
 
@@ -17,30 +17,21 @@ Replace **YOUR\_MONIKER** with your validator name
 {% endhint %}
 
 ```bash
-MONIKER="YOUR_MONIKER"
-```
+# Set VARS
+KI_CHAIN=kichain-2
+KI_NODENAME="YOUR_NODE_NAME"
+KI_WALLET="YOUR_WALLET_NAME"
 
-### Install dependencies
-
-#### Add package repository for Node.js
-
-```bash
-curl -Ls https://deb.nodesource.com/setup_16.x | sudo bash
-```
-
-#### Add package repository for Yarn
-
-```bash
-curl -Ls https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+echo 'export KI_CHAIN='$KI_CHAIN >> $HOME/.bash_profile
+echo 'export KI_NODENAME='${KI_NODENAME} >> $HOME/.bash_profile
+echo 'export KI_WALLET='${KI_WALLET} >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 #### Update system and install build tools
 
 ```bash
-sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential nodejs=16.* yarn
-sudo apt -qy upgrade
+sudo apt -q update && sudo apt -qy upgrade
 ```
 
 #### Install Go
@@ -57,16 +48,15 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf pismoA
-git clone https://github.com/kichain/kichain-sdk.git pismoA
-cd pismoA
-git checkout pismoA
+git clone https://github.com/KiFoundation/ki-tools.git
+git checkout main
+git pull
+git checkout 4.2.0
+make install
+cd $HOME
 
-# Install and build kichain Javascript packages
-yarn install && yarn build
-
-# Install and build kichain Cosmos SDK support
-(cd packages/cosmic-swingset && make)
+kid version
+#Mainnet-4.2.0
 
 # Prepare binaries for Cosmovisor
 mkdir -p $HOME/.kid/cosmovisor/genesis/bin
