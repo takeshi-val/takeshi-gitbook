@@ -6,16 +6,16 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/haqq.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: haqq_54211-3 | **Latest Version Tag**: v1.3.0 | **Custom Port**: 35
+**Chain ID**: haqq_54211-3 | **Latest Version Tag**: v1.1.0 | **Custom Port**: 35
 
 ### Setup validator name
 
 {% hint style='info' %}
-Replace **YOUR_MONIKER_GOES_HERE** with your validator name
+Replace **YOUR_MONIKER** with your validator name
 {% endhint %}
 
 ```bash
-MONIKER="YOUR_MONIKER_GOES_HERE"
+MONIKER="YOUR_MONIKER"
 ```
 
 ### Install dependencies
@@ -45,7 +45,7 @@ cd $HOME
 rm -rf haqq
 git clone https://github.com/haqq-network/haqq.git
 cd haqq
-git checkout v1.3.0
+git checkout v1.1.0
 
 # Build binaries
 make build

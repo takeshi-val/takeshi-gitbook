@@ -4,7 +4,7 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Snapshots allows a new node to join the network by recovering application state from a backup file. Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, snapshot server is periodically beeing state-synced.
@@ -12,7 +12,7 @@ Snapshots allows a new node to join the network by recovering application state 
 
 Snapshots are taken automatically every 6 hours starting at **01:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.3.0
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.1.0
 
 | BLOCK   | AGE     | DOWNLOAD                                                                             |
 | ------- | ------- | ------------------------------------------------------------------------------------ |

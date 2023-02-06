@@ -1,10 +1,10 @@
 # Services
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" width="150" alt=""><figcaption></figcaption></figure>
 
 Teritori is a multi-chain hub designed to allow IBC and non IBC communities  to connect, trade services & NFTs, launch new projects & build further existing ones.
 
-**Chain ID**: teritori-testnet-v3 | **Latest Version Tag**: v1.3.0 | **Wasm**: ON
+**Chain ID**: teritori-testnet-v3 | **Latest Version Tag**: v1.1.0 | **Wasm**: ON
 
 [Website](https://teritori.com) | [Discord](https://discord.gg/teritori) | [Twitter](https://twitter.com/Chain4Energy)
 

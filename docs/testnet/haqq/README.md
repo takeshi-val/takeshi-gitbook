@@ -4,7 +4,7 @@
 
 Haqq is the blockchain network that issues Islamic Coin,  its native cryptocurrency. Haqq is fast, trusted and  compatible with thousands of applications around the world.
 
-**Chain ID**: haqq_54211-3 | **Latest Version Tag**: v1.3.0 | **Wasm**: OFF
+**Chain ID**: haqq_54211-3 | **Latest Version Tag**: v1.1.0 | **Wasm**: OFF
 
 [Website](https://islamiccoin.net) | [Discord](https://discord.gg/hU9MHG5kZq) | [Twitter](https://twitter.com/Islamic_Coin)
 

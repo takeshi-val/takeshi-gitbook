@@ -4,7 +4,7 @@ description: Useful set of commands for node operators. From key management to c
 
 # Useful commands
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" width="150" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -66,7 +66,7 @@ c4ed tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=teritori-1 \
+--chain-id=perun-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -86,7 +86,7 @@ c4ed tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=teritori-1 \
+--chain-id=perun-1 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -98,7 +98,7 @@ c4ed tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-c4ed tx slashing unjail --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ c4ed q staking validator $(c4ed keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-c4ed tx distribution withdraw-all-rewards --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id teritori-1
+c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id perun-1
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ c4ed query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-c4ed tx gov vote 1 yes --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'No'
 
 ```bash
-c4ed tx gov vote 1 no --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-c4ed tx gov vote 1 abstain --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-c4ed tx gov vote 1 nowithveto --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 ## ⚡️ Utility

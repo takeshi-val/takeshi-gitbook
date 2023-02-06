@@ -6,9 +6,9 @@ description: >-
 
 # Installation
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: teritori-1 | **Latest Version Tag**: v1.3.0 | **Custom Port**: 19
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 | **Custom Port**: 19
 
 ### Setup validator name
 
@@ -17,7 +17,7 @@ Replace **YOUR\_MONIKER\_GOES\_HERE** with your validator name
 {% endhint %}
 
 ```bash
-MONIKER="YOUR_MONIKER_GOES_HERE"
+MONIKER="YOUR_MONIKER"
 ```
 
 ### Install dependencies
@@ -47,7 +47,7 @@ cd $HOME
 rm -rf teritori-chain
 git clone https://github.com/TERITORI/teritori-chain.git
 cd teritori-chain
-git checkout v1.3.0
+git checkout v1.1.0
 
 # Build binaries
 make build
@@ -95,12 +95,12 @@ sudo systemctl enable teritorid
 
 ```bash
 # Set node configuration
-teritorid config chain-id teritori-1
+teritorid config chain-id perun-1
 teritorid config keyring-backend file
 teritorid config node tcp://localhost:19657
 
 # Initialize the node
-teritorid init $MONIKER --chain-id teritori-1
+teritorid init $MONIKER --chain-id perun-1
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.kjnodes.com/teritori/genesis.json > $HOME/.teritorid/config/genesis.json

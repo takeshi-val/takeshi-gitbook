@@ -22,7 +22,7 @@ description: Discover base tools contributed to the projects by kjnodes team.
 
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/stride.png" alt="" data-size="line"> [Stride](mainnet/stride/)
 
-<img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" alt="" data-size="line"> [Teritori](mainnet/chain4energy/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Teritori](mainnet/chain4energy/)
 
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/rebus.png" alt="" data-size="line"> [Rebus](mainnet/rebus/)
 
@@ -64,6 +64,6 @@ description: Discover base tools contributed to the projects by kjnodes team.
 
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/sei.png" alt="" data-size="line"> [Sei](testnet/sei/)
 
-<img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" alt="" data-size="line"> [Teritori](testnet/teritori/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Teritori](testnet/teritori/)
 
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/uptick.png" alt="" data-size="line"> [Uptick](testnet/uptick/)

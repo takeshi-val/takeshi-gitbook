@@ -6,7 +6,7 @@ description: >-
 
 # Useful commands
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/teritori.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -68,7 +68,7 @@ teritorid tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=teritori-1 \
+--chain-id=perun-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -88,7 +88,7 @@ teritorid tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=teritori-1 \
+--chain-id=perun-1 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -100,7 +100,7 @@ teritorid tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-teritorid tx slashing unjail --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Jail reason
@@ -132,43 +132,43 @@ teritorid q staking validator $(teritorid keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-teritorid tx distribution withdraw-all-rewards --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-teritorid tx distribution withdraw-rewards $(teritorid keys show wallet --bech val -a) --commission --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx distribution withdraw-rewards $(teritorid keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-teritorid tx staking delegate $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx staking delegate $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-teritorid tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-teritorid tx staking redelegate $(teritorid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx staking redelegate $(teritorid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-teritorid tx staking unbond $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx staking unbond $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-teritorid tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id teritori-1
+teritorid tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id perun-1
 ```
 
 ## 🗳 Governance
@@ -188,25 +188,25 @@ teritorid query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-teritorid tx gov vote 1 yes --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'No'
 
 ```bash
-teritorid tx gov vote 1 no --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-teritorid tx gov vote 1 abstain --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-teritorid tx gov vote 1 nowithveto --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+teritorid tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 ## ⚡️ Utility
