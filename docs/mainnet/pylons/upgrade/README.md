@@ -4,7 +4,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kujira.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: kaiyo-1 | **Latest Version Tag**: v0.7.1 | **Custom Port**: 13
 
@@ -18,17 +18,17 @@ You just have to build new binaries and move it into cosmovisor upgrades directo
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf core
-git clone https://github.com/Team-Kujira/core.git
-cd core
+rm -rf konstellation
+git clone https://github.com/Team-konstellation/konstellation.git
+cd konstellation
 git checkout v0.7.1
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.kujira/cosmovisor/upgrades/v0.7.1/bin
-mv build/kujirad $HOME/.kujira/cosmovisor/upgrades/v0.7.1/bin/
+mkdir -p $HOME/.knstld/cosmovisor/upgrades/v0.7.1/bin
+mv build/knstld $HOME/.knstld/cosmovisor/upgrades/v0.7.1/bin/
 rm -rf build
 ```
 
