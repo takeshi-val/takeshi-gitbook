@@ -6,7 +6,7 @@ description: Base tools API, RPC, Snap Shots, State Sync contributed to the proj
 
 ## MAINNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/agoric.png" alt="" data-size="line"> [Agoric](mainnet/agoric/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/bitcanna.png" alt="" data-size="line"> [Bitcanna](mainnet/bitcanna/)
 
