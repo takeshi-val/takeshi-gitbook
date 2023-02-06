@@ -4,12 +4,12 @@
 
 ## MAINNET
 
-* [Agoric](mainnet/agoric/README.md)
-  * [Installation](mainnet/agoric/installation/README.md)
-  * [Upgrade](mainnet/agoric/upgrade/README.md)
-  * [Snapshot](mainnet/agoric/snapshot/README.md)
-  * [State sync](mainnet/agoric/state-sync/README.md)
-  * [Useful commands](mainnet/agoric/useful-commands/README.md)
+* [Kichain](mainnet/kichain/README.md)
+  * [Installation](mainnet/kichain/installation.md)
+  * [Upgrade](mainnet/kichain/upgrade.md)
+  * [Snapshot](mainnet/kichain/snapshot.md)
+  * [State sync](mainnet/kichain/state-sync.md)
+  * [Useful commands](mainnet/kichain/useful-commands.md)
 * [Bitcanna](mainnet/bitcanna/README.md)
   * [Installation](mainnet/bitcanna/installation/README.md)
   * [Upgrade](mainnet/bitcanna/upgrade/README.md)
