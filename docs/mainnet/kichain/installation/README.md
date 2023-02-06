@@ -20,18 +20,6 @@ MONIKER="YOUR_MONIKER"
 
 ### Install dependencies
 
-#### Add package repository for Node.js
-
-```bash
-curl -Ls https://deb.nodesource.com/setup_16.x | sudo bash
-```
-
-#### Add package repository for Yarn
-
-```bash
-curl -Ls https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-```
 
 #### Update system and install build tools
 

@@ -54,24 +54,11 @@ cd $HOME
 kid version
 #Mainnet-4.2.0
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.kid/cosmovisor/genesis/bin
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/.kid/cosmovisor/genesis/bin/ag-chain-cosmos
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-nchainz $HOME/.kid/cosmovisor/genesis/bin/ag-nchainz
-cp golang/cosmos/build/kid $HOME/.kid/cosmovisor/genesis/bin/
-cp golang/cosmos/build/ag-cosmos-helper $HOME/.kid/cosmovisor/genesis/bin/
-
-# Create application symlinks
-ln -s $HOME/.kid/cosmovisor/genesis $HOME/.kid/cosmovisor/current
-sudo ln -s $HOME/.kid/cosmovisor/current/bin/kid /usr/local/bin/kid
 ```
 
-### Install Cosmovisor and create a service
+### Сreate a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/kid.service > /dev/null << EOF
 [Unit]
@@ -80,7 +67,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which kid) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -91,6 +78,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
+
 sudo systemctl daemon-reload
 sudo systemctl enable kid
 ```
@@ -99,12 +87,12 @@ sudo systemctl enable kid
 
 ```bash
 # Set node configuration
-kid config chain-id kichain-2
+kid config chain-id $KI_CHAIN
 kid config keyring-backend file
 kid config node tcp://localhost:27657
 
 # Initialize the node
-kid init $MONIKER --chain-id kichain-2
+kid init $KI_NODENAME --chain-id $KI_CHAIN
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/kichain/genesis.json > $HOME/.kid/config/genesis.json
@@ -133,7 +121,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"
 
 ```bash
 curl -L https://snapshots.takeshi.team/kichain/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
-[[ -f $HOME/.kid/data/upgrade-info.json ]] && cp $HOME/.kid/data/upgrade-info.json $HOME/.kid/cosmovisor/genesis/upgrade-info.json
+mv $HOME/.kid/priv_validator_state.json.backup $HOME/.kid/data/priv_validator_state.json
 ```
 
 ### Start service and check the logs
