@@ -105,7 +105,7 @@ curl -Ls https://snapshots.kjnodes.com/teritori/genesis.json > $HOME/.c4e-chain/
 curl -Ls https://snapshots.kjnodes.com/teritori/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@teritori.rpc.kjnodes.com:19659\"|" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rpc-c4e.takeshi.team:19659\"|" $HOME/.c4e-chain/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0utori\"|" $HOME/.c4e-chain/config/app.toml
