@@ -48,24 +48,13 @@ cd hub
 git checkout v1.0.0
 
 # Build binaries
-make build
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.bze/cosmovisor/genesis/bin
-mv build/bzed $HOME/.bze/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.bze/cosmovisor/genesis $HOME/.bze/cosmovisor/current
-sudo ln -s $HOME/.bze/cosmovisor/current/bin/bzed /usr/local/bin/bzed
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/bzed.service > /dev/null << EOF
 [Unit]
@@ -85,6 +74,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
+
 sudo systemctl daemon-reload
 sudo systemctl enable bzed
 ```
