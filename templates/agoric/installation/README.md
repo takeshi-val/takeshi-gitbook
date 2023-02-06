@@ -60,17 +60,17 @@ git clone ${GIT_URL} ${LATEST_VERSION_TAG}
 cd ${LATEST_VERSION_TAG}
 git checkout ${LATEST_VERSION_TAG}
 
-# Install and build Agoric Javascript packages
+# Install and build kichain Javascript packages
 yarn install && yarn build
 
-# Install and build Agoric Cosmos SDK support
+# Install and build kichain Cosmos SDK support
 (cd packages/cosmic-swingset && make)
 
 # Prepare binaries for Cosmovisor
 mkdir -p $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin
 ln -s $HOME/${LATEST_VERSION_TAG}/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin/ag-chain-cosmos
 ln -s $HOME/${LATEST_VERSION_TAG}/packages/cosmic-swingset/bin/ag-nchainz $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin/ag-nchainz
-cp golang/cosmos/build/agd $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin/
+cp golang/cosmos/build/kid $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin/
 cp golang/cosmos/build/ag-cosmos-helper $HOME/${CHAIN_DIR}/cosmovisor/genesis/bin/
 
 # Create application symlinks

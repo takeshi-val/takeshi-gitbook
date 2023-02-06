@@ -4,7 +4,7 @@ description: With our state sync services you will be able to catch up latest ch
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/agoric.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 State Sync allows a new node to join the network by fetching a snapshot of the application state 
@@ -14,5 +14,5 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 {% endhint %}
 
 {% hint style='warning' %}
-Currently agoric does not support State sync 😢
+Currently kichain does not support State sync 😢
 {% endhint %}

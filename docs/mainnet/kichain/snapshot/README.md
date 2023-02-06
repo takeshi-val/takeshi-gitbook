@@ -4,7 +4,7 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/agoric.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 Snapshots allows a new node to join the network by recovering application state from a backup file. 
@@ -14,31 +14,31 @@ snapshot server is periodically beeing state-synced.
 
 Snapshots are taken automatically every 6 hours starting at **04:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: agoric-upgrade-8
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: kichain-upgrade-8
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 8492808 | 5 hours | [snapshot (2.63 GB)](https://snapshots.takeshi.team/agoric/snapshot\_latest.tar.lz4) |
+| 8492808 | 5 hours | [snapshot (2.63 GB)](https://snapshots.takeshi.team/kichain/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop agd
-cp $HOME/.agoric/data/priv_validator_state.json $HOME/.agoric/priv_validator_state.json.backup
-rm -rf $HOME/.agoric/data
+sudo systemctl stop kid
+cp $HOME/.kid/data/priv_validator_state.json $HOME/.kid/priv_validator_state.json.backup
+rm -rf $HOME/.kid/data
 ```
 
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/agoric/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.agoric
-mv $HOME/.agoric/priv_validator_state.json.backup $HOME/.agoric/data/priv_validator_state.json
+curl -L https://snapshots.takeshi.team/kichain/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
+mv $HOME/.kid/priv_validator_state.json.backup $HOME/.kid/data/priv_validator_state.json
 ```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start agd && sudo journalctl -u agd -f --no-hostname -o cat
+sudo systemctl start kid && sudo journalctl -u kid -f --no-hostname -o cat
 ```
