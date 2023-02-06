@@ -13,43 +13,43 @@ description: >-
 #### Add new key
 
 ```bash
-teritorid keys add wallet
+c4ed keys add wallet
 ```
 
 #### Recover existing key
 
 ```bash
-teritorid keys add wallet --recover
+c4ed keys add wallet --recover
 ```
 
 #### List all keys
 
 ```bash
-teritorid keys list
+c4ed keys list
 ```
 
 #### Delete key
 
 ```bash
-teritorid keys delete wallet
+c4ed keys delete wallet
 ```
 
 #### Export key to the file
 
 ```bash
-teritorid keys export wallet
+c4ed keys export wallet
 ```
 
 #### Import key from the file
 
 ```bash
-teritorid keys import wallet wallet.backup
+c4ed keys import wallet wallet.backup
 ```
 
 #### Query wallet balance
 
 ```bash
-teritorid q bank balances $(teritorid keys show wallet -a)
+c4ed q bank balances $(c4ed keys show wallet -a)
 ```
 
 ## 👷 Validator management
@@ -61,9 +61,9 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 #### Create new validator
 
 ```bash
-teritorid tx staking create-validator \
+c4ed tx staking create-validator \
 --amount=1000000utori \
---pubkey=$(teritorid tendermint show-validator) \
+--pubkey=$(c4ed tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
@@ -83,7 +83,7 @@ teritorid tx staking create-validator \
 #### Edit existing validator
 
 ```bash
-teritorid tx staking edit-validator \
+c4ed tx staking edit-validator \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
@@ -100,31 +100,31 @@ teritorid tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-teritorid tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Jail reason
 
 ```bash
-teritorid query slashing signing-info $(teritorid tendermint show-validator)
+c4ed query slashing signing-info $(c4ed tendermint show-validator)
 ```
 
 #### List all active validators
 
 ```bash
-teritorid q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+c4ed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### List all inactive validators
 
 ```bash
-teritorid q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+c4ed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### View validator details
 
 ```bash
-teritorid q staking validator $(teritorid keys show wallet --bech val -a)
+c4ed q staking validator $(c4ed keys show wallet --bech val -a)
 ```
 
 ## 💲 Token management
@@ -132,43 +132,43 @@ teritorid q staking validator $(teritorid keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-teritorid tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-teritorid tx distribution withdraw-rewards $(teritorid keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-teritorid tx staking delegate $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-teritorid tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-teritorid tx staking redelegate $(teritorid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-teritorid tx staking unbond $(teritorid keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-teritorid tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id perun-1
+c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id perun-1
 ```
 
 ## 🗳 Governance
@@ -176,37 +176,37 @@ teritorid tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --c
 #### List all proposals
 
 ```bash
-teritorid query gov proposals
+c4ed query gov proposals
 ```
 
 #### View proposal by id
 
 ```bash
-teritorid query gov proposal 1
+c4ed query gov proposal 1
 ```
 
 #### Vote 'Yes'
 
 ```bash
-teritorid tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'No'
 
 ```bash
-teritorid tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-teritorid tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-teritorid tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 ## ⚡️ Utility
@@ -215,8 +215,8 @@ teritorid tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjust
 
 ```bash
 CUSTOM_PORT=10
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.teritorid/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.teritorid/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.c4e-chain/config/app.toml
 ```
 
 #### Update Indexer
@@ -224,13 +224,13 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTO
 **Disable indexer**
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.teritorid/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.c4e-chain/config/config.toml
 ```
 
 **Enable indexer**
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.teritorid/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.c4e-chain/config/config.toml
 ```
 
 #### Update pruning
@@ -241,7 +241,7 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.teritorid/config/app.toml
+  $HOME/.c4e-chain/config/app.toml
 ```
 
 ## 🚨 Maintenance
@@ -249,25 +249,25 @@ sed -i \
 #### Get validator info
 
 ```bash
-teritorid status 2>&1 | jq .ValidatorInfo
+c4ed status 2>&1 | jq .ValidatorInfo
 ```
 
 #### Get sync info
 
 ```bash
-teritorid status 2>&1 | jq .SyncInfo
+c4ed status 2>&1 | jq .SyncInfo
 ```
 
 #### Get node peer
 
 ```bash
-echo $(teritorid tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.teritorid/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(c4ed tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.c4e-chain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Check if validator key is correct
 
 ```bash
-[[ $(teritorid q staking validator $(teritorid keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(teritorid status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+[[ $(c4ed q staking validator $(c4ed keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(c4ed status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
 
 #### Get live peers
@@ -279,19 +279,19 @@ curl -sS http://localhost:19657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utori\"/" $HOME/.teritorid/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utori\"/" $HOME/.c4e-chain/config/app.toml
 ```
 
 #### Enable prometheus
 
 ```bash
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.teritorid/config/config.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.c4e-chain/config/config.toml
 ```
 
 #### Reset chain data
 
 ```bash
-teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
+c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain --keep-addr-book
 ```
 
 #### Remove node
@@ -302,12 +302,12 @@ Please, before proceeding with the next step! All chain data will be lost! Make 
 
 ```bash
 cd $HOME
-sudo systemctl stop teritorid
-sudo systemctl disable teritorid
-sudo rm /etc/systemd/system/teritorid.service
+sudo systemctl stop c4ed
+sudo systemctl disable c4ed
+sudo rm /etc/systemd/system/c4ed.service
 sudo systemctl daemon-reload
-rm -f $(which teritorid)
-rm -rf $HOME/.teritorid
+rm -f $(which c4ed)
+rm -rf $HOME/.c4e-chain
 rm -rf $HOME/teritori-chain
 ```
 
@@ -322,41 +322,41 @@ sudo systemctl daemon-reload
 #### Enable service
 
 ```bash
-sudo systemctl enable teritorid
+sudo systemctl enable c4ed
 ```
 
 #### Disable service
 
 ```bash
-sudo systemctl disable teritorid
+sudo systemctl disable c4ed
 ```
 
 #### Start service
 
 ```bash
-sudo systemctl start teritorid
+sudo systemctl start c4ed
 ```
 
 #### Stop service
 
 ```bash
-sudo systemctl stop teritorid
+sudo systemctl stop c4ed
 ```
 
 #### Restart service
 
 ```bash
-sudo systemctl restart teritorid
+sudo systemctl restart c4ed
 ```
 
 #### Check service status
 
 ```bash
-sudo systemctl status teritorid
+sudo systemctl status c4ed
 ```
 
 #### Check service logs
 
 ```bash
-sudo journalctl -u teritorid -f --no-hostname -o cat
+sudo journalctl -u c4ed -f --no-hostname -o cat
 ```

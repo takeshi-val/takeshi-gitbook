@@ -26,7 +26,7 @@ c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://teritori.rpc.kjnodes.com:443
+STATE_SYNC_RPC=https://rpc-c4e.takeshi.tem:443
 STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@teritori.rpc.kjnodes.com:19656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))

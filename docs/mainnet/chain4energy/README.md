@@ -32,7 +32,7 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@rpc-c4e.takeshi.team:443
 **addrbook**
 
 ```bash
-curl -Ls https://snapshots.kjnodes.com/teritori/addrbook.json > $HOME/.teritorid/config/addrbook.json
+curl -Ls https://snapshots.kjnodes.com/teritori/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 ```
 
 **live-peers** (33)
