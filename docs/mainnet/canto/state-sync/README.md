@@ -4,7 +4,7 @@ description: With our state sync services you will be able to catch up latest ch
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/bitcanna.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 State Sync allows a new node to join the network by fetching a snapshot of the application state 
@@ -18,9 +18,9 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop bcnad
-cp $HOME/.bcna/data/priv_validator_state.json $HOME/.bcna/priv_validator_state.json.backup
-bcnad tendermint unsafe-reset-all --home $HOME/.bcna
+sudo systemctl stop cantod
+cp $HOME/.cantod/data/priv_validator_state.json $HOME/.cantod/priv_validator_state.json.backup
+cantod tendermint unsafe-reset-all --home $HOME/.cantod
 ```
 
 ### Get and configure the state sync information
@@ -38,9 +38,9 @@ sed -i \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
   -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.bcna/config/config.toml
+  $HOME/.cantod/config/config.toml
 
-mv $HOME/.bcna/priv_validator_state.json.backup $HOME/.bcna/data/priv_validator_state.json
+mv $HOME/.cantod/priv_validator_state.json.backup $HOME/.cantod/data/priv_validator_state.json
 ```
 
 
@@ -48,5 +48,5 @@ mv $HOME/.bcna/priv_validator_state.json.backup $HOME/.bcna/data/priv_validator_
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start bcnad && sudo journalctl -u bcnad -f --no-hostname -o cat
+sudo systemctl start cantod && sudo journalctl -u cantod -f --no-hostname -o cat
 ```

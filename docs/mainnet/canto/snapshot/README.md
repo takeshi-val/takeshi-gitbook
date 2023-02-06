@@ -4,7 +4,7 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/bitcanna.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 Snapshots allows a new node to join the network by recovering application state from a backup file. 
@@ -25,20 +25,20 @@ Snapshots are taken automatically every 6 hours starting at **05:15 UTC**
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop bcnad
-cp $HOME/.bcna/data/priv_validator_state.json $HOME/.bcna/priv_validator_state.json.backup
-rm -rf $HOME/.bcna/data
+sudo systemctl stop cantod
+cp $HOME/.cantod/data/priv_validator_state.json $HOME/.cantod/priv_validator_state.json.backup
+rm -rf $HOME/.cantod/data
 ```
 
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bcna
-mv $HOME/.bcna/priv_validator_state.json.backup $HOME/.bcna/data/priv_validator_state.json
+curl -L https://snapshots.takeshi.team/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.cantod
+mv $HOME/.cantod/priv_validator_state.json.backup $HOME/.cantod/data/priv_validator_state.json
 ```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start bcnad && sudo journalctl -u bcnad -f --no-hostname -o cat
+sudo systemctl start cantod && sudo journalctl -u cantod -f --no-hostname -o cat
 ```
