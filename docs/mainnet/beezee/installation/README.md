@@ -108,7 +108,7 @@ curl -Ls https://snapshots.takeshi.team/beezee/addrbook.json > $HOME/.bze/config
 sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@beezee.rpc.takeshi.team:45659\"|" $HOME/.bze/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ubeezee\"|" $HOME/.bze/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ubze\"|" $HOME/.bze/config/app.toml
 
 # Set pruning
 sed -i \

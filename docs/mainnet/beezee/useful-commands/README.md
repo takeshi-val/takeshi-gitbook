@@ -60,7 +60,7 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 
 ```bash
 bzed tx staking create-validator \
---amount=1000000ubeezee \
+--amount=1000000ubze \
 --pubkey=$(bzed tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
@@ -74,7 +74,7 @@ bzed tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0ubeezee \
+--gas-prices=0ubze \
 -y
 ```
 
@@ -91,14 +91,14 @@ bzed tx staking edit-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0ubeezee \
+--gas-prices=0ubze \
 -y
 ```
 
 #### Unjail validator
 
 ```bash
-bzed tx slashing unjail --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx slashing unjail --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ bzed q staking validator $(bzed keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-bzed tx distribution withdraw-all-rewards --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx distribution withdraw-all-rewards --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-bzed tx distribution withdraw-rewards $(bzed keys show wallet --bech val -a) --commission --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx distribution withdraw-rewards $(bzed keys show wallet --bech val -a) --commission --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-bzed tx staking delegate $(bzed keys show wallet --bech val -a) 1000000ubeezee --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx staking delegate $(bzed keys show wallet --bech val -a) 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-bzed tx staking delegate <TO_VALOPER_ADDRESS> 1000000ubeezee --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx staking delegate <TO_VALOPER_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-bzed tx staking redelegate $(bzed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ubeezee --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx staking redelegate $(bzed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-bzed tx staking unbond $(bzed keys show wallet --bech val -a) 1000000ubeezee --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx staking unbond $(bzed keys show wallet --bech val -a) 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-bzed tx bank send wallet <TO_WALLET_ADDRESS> 1000000ubeezee --from wallet --chain-id beezee-1
+bzed tx bank send wallet <TO_WALLET_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ bzed query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-bzed tx gov vote 1 yes --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx gov vote 1 yes --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Vote 'No'
 
 ```bash
-bzed tx gov vote 1 no --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx gov vote 1 no --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-bzed tx gov vote 1 abstain --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx gov vote 1 abstain --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-bzed tx gov vote 1 nowithveto --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubeezee -y
+bzed tx gov vote 1 nowithveto --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
 
 ## ⚡️ Utility
@@ -277,7 +277,7 @@ curl -sS http://localhost:45657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ubeezee\"/" $HOME/.bze/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ubze\"/" $HOME/.bze/config/app.toml
 ```
 
 #### Enable prometheus
