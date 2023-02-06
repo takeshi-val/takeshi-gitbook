@@ -60,30 +60,12 @@ git clone https://github.com/kichain/kichain-sdk.git pismoA
 cd pismoA
 git checkout pismoA
 
-# Install and build kichain Javascript packages
-yarn install && yarn build
 
-# Install and build kichain Cosmos SDK support
-(cd packages/cosmic-swingset && make)
-
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.kid/cosmovisor/genesis/bin
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/.kid/cosmovisor/genesis/bin/ag-chain-cosmos
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-nchainz $HOME/.kid/cosmovisor/genesis/bin/ag-nchainz
-cp golang/cosmos/build/kid $HOME/.kid/cosmovisor/genesis/bin/
-cp golang/cosmos/build/ag-cosmos-helper $HOME/.kid/cosmovisor/genesis/bin/
-
-# Create application symlinks
-ln -s $HOME/.kid/cosmovisor/genesis $HOME/.kid/cosmovisor/current
-sudo ln -s $HOME/.kid/cosmovisor/current/bin/kid /usr/local/bin/kid
 ```
 
-### Install Cosmovisor and create a service
+### Сreate a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/kid.service > /dev/null << EOF
 [Unit]
