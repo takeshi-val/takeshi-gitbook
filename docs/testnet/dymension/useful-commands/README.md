@@ -60,7 +60,7 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 
 ```bash
 kid tx staking create-validator \
---amount=1000000ubld \
+--amount=1000000uxki \
 --pubkey=$(kid tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
@@ -74,7 +74,7 @@ kid tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.025ubld \
+--gas-prices=0.025uxki \
 -y
 ```
 
@@ -91,14 +91,14 @@ kid tx staking edit-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.025ubld \
+--gas-prices=0.025uxki \
 -y
 ```
 
 #### Unjail validator
 
 ```bash
-kid tx slashing unjail --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx slashing unjail --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ kid q staking validator $(kid keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-kid tx distribution withdraw-all-rewards --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx distribution withdraw-all-rewards --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-kid tx distribution withdraw-rewards $(kid keys show wallet --bech val -a) --commission --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx distribution withdraw-rewards $(kid keys show wallet --bech val -a) --commission --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-kid tx staking delegate $(kid keys show wallet --bech val -a) 1000000ubld --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx staking delegate $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-kid tx staking delegate <TO_VALOPER_ADDRESS> 1000000ubld --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx staking delegate <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-kid tx staking redelegate $(kid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ubld --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx staking redelegate $(kid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-kid tx staking unbond $(kid keys show wallet --bech val -a) 1000000ubld --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx staking unbond $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-kid tx bank send wallet <TO_WALLET_ADDRESS> 1000000ubld --from wallet --chain-id kichain-emerynet-5
+kid tx bank send wallet <TO_WALLET_ADDRESS> 1000000uxki --from wallet --chain-id kichain-emerynet-5
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ kid query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-kid tx gov vote 1 yes --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx gov vote 1 yes --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'No'
 
 ```bash
-kid tx gov vote 1 no --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx gov vote 1 no --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-kid tx gov vote 1 abstain --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx gov vote 1 abstain --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-kid tx gov vote 1 nowithveto --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025ubld -y
+kid tx gov vote 1 nowithveto --from wallet --chain-id kichain-emerynet-5 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 ## ⚡️ Utility
@@ -277,7 +277,7 @@ curl -sS http://localhost:27657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ubld\"/" $HOME/.kid/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uxki\"/" $HOME/.kid/config/app.toml
 ```
 
 #### Enable prometheus

@@ -126,7 +126,7 @@ curl -Ls https://snapshots.takeshi.team/kichain-testnet/addrbook.json > $HOME/.k
 sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@kichain-testnet.rpc.takeshi.team:27659\"|" $HOME/.kid/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025ubld\"|" $HOME/.kid/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025uxki\"|" $HOME/.kid/config/app.toml
 
 # Set pruning
 sed -i \
