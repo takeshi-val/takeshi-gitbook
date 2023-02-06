@@ -8,12 +8,6 @@ kichain is an interoperable Proof-of-Stake chain in the Cosmos ecosystem. kichai
 
 [Website](https://foundation.ki/) | [Discord](https://discord.gg/vqWc7MGd87) | [Twitter](https://twitter.com/Ki_Foundation)
 
-[![Stake with kjnodes](https://i.ibb.co/cr44Q8j/button-stake-with-kjnodes.png)](https://restake.app/kichain/kichainvaloper1ku5sm2twlsywdrp4wz3kfwgyrtqtp0lpr3nvk8)
-
-## Restake
-
-[Restake with kjnodes](https://restake.app/kichain/kichainvaloper1ku5sm2twlsywdrp4wz3kfwgyrtqtp0lpr3nvk8) (every day at 08:00, 20:00)
-
 ## Chain explorer
 
 [https://explorer.takeshi.team/kichain](https://explorer.takeshi.team/kichain)
