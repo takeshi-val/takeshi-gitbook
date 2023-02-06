@@ -23,7 +23,7 @@ description: Discover base tools contributed to the projects by kjnodes team.
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/stride.png" alt="" data-size="line"> [Stride](mainnet/stride/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line" alt="" 
-data-size="line"> [chain4energy](mainnet/chain4energy/)
+data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 
 <img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/rebus.png" alt="" data-size="line"> [Rebus](mainnet/rebus/)
 
