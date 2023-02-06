@@ -1,29 +1,30 @@
 ---
-description: Base tools API, RPC, Snap Shots, State Sync contributed to the projects by takeshi.team.
+description: >-
+  Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
+  takeshi.team.
 ---
 
 # ⚙ Supported chains
 
 ## MAINNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/) 
+<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/pylons/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/cosmoshub.png" alt="" data-size="line"> [Cosmos Hub](mainnet/cosmoshub/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/pylons/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/pylons-1/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt="" data-size="line"> [Provenance](mainnet/provenance/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt="" data-size="line"> [Provenance](mainnet/canto/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" alt="" data-size="line"> [Konstellation](mainnet/konstellation/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" alt="" data-size="line"> [Konstellation](mainnet/provenance/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/stride.png" alt="" data-size="line"> [Stride](mainnet/stride/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line" alt="" 
-data-size="line"> [Chain4Energy](mainnet/chain4energy/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt="" data-size="line"> [BeeZee](mainnet/beezee/)
 
@@ -68,4 +69,3 @@ data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 <img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Teritori](testnet/teritori/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/uptick.png" alt="" data-size="line"> [Uptick](testnet/uptick/)
-
