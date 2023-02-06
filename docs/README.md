@@ -1,12 +1,14 @@
 ---
-description: Base tools API, RPC, Snap Shots, State Sync contributed to the projects by takeshi.team.
+description: >-
+  Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
+  takeshi.team.
 ---
 
 # ⚙ Supported chains
 
 ## MAINNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/) 
+<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
 
@@ -14,7 +16,7 @@ description: Base tools API, RPC, Snap Shots, State Sync contributed to the proj
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/pylons/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/konstellation/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt="" data-size="line"> [Provenance](mainnet/provenance/)
 
@@ -22,8 +24,7 @@ description: Base tools API, RPC, Snap Shots, State Sync contributed to the proj
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/stride.png" alt="" data-size="line"> [Stride](mainnet/stride/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line" alt="" 
-data-size="line"> [Chain4Energy](mainnet/chain4energy/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt="" data-size="line"> [BeeZee](mainnet/beezee/)
 
@@ -46,5 +47,3 @@ data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 <img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](testnet/quicksilver/)
-
-
