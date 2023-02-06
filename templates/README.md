@@ -1,5 +1,5 @@
 ---
-description: Discover base tools contributed to the projects by kjnodes team.
+description: Discover base tools contributed to the projects by takeshi.team.
 ---
 
 # 🖤 Supported chains

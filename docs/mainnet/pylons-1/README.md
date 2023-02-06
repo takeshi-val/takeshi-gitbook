@@ -8,12 +8,6 @@ pylonschain is a platform that will provide DeFi (Decentralized Finance) investm
 
 [Website](https://www.pylonschain.com) | [Discord](https://discord.gg/pylonschain) | [Twitter](https://twitter.com/pylonsChain)
 
-[![Stake with kjnodes](https://i.ibb.co/cr44Q8j/button-stake-with-kjnodes.png)](https://restake.app/pylons/pylonsvaloper1vndzy8y55ylgpmmsc34uy8rm6kqlml6ffs9lrv)
-
-## Restake
-
-[Restake with kjnodes](https://restake.app/pylons/pylonsvaloper1vndzy8y55ylgpmmsc34uy8rm6kqlml6ffs9lrv) (every day at 08:00, 20:00)
-
 ## Chain explorer
 
 [https://explorer.takeshi.team/pylons](https://explorer.takeshi.team/pylons)
