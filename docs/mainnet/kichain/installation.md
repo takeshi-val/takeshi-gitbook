@@ -10,7 +10,7 @@ description: >-
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Custom Port**: 27
 
-### Setup your VARS0
+### Setup your VARS
 
 ```bash
 # Set VARS
