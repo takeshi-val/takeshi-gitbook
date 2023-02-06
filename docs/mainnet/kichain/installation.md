@@ -10,11 +10,7 @@ description: >-
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Custom Port**: 27
 
-### Setup validator name
-
-{% hint style="info" %}
-Replace **YOUR\_MONIKER** with your validator name
-{% endhint %}
+### Setup your VARS0
 
 ```bash
 # Set VARS
