@@ -66,7 +66,7 @@ c4ed tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=teritori-testnet-v3 \
+--chain-id=teritori-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -86,7 +86,7 @@ c4ed tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=teritori-testnet-v3 \
+--chain-id=teritori-1 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -98,7 +98,7 @@ c4ed tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-c4ed tx slashing unjail --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx slashing unjail --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ c4ed q staking validator $(c4ed keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-c4ed tx distribution withdraw-all-rewards --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-all-rewards --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000utori --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id teritori-testnet-v3
+c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000utori --from wallet --chain-id teritori-1
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ c4ed query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-c4ed tx gov vote 1 yes --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 yes --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'No'
 
 ```bash
-c4ed tx gov vote 1 no --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 no --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-c4ed tx gov vote 1 abstain --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 abstain --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-c4ed tx gov vote 1 nowithveto --from wallet --chain-id teritori-testnet-v3 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
+c4ed tx gov vote 1 nowithveto --from wallet --chain-id teritori-1 --gas-adjustment 1.4 --gas auto --gas-prices 0utori -y
 ```
 
 ## ⚡️ Utility
@@ -213,8 +213,8 @@ c4ed tx gov vote 1 nowithveto --from wallet --chain-id teritori-testnet-v3 --gas
 
 ```bash
 CUSTOM_PORT=10
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.c4e-chain/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.c4e-chain/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/c4e-chain/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/c4e-chain/config/app.toml
 ```
 
 #### Update Indexer
@@ -222,13 +222,13 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTO
 ##### Disable indexer
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.c4e-chain/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/c4e-chain/config/config.toml
 ```
 
 ##### Enable indexer
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.c4e-chain/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/c4e-chain/config/config.toml
 ```
 
 #### Update pruning
@@ -239,7 +239,7 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.c4e-chain/config/app.toml
+  $HOME/c4e-chain/config/app.toml
 ```
 
 ## 🚨 Maintenance
@@ -259,7 +259,7 @@ c4ed status 2>&1 | jq .SyncInfo
 #### Get node peer
 
 ```bash
-echo $(c4ed tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.c4e-chain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(c4ed tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/c4e-chain/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Check if validator key is correct
@@ -277,19 +277,19 @@ curl -sS http://localhost:19657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utori\"/" $HOME/.c4e-chain/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0utori\"/" $HOME/c4e-chain/config/app.toml
 ```
 
 #### Enable prometheus
 
 ```bash
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/c4e-chain/config/config.toml
 ```
 
 #### Reset chain data
 
 ```bash
-c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain --keep-addr-book
+c4ed tendermint unsafe-reset-all --home $HOME/c4e-chain --keep-addr-book
 ```
 
 #### Remove node
@@ -305,7 +305,7 @@ sudo systemctl disable c4ed
 sudo rm /etc/systemd/system/c4ed.service
 sudo systemctl daemon-reload
 rm -f $(which c4ed)
-rm -rf $HOME/.c4e-chain
+rm -rf $HOME/c4e-chain
 rm -rf $HOME/teritori-chain
 ```
 

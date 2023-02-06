@@ -27,8 +27,8 @@ git checkout v1.3.0
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.teritorid/cosmovisor/upgrades/v1.3.0/bin
-mv build/teritorid $HOME/.teritorid/cosmovisor/upgrades/v1.3.0/bin/
+mkdir -p $HOME/.c4e-chain/cosmovisor/upgrades/v1.3.0/bin
+mv build/c4ed $HOME/.c4e-chain/cosmovisor/upgrades/v1.3.0/bin/
 rm -rf build
 ```
 

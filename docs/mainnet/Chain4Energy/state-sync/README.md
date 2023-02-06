@@ -18,9 +18,9 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop teritorid
-cp $HOME/.teritorid/data/priv_validator_state.json $HOME/.teritorid/priv_validator_state.json.backup
-teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
+sudo systemctl stop c4ed
+cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validator_state.json.backup
+c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain
 ```
 
 ### Get and configure the state sync information
@@ -38,9 +38,9 @@ sed -i \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
   -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.teritorid/config/config.toml
+  $HOME/.c4e-chain/config/config.toml
 
-mv $HOME/.teritorid/priv_validator_state.json.backup $HOME/.teritorid/data/priv_validator_state.json
+mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
 ```
 
 ### Download latest wasm
@@ -50,11 +50,11 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.teritorid
+curl -L https://snapshots.kjnodes.com/teritori/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.c4e-chain
 ```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start teritorid && sudo journalctl -u teritorid -f --no-hostname -o cat
+sudo systemctl start c4ed && sudo journalctl -u c4ed -f --no-hostname -o cat
 ```
