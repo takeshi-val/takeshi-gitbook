@@ -4,7 +4,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 # Installation
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/okp4.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/okp4.png" width="150" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: okp4-nemeton-1 | **Latest Version Tag**: v3.0.0 | **Custom Port**: 36
 

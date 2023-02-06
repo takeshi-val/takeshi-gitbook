@@ -1,6 +1,6 @@
 # Services
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/kujira.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kujira.png" width="150" alt=""><figcaption></figcaption></figure>
 
 Kujira is a Layer 1 protocol built on Cosmos, which can be used for  hosting community-selected projects.
 

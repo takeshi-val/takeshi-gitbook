@@ -4,7 +4,7 @@ description: Useful set of commands for node operators. From key management to c
 
 # Useful commands
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/gravitybridge.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" width="150" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 

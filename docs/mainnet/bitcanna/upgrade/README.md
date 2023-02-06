@@ -4,7 +4,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/bitcanna.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/bitcanna.png" width="150" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: bitcanna-1 | **Latest Version Tag**: v1.5.3 | **Custom Port**: 42
 

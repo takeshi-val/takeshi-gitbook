@@ -1,6 +1,6 @@
 # Services
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/uptick.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/uptick.png" width="150" alt=""><figcaption></figcaption></figure>
 
 The Business Grade Multi-Chain NFT Infrastructure for Web 3.0
 

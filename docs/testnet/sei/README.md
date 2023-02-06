@@ -1,6 +1,6 @@
 # Services
 
-<figure><img src="https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/sei.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/sei.png" width="150" alt=""><figcaption></figcaption></figure>
 
 Sei is a Layer 1 blockchain on Cosmos with orderbook-focused infrastructure at its core
 
