@@ -4,9 +4,9 @@
 
 Teritori is a multi-chain hub designed to allow IBC and non IBC communities to connect, trade services & NFTs, launch new projects & build further existing ones.
 
-**Chain ID**: teritori-1 | **Latest Version Tag**: v1.3.0 | **Wasm**: ON
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 | 
 
-[Website](https://teritori.com) | [Discord](https://discord.gg/teritori) | [Twitter](https://twitter.com/TeritoriNetwork)
+[Website](https://c4e.io) | [Discord](https://discord.gg/teritori) | [Twitter](https://twitter.com/Chain4Energy)
 
 [![Stake with kjnodes](https://i.ibb.co/cr44Q8j/button-stake-with-kjnodes.png)](https://restake.app/teritori/torivaloper184ln03hkpt75uhrrr26f66kvcqvf4yn4nc2xjm)
 
