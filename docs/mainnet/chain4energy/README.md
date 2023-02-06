@@ -1,6 +1,6 @@
 # Chain4Energy
 
-<figure><img src="https://github.com/takeshi-val/Logo/blob/main/logo_C4E.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt=""><figcaption></figcaption></figure>
 
 Teritori is a multi-chain hub designed to allow IBC and non IBC communities to connect, trade services & NFTs, launch new projects & build further existing ones.
 
