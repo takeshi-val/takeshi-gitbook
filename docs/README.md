@@ -51,7 +51,7 @@ data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/lava.png" alt="" data-size="line"> [Lava](testnet/lava/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/mars.png" alt="" data-size="line"> [Mars](testnet/mars/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt="" data-size="line"> [beezee](testnet/beezee/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 

@@ -4,7 +4,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/mars.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" width="150" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: ares-1 | **Latest Version Tag**: v1.0.0-rc7 | **Custom Port**: 45
 
