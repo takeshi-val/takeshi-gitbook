@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **02:00 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 4106514 | 1 hours | [snapshot (1.02 GB)](https://snapshots.kjnodes.com/rebus/snapshot\_latest.tar.lz4) |
+| 4106514 | 1 hours | [snapshot (1.02 GB)](https://snapshots.takeshi.team/rebus/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.rebusd/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/rebus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.rebusd
+curl -L https://snapshots.takeshi.team/rebus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.rebusd
 mv $HOME/.rebusd/priv_validator_state.json.backup $HOME/.rebusd/data/priv_validator_state.json
 ```
 

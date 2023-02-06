@@ -12,31 +12,31 @@ Hypersign is a decentralized identity layer for the internet, giving  users cont
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/hypersign-testnet](https://explorer.kjnodes.com/hypersign-testnet)
+[https://explorer.takeshi.team/hypersign-testnet](https://explorer.takeshi.team/hypersign-testnet)
 
 ## Public endpoints
 
-* api: [https://hypersign-testnet.api.kjnodes.com](https://hypersign-testnet.api.kjnodes.com)
-* rpc: [https://hypersign-testnet.rpc.kjnodes.com](https://hypersign-testnet.rpc.kjnodes.com)
-* grpc: [https://hypersign-testnet.grpc.kjnodes.com](https://hypersign-testnet.grpc.kjnodes.com)
+* api: [https://hypersign-testnet.api.takeshi.team](https://hypersign-testnet.api.takeshi.team)
+* rpc: [https://hypersign-testnet.rpc.takeshi.team](https://hypersign-testnet.rpc.takeshi.team)
+* grpc: [https://hypersign-testnet.grpc.takeshi.team](https://hypersign-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@hypersign-testnet.rpc.kjnodes.com:31656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@hypersign-testnet.rpc.takeshi.team:31656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@hypersign-testnet.rpc.kjnodes.com:31659
+3f472746f46493309650e5a033076689996c8881@hypersign-testnet.rpc.takeshi.team:31659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/hypersign-testnet/addrbook.json > $HOME/.hid-node/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/hypersign-testnet/addrbook.json > $HOME/.hid-node/config/addrbook.json
 ```
 
 **live-peers** (10)

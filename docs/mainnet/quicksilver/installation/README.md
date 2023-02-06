@@ -101,11 +101,11 @@ quicksilverd config node tcp://localhost:11657
 quicksilverd init $MONIKER --chain-id quicksilver-2
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/quicksilver/genesis.json > $HOME/.quicksilverd/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/quicksilver/genesis.json > $HOME/.quicksilverd/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.kjnodes.com:11659\"|" $HOME/.quicksilverd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.takeshi.team:11659\"|" $HOME/.quicksilverd/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001uqck\"|" $HOME/.quicksilverd/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:11317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/quicksilver/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
+curl -L https://snapshots.takeshi.team/quicksilver/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
 [[ -f $HOME/.quicksilverd/data/upgrade-info.json ]] && cp $HOME/.quicksilverd/data/upgrade-info.json $HOME/.quicksilverd/cosmovisor/genesis/upgrade-info.json
 ```
 

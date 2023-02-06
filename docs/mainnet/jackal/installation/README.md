@@ -101,11 +101,11 @@ canined config node tcp://localhost:37657
 canined init $MONIKER --chain-id jackal-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/jackal/genesis.json > $HOME/.canine/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/jackal/genesis.json > $HOME/.canine/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.kjnodes.com:37659\"|" $HOME/.canine/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.takeshi.team:37659\"|" $HOME/.canine/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002ujkl\"|" $HOME/.canine/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:37317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/jackal/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/jackal/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
 [[ -f $HOME/.canine/data/upgrade-info.json ]] && cp $HOME/.canine/data/upgrade-info.json $HOME/.canine/cosmovisor/genesis/upgrade-info.json
 ```
 

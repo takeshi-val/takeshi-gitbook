@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **01:15 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 3137193 | 2 hours | [snapshot (0.47 GB)](https://snapshots.kjnodes.com/teritori-testnet/snapshot\_latest.tar.lz4) |
+| 3137193 | 2 hours | [snapshot (0.47 GB)](https://snapshots.takeshi.team/teritori-testnet/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.c4e-chain/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/teritori-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
 mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
 ```
 

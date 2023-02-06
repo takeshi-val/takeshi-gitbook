@@ -101,11 +101,11 @@ okp4d config node tcp://localhost:36657
 okp4d init $MONIKER --chain-id okp4-nemeton-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/okp4-testnet/genesis.json > $HOME/.okp4d/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/okp4-testnet/addrbook.json > $HOME/.okp4d/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/okp4-testnet/genesis.json > $HOME/.okp4d/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/okp4-testnet/addrbook.json > $HOME/.okp4d/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@okp4-testnet.rpc.kjnodes.com:36659\"|" $HOME/.okp4d/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@okp4-testnet.rpc.takeshi.team:36659\"|" $HOME/.okp4d/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uknow\"|" $HOME/.okp4d/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:36317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/okp4-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.okp4d
+curl -L https://snapshots.takeshi.team/okp4-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.okp4d
 [[ -f $HOME/.okp4d/data/upgrade-info.json ]] && cp $HOME/.okp4d/data/upgrade-info.json $HOME/.okp4d/cosmovisor/genesis/upgrade-info.json
 ```
 

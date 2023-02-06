@@ -14,31 +14,31 @@ Stride is a blockchain ("zone") that provides liquidity for staked assets.  Usin
 
 [Restake with kjnodes](https://restake.app/stride/stridevaloper1j8gkhtllnp252l6g6zwzea30e7pvzqttr9768n) (every day at 08:00, 20:00)
 ## Chain explorer
-[https://explorer.kjnodes.com/stride](https://explorer.kjnodes.com/stride)
+[https://explorer.takeshi.team/stride](https://explorer.takeshi.team/stride)
 
 ## Public endpoints
 
-* api: [https://stride.api.kjnodes.com](https://stride.api.kjnodes.com)
-* rpc: [https://stride.rpc.kjnodes.com](https://stride.rpc.kjnodes.com)
-* grpc: [https://stride.grpc.kjnodes.com](https://stride.grpc.kjnodes.com)
+* api: [https://stride.api.takeshi.team](https://stride.api.takeshi.team)
+* rpc: [https://stride.rpc.takeshi.team](https://stride.rpc.takeshi.team)
+* grpc: [https://stride.grpc.takeshi.team](https://stride.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@stride.rpc.kjnodes.com:16656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@stride.rpc.takeshi.team:16656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@stride.rpc.kjnodes.com:16659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@stride.rpc.takeshi.team:16659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/stride/addrbook.json > $HOME/.stride/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/stride/addrbook.json > $HOME/.stride/config/addrbook.json
 ```
 
 **live-peers** (48)

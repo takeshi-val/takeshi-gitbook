@@ -14,31 +14,31 @@ The Jackal Protocol is a fast, scalable, and secure blockchain that empowers  in
 
 [Restake with kjnodes](https://restake.app/jackal/jklvaloper1tr3wm3mdkz0tda6t7vavqnn7fe2g4un0f67xmt) (every day at 08:00, 20:00)
 ## Chain explorer
-[https://explorer.kjnodes.com/jackal](https://explorer.kjnodes.com/jackal)
+[https://explorer.takeshi.team/jackal](https://explorer.takeshi.team/jackal)
 
 ## Public endpoints
 
-* api: [https://jackal.api.kjnodes.com](https://jackal.api.kjnodes.com)
-* rpc: [https://jackal.rpc.kjnodes.com](https://jackal.rpc.kjnodes.com)
-* grpc: [https://jackal.grpc.kjnodes.com](https://jackal.grpc.kjnodes.com)
+* api: [https://jackal.api.takeshi.team](https://jackal.api.takeshi.team)
+* rpc: [https://jackal.rpc.takeshi.team](https://jackal.rpc.takeshi.team)
+* grpc: [https://jackal.grpc.takeshi.team](https://jackal.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.kjnodes.com:37656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.takeshi.team:37656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.kjnodes.com:37659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.takeshi.team:37659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
 ```
 
 **live-peers** (21)

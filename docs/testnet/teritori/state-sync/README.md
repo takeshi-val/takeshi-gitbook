@@ -26,8 +26,8 @@ c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://teritori-testnet.rpc.kjnodes.com:443
-STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@teritori-testnet.rpc.kjnodes.com:19656
+STATE_SYNC_RPC=https://teritori-testnet.rpc.takeshi.team:443
+STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@teritori-testnet.rpc.takeshi.team:19656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -50,7 +50,7 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori-testnet/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/teritori-testnet/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.c4e-chain
 ```
 
 ### Restart the service and check the log

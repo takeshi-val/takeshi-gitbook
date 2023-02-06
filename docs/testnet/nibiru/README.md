@@ -12,31 +12,31 @@ Nibiru is a sovereign proof-of-stake blockchain, open-source platform,  and memb
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/nibiru-testnet](https://explorer.kjnodes.com/nibiru-testnet)
+[https://explorer.takeshi.team/nibiru-testnet](https://explorer.takeshi.team/nibiru-testnet)
 
 ## Public endpoints
 
-* api: [https://nibiru-testnet.api.kjnodes.com](https://nibiru-testnet.api.kjnodes.com)
-* rpc: [https://nibiru-testnet.rpc.kjnodes.com](https://nibiru-testnet.rpc.kjnodes.com)
-* grpc: [https://nibiru-testnet.grpc.kjnodes.com](https://nibiru-testnet.grpc.kjnodes.com)
+* api: [https://nibiru-testnet.api.takeshi.team](https://nibiru-testnet.api.takeshi.team)
+* rpc: [https://nibiru-testnet.rpc.takeshi.team](https://nibiru-testnet.rpc.takeshi.team)
+* grpc: [https://nibiru-testnet.grpc.takeshi.team](https://nibiru-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@nibiru-testnet.rpc.kjnodes.com:39656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@nibiru-testnet.rpc.takeshi.team:39656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.kjnodes.com:39659
+3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.takeshi.team:39659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 ```
 
 **live-peers** (47)

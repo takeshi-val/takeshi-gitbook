@@ -12,31 +12,31 @@ The Aura Network protocol allows users to mint, rate, track data,  or trade NFT 
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/aura-testnet](https://explorer.kjnodes.com/aura-testnet)
+[https://explorer.takeshi.team/aura-testnet](https://explorer.takeshi.team/aura-testnet)
 
 ## Public endpoints
 
-* api: [https://aura-testnet.api.kjnodes.com](https://aura-testnet.api.kjnodes.com)
-* rpc: [https://aura-testnet.rpc.kjnodes.com](https://aura-testnet.rpc.kjnodes.com)
-* grpc: [https://aura-testnet.grpc.kjnodes.com](https://aura-testnet.grpc.kjnodes.com)
+* api: [https://aura-testnet.api.takeshi.team](https://aura-testnet.api.takeshi.team)
+* rpc: [https://aura-testnet.rpc.takeshi.team](https://aura-testnet.rpc.takeshi.team)
+* grpc: [https://aura-testnet.grpc.takeshi.team](https://aura-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@aura-testnet.rpc.kjnodes.com:17656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@aura-testnet.rpc.takeshi.team:17656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@aura-testnet.rpc.kjnodes.com:17659
+3f472746f46493309650e5a033076689996c8881@aura-testnet.rpc.takeshi.team:17659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/aura-testnet/addrbook.json > $HOME/.aura/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/aura-testnet/addrbook.json > $HOME/.aura/config/addrbook.json
 ```
 
 **live-peers** (10)

@@ -12,31 +12,31 @@ Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid stak
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/quicksilver-testnet](https://explorer.kjnodes.com/quicksilver-testnet)
+[https://explorer.takeshi.team/quicksilver-testnet](https://explorer.takeshi.team/quicksilver-testnet)
 
 ## Public endpoints
 
-* api: [https://quicksilver-testnet.api.kjnodes.com](https://quicksilver-testnet.api.kjnodes.com)
-* rpc: [https://quicksilver-testnet.rpc.kjnodes.com](https://quicksilver-testnet.rpc.kjnodes.com)
-* grpc: [https://quicksilver-testnet.grpc.kjnodes.com](https://quicksilver-testnet.grpc.kjnodes.com)
+* api: [https://quicksilver-testnet.api.takeshi.team](https://quicksilver-testnet.api.takeshi.team)
+* rpc: [https://quicksilver-testnet.rpc.takeshi.team](https://quicksilver-testnet.rpc.takeshi.team)
+* grpc: [https://quicksilver-testnet.grpc.takeshi.team](https://quicksilver-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@quicksilver-testnet.rpc.kjnodes.com:11656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@quicksilver-testnet.rpc.takeshi.team:11656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.kjnodes.com:11659
+3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.takeshi.team:11659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/quicksilver-testnet/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/quicksilver-testnet/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
 ```
 
 **live-peers** (41)

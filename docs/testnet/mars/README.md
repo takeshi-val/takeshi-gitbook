@@ -12,31 +12,31 @@ Mars is a credit protocol for the future: non-custodial,  open-source, transpare
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/mars-testnet](https://explorer.kjnodes.com/mars-testnet)
+[https://explorer.takeshi.team/mars-testnet](https://explorer.takeshi.team/mars-testnet)
 
 ## Public endpoints
 
-* api: [https://mars-testnet.api.kjnodes.com](https://mars-testnet.api.kjnodes.com)
-* rpc: [https://mars-testnet.rpc.kjnodes.com](https://mars-testnet.rpc.kjnodes.com)
-* grpc: [https://mars-testnet.grpc.kjnodes.com](https://mars-testnet.grpc.kjnodes.com)
+* api: [https://mars-testnet.api.takeshi.team](https://mars-testnet.api.takeshi.team)
+* rpc: [https://mars-testnet.rpc.takeshi.team](https://mars-testnet.rpc.takeshi.team)
+* grpc: [https://mars-testnet.grpc.takeshi.team](https://mars-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@mars-testnet.rpc.kjnodes.com:45656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@mars-testnet.rpc.takeshi.team:45656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@mars-testnet.rpc.kjnodes.com:45659
+3f472746f46493309650e5a033076689996c8881@mars-testnet.rpc.takeshi.team:45659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/mars-testnet/addrbook.json > $HOME/.mars/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/mars-testnet/addrbook.json > $HOME/.mars/config/addrbook.json
 ```
 
 **live-peers** (49)

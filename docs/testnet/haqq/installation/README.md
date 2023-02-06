@@ -101,11 +101,11 @@ haqqd config node tcp://localhost:35657
 haqqd init $MONIKER --chain-id haqq_54211-3
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/haqq-testnet/genesis.json > $HOME/.haqqd/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/haqq-testnet/addrbook.json > $HOME/.haqqd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/haqq-testnet/genesis.json > $HOME/.haqqd/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/haqq-testnet/addrbook.json > $HOME/.haqqd/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@haqq-testnet.rpc.kjnodes.com:35659\"|" $HOME/.haqqd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@haqq-testnet.rpc.takeshi.team:35659\"|" $HOME/.haqqd/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0aISLM\"|" $HOME/.haqqd/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:35317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/haqq-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.haqqd
+curl -L https://snapshots.takeshi.team/haqq-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.haqqd
 [[ -f $HOME/.haqqd/data/upgrade-info.json ]] && cp $HOME/.haqqd/data/upgrade-info.json $HOME/.haqqd/cosmovisor/genesis/upgrade-info.json
 ```
 

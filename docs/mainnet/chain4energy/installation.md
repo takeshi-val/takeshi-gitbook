@@ -103,8 +103,8 @@ c4ed config node tcp://localhost:19657
 c4ed init $MONIKER --chain-id perun-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/teritori/genesis.json > $HOME/.c4e-chain/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/teritori/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/teritori/genesis.json > $HOME/.c4e-chain/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/teritori/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 
 # Add seeds
 sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rpc-c4e.takeshi.team:19659\"|" $HOME/.c4e-chain/config/config.toml
@@ -128,7 +128,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:19317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/teritori/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
 [[ -f $HOME/.c4e-chain/data/upgrade-info.json ]] && cp $HOME/.c4e-chain/data/upgrade-info.json $HOME/.c4e-chain/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -12,31 +12,31 @@ OLLO is a sovereign L1 chain built on the Cosmos network providing  next-gen tra
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/ollo-testnet](https://explorer.kjnodes.com/ollo-testnet)
+[https://explorer.takeshi.team/ollo-testnet](https://explorer.takeshi.team/ollo-testnet)
 
 ## Public endpoints
 
-* api: [https://ollo-testnet.api.kjnodes.com](https://ollo-testnet.api.kjnodes.com)
-* rpc: [https://ollo-testnet.rpc.kjnodes.com](https://ollo-testnet.rpc.kjnodes.com)
-* grpc: [https://ollo-testnet.grpc.kjnodes.com](https://ollo-testnet.grpc.kjnodes.com)
+* api: [https://ollo-testnet.api.takeshi.team](https://ollo-testnet.api.takeshi.team)
+* rpc: [https://ollo-testnet.rpc.takeshi.team](https://ollo-testnet.rpc.takeshi.team)
+* grpc: [https://ollo-testnet.grpc.takeshi.team](https://ollo-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@ollo-testnet.rpc.kjnodes.com:32656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@ollo-testnet.rpc.takeshi.team:32656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@ollo-testnet.rpc.kjnodes.com:32659
+3f472746f46493309650e5a033076689996c8881@ollo-testnet.rpc.takeshi.team:32659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/ollo-testnet/addrbook.json > $HOME/.ollo/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/ollo-testnet/addrbook.json > $HOME/.ollo/config/addrbook.json
 ```
 
 **live-peers** (25)

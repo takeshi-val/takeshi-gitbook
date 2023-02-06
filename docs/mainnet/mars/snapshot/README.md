@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **06:00 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 8129 | 3 hours | [snapshot (0.25 GB)](https://snapshots.kjnodes.com/mars/snapshot\_latest.tar.lz4) |
+| 8129 | 3 hours | [snapshot (0.25 GB)](https://snapshots.takeshi.team/mars/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.mars/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/mars/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mars
+curl -L https://snapshots.takeshi.team/mars/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mars
 mv $HOME/.mars/priv_validator_state.json.backup $HOME/.mars/data/priv_validator_state.json
 ```
 

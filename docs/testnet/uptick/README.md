@@ -12,31 +12,31 @@ The Business Grade Multi-Chain NFT Infrastructure for Web 3.0
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/uptick-testnet](https://explorer.kjnodes.com/uptick-testnet)
+[https://explorer.takeshi.team/uptick-testnet](https://explorer.takeshi.team/uptick-testnet)
 
 ## Public endpoints
 
-* api: [https://uptick-testnet.api.kjnodes.com](https://uptick-testnet.api.kjnodes.com)
-* rpc: [https://uptick-testnet.rpc.kjnodes.com](https://uptick-testnet.rpc.kjnodes.com)
-* grpc: [https://uptick-testnet.grpc.kjnodes.com](https://uptick-testnet.grpc.kjnodes.com)
+* api: [https://uptick-testnet.api.takeshi.team](https://uptick-testnet.api.takeshi.team)
+* rpc: [https://uptick-testnet.rpc.takeshi.team](https://uptick-testnet.rpc.takeshi.team)
+* grpc: [https://uptick-testnet.grpc.takeshi.team](https://uptick-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@uptick-testnet.rpc.kjnodes.com:15656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@uptick-testnet.rpc.takeshi.team:15656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@uptick-testnet.rpc.kjnodes.com:15659
+3f472746f46493309650e5a033076689996c8881@uptick-testnet.rpc.takeshi.team:15659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/uptick-testnet/addrbook.json > $HOME/.uptickd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/uptick-testnet/addrbook.json > $HOME/.uptickd/config/addrbook.json
 ```
 
 **live-peers** (27)

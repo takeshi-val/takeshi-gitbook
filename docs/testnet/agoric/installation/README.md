@@ -119,11 +119,11 @@ agd config node tcp://localhost:27657
 agd init $MONIKER --chain-id agoric-emerynet-5
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/agoric-testnet/genesis.json > $HOME/.agoric/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/agoric-testnet/addrbook.json > $HOME/.agoric/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/agoric-testnet/genesis.json > $HOME/.agoric/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/agoric-testnet/addrbook.json > $HOME/.agoric/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@agoric-testnet.rpc.kjnodes.com:27659\"|" $HOME/.agoric/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@agoric-testnet.rpc.takeshi.team:27659\"|" $HOME/.agoric/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025ubld\"|" $HOME/.agoric/config/app.toml
@@ -144,7 +144,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/agoric-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.agoric
+curl -L https://snapshots.takeshi.team/agoric-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.agoric
 [[ -f $HOME/.agoric/data/upgrade-info.json ]] && cp $HOME/.agoric/data/upgrade-info.json $HOME/.agoric/cosmovisor/genesis/upgrade-info.json
 ```
 

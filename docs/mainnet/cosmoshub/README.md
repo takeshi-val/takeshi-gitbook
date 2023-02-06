@@ -12,31 +12,31 @@ The Cosmos Hub is the blockchain protocol underlying an  increasingly large numb
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/cosmoshub](https://explorer.kjnodes.com/cosmoshub)
+[https://explorer.takeshi.team/cosmoshub](https://explorer.takeshi.team/cosmoshub)
 
 ## Public endpoints
 
-* api: [https://cosmoshub.api.kjnodes.com](https://cosmoshub.api.kjnodes.com)
-* rpc: [https://cosmoshub.rpc.kjnodes.com](https://cosmoshub.rpc.kjnodes.com)
-* grpc: [https://cosmoshub.grpc.kjnodes.com](https://cosmoshub.grpc.kjnodes.com)
+* api: [https://cosmoshub.api.takeshi.team](https://cosmoshub.api.takeshi.team)
+* rpc: [https://cosmoshub.rpc.takeshi.team](https://cosmoshub.rpc.takeshi.team)
+* grpc: [https://cosmoshub.grpc.takeshi.team](https://cosmoshub.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@cosmoshub.rpc.kjnodes.com:34656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@cosmoshub.rpc.takeshi.team:34656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@cosmoshub.rpc.kjnodes.com:34659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@cosmoshub.rpc.takeshi.team:34659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/cosmoshub/addrbook.json > $HOME/.gaia/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/cosmoshub/addrbook.json > $HOME/.gaia/config/addrbook.json
 ```
 
 **live-peers** (50)

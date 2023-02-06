@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **01:30 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 2174244 | 1 hours | [snapshot (5.08 GB)](https://snapshots.kjnodes.com/stride/snapshot\_latest.tar.lz4) |
+| 2174244 | 1 hours | [snapshot (5.08 GB)](https://snapshots.takeshi.team/stride/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.stride/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/stride/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.stride
+curl -L https://snapshots.takeshi.team/stride/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.stride
 mv $HOME/.stride/priv_validator_state.json.backup $HOME/.stride/data/priv_validator_state.json
 ```
 

@@ -101,11 +101,11 @@ strided config node tcp://localhost:16657
 strided init $MONIKER --chain-id stride-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/stride/genesis.json > $HOME/.stride/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/stride/addrbook.json > $HOME/.stride/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/stride/genesis.json > $HOME/.stride/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/stride/addrbook.json > $HOME/.stride/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@stride.rpc.kjnodes.com:16659\"|" $HOME/.stride/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@stride.rpc.takeshi.team:16659\"|" $HOME/.stride/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.001ustrd\"|" $HOME/.stride/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:16317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/stride/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.stride
+curl -L https://snapshots.takeshi.team/stride/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.stride
 [[ -f $HOME/.stride/data/upgrade-info.json ]] && cp $HOME/.stride/data/upgrade-info.json $HOME/.stride/cosmovisor/genesis/upgrade-info.json
 ```
 

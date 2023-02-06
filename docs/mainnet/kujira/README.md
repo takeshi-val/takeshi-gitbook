@@ -14,31 +14,31 @@ Kujira is a Layer 1 protocol built on Cosmos, which can be used for  hosting com
 
 [Restake with kjnodes](https://restake.app/kujira/kujiravaloper1tnuqj73jfn3724lqz34c27tuv80nv336sadqym) (every day at 08:00, 20:00)
 ## Chain explorer
-[https://explorer.kjnodes.com/kujira](https://explorer.kjnodes.com/kujira)
+[https://explorer.takeshi.team/kujira](https://explorer.takeshi.team/kujira)
 
 ## Public endpoints
 
-* api: [https://kujira.api.kjnodes.com](https://kujira.api.kjnodes.com)
-* rpc: [https://kujira.rpc.kjnodes.com](https://kujira.rpc.kjnodes.com)
-* grpc: [https://kujira.grpc.kjnodes.com](https://kujira.grpc.kjnodes.com)
+* api: [https://kujira.api.takeshi.team](https://kujira.api.takeshi.team)
+* rpc: [https://kujira.rpc.takeshi.team](https://kujira.rpc.takeshi.team)
+* grpc: [https://kujira.grpc.takeshi.team](https://kujira.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@kujira.rpc.kjnodes.com:13656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@kujira.rpc.takeshi.team:13656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@kujira.rpc.kjnodes.com:13659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@kujira.rpc.takeshi.team:13659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/kujira/addrbook.json > $HOME/.kujira/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/kujira/addrbook.json > $HOME/.kujira/config/addrbook.json
 ```
 
 **live-peers** (10)

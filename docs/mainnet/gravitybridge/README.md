@@ -14,31 +14,31 @@ An open, decentralized bridge that unlocks the power of  interoperability & liqu
 
 [Restake with kjnodes](https://restake.app/gravitybridge/gravityvaloper1nw3uavthnjwsgrrjzav2wdg9m0pw7k4fc7hvlz) (every day at 08:00, 20:00)
 ## Chain explorer
-[https://explorer.kjnodes.com/gravitybridge](https://explorer.kjnodes.com/gravitybridge)
+[https://explorer.takeshi.team/gravitybridge](https://explorer.takeshi.team/gravitybridge)
 
 ## Public endpoints
 
-* api: [https://gravitybridge.api.kjnodes.com](https://gravitybridge.api.kjnodes.com)
-* rpc: [https://gravitybridge.rpc.kjnodes.com](https://gravitybridge.rpc.kjnodes.com)
-* grpc: [https://gravitybridge.grpc.kjnodes.com](https://gravitybridge.grpc.kjnodes.com)
+* api: [https://gravitybridge.api.takeshi.team](https://gravitybridge.api.takeshi.team)
+* rpc: [https://gravitybridge.rpc.takeshi.team](https://gravitybridge.rpc.takeshi.team)
+* grpc: [https://gravitybridge.grpc.takeshi.team](https://gravitybridge.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@gravitybridge.rpc.kjnodes.com:26656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@gravitybridge.rpc.takeshi.team:26656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.kjnodes.com:26659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.takeshi.team:26659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
 ```
 
 **live-peers** (7)

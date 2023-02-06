@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **04:30 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 1940109 | 7 minutes | [snapshot (6.34 GB)](https://snapshots.kjnodes.com/defund-testnet/snapshot\_latest.tar.lz4) |
+| 1940109 | 7 minutes | [snapshot (6.34 GB)](https://snapshots.takeshi.team/defund-testnet/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.defund/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/defund-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.defund
+curl -L https://snapshots.takeshi.team/defund-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.defund
 mv $HOME/.defund/priv_validator_state.json.backup $HOME/.defund/data/priv_validator_state.json
 ```
 

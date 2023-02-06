@@ -12,31 +12,31 @@ Osmosis is a DEX protocol, which means it uses smart contracts  to determine the
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/osmosis](https://explorer.kjnodes.com/osmosis)
+[https://explorer.takeshi.team/osmosis](https://explorer.takeshi.team/osmosis)
 
 ## Public endpoints
 
-* api: [https://osmosis.api.kjnodes.com](https://osmosis.api.kjnodes.com)
-* rpc: [https://osmosis.rpc.kjnodes.com](https://osmosis.rpc.kjnodes.com)
-* grpc: [https://osmosis.grpc.kjnodes.com](https://osmosis.grpc.kjnodes.com)
+* api: [https://osmosis.api.takeshi.team](https://osmosis.api.takeshi.team)
+* rpc: [https://osmosis.rpc.takeshi.team](https://osmosis.rpc.takeshi.team)
+* grpc: [https://osmosis.grpc.takeshi.team](https://osmosis.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@osmosis.rpc.kjnodes.com:29656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@osmosis.rpc.takeshi.team:29656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@osmosis.rpc.kjnodes.com:29659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@osmosis.rpc.takeshi.team:29659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/osmosis/addrbook.json > $HOME/.osmosisd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/osmosis/addrbook.json > $HOME/.osmosisd/config/addrbook.json
 ```
 
 **live-peers** (51)

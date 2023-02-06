@@ -26,8 +26,8 @@ canined tendermint unsafe-reset-all --home $HOME/.canine
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://jackal.rpc.kjnodes.com:443
-STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.kjnodes.com:37656
+STATE_SYNC_RPC=https://jackal.rpc.takeshi.team:443
+STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.takeshi.team:37656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -50,7 +50,7 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.kjnodes.com/jackal/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/jackal/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine
 ```
 
 ### Restart the service and check the log

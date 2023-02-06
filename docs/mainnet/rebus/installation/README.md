@@ -101,11 +101,11 @@ rebusd config node tcp://localhost:21657
 rebusd init $MONIKER --chain-id reb_1111-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/rebus/genesis.json > $HOME/.rebusd/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/rebus/addrbook.json > $HOME/.rebusd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/rebus/genesis.json > $HOME/.rebusd/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/rebus/addrbook.json > $HOME/.rebusd/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rebus.rpc.kjnodes.com:21659\"|" $HOME/.rebusd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rebus.rpc.takeshi.team:21659\"|" $HOME/.rebusd/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0arebus\"|" $HOME/.rebusd/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:21317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/rebus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.rebusd
+curl -L https://snapshots.takeshi.team/rebus/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.rebusd
 [[ -f $HOME/.rebusd/data/upgrade-info.json ]] && cp $HOME/.rebusd/data/upgrade-info.json $HOME/.rebusd/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -42,9 +42,9 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf teritori-chain
-git clone https://github.com/TERITORI/teritori-chain.git
-cd teritori-chain
+rm -rf c4e-chain
+git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
+cd c4e-chain
 git checkout v1.1.0
 
 # Build binaries
@@ -101,8 +101,8 @@ c4ed config node tcp://localhost:19657
 c4ed init $MONIKER --chain-id perun-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/teritori/genesis.json > $HOME/.c4e-chain/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/teritori/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
+wget https://raw.githubusercontent.com/chain4energy/c4e-chains/main/perun-1/genesis.json -O $HOME/.c4e-chain/config/genesis.json
+wget https://snapshots.nodestake.top/c4e/addrbook.json -O $HOME/.c4e-chain/config/addrbook.json
 
 # Add seeds
 sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rpc-c4e.takeshi.team:19659\"|" $HOME/.c4e-chain/config/config.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:19317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/teritori/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
 [[ -f $HOME/.c4e-chain/data/upgrade-info.json ]] && cp $HOME/.c4e-chain/data/upgrade-info.json $HOME/.c4e-chain/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -101,11 +101,11 @@ aurad config node tcp://localhost:17657
 aurad init $MONIKER --chain-id euphoria-2
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/aura-testnet/genesis.json > $HOME/.aura/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/aura-testnet/addrbook.json > $HOME/.aura/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/aura-testnet/genesis.json > $HOME/.aura/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/aura-testnet/addrbook.json > $HOME/.aura/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@aura-testnet.rpc.kjnodes.com:17659\"|" $HOME/.aura/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@aura-testnet.rpc.takeshi.team:17659\"|" $HOME/.aura/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ueaura\"|" $HOME/.aura/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:17317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/aura-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.aura
+curl -L https://snapshots.takeshi.team/aura-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.aura
 [[ -f $HOME/.aura/data/upgrade-info.json ]] && cp $HOME/.aura/data/upgrade-info.json $HOME/.aura/cosmovisor/genesis/upgrade-info.json
 ```
 

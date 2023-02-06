@@ -12,31 +12,31 @@ DeFund is an L1 blockchain built for building decentralized permissionless,  on-
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/defund-testnet](https://explorer.kjnodes.com/defund-testnet)
+[https://explorer.takeshi.team/defund-testnet](https://explorer.takeshi.team/defund-testnet)
 
 ## Public endpoints
 
-* api: [https://defund-testnet.api.kjnodes.com](https://defund-testnet.api.kjnodes.com)
-* rpc: [https://defund-testnet.rpc.kjnodes.com](https://defund-testnet.rpc.kjnodes.com)
-* grpc: [https://defund-testnet.grpc.kjnodes.com](https://defund-testnet.grpc.kjnodes.com)
+* api: [https://defund-testnet.api.takeshi.team](https://defund-testnet.api.takeshi.team)
+* rpc: [https://defund-testnet.rpc.takeshi.team](https://defund-testnet.rpc.takeshi.team)
+* grpc: [https://defund-testnet.grpc.takeshi.team](https://defund-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@defund-testnet.rpc.kjnodes.com:40656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@defund-testnet.rpc.takeshi.team:40656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.kjnodes.com:40659
+3f472746f46493309650e5a033076689996c8881@defund-testnet.rpc.takeshi.team:40659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/defund-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/defund-testnet/addrbook.json > $HOME/.defund/config/addrbook.json
 ```
 
 **live-peers** (128)

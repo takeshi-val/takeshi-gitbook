@@ -12,31 +12,31 @@ OKP4 is a revolutionary public blockchain protocol where communities are incenti
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/okp4-testnet](https://explorer.kjnodes.com/okp4-testnet)
+[https://explorer.takeshi.team/okp4-testnet](https://explorer.takeshi.team/okp4-testnet)
 
 ## Public endpoints
 
-* api: [https://okp4-testnet.api.kjnodes.com](https://okp4-testnet.api.kjnodes.com)
-* rpc: [https://okp4-testnet.rpc.kjnodes.com](https://okp4-testnet.rpc.kjnodes.com)
-* grpc: [https://okp4-testnet.grpc.kjnodes.com](https://okp4-testnet.grpc.kjnodes.com)
+* api: [https://okp4-testnet.api.takeshi.team](https://okp4-testnet.api.takeshi.team)
+* rpc: [https://okp4-testnet.rpc.takeshi.team](https://okp4-testnet.rpc.takeshi.team)
+* grpc: [https://okp4-testnet.grpc.takeshi.team](https://okp4-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@okp4-testnet.rpc.kjnodes.com:36656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@okp4-testnet.rpc.takeshi.team:36656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@okp4-testnet.rpc.kjnodes.com:36659
+3f472746f46493309650e5a033076689996c8881@okp4-testnet.rpc.takeshi.team:36659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/okp4-testnet/addrbook.json > $HOME/.okp4d/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/okp4-testnet/addrbook.json > $HOME/.okp4d/config/addrbook.json
 ```
 
 **live-peers** (35)

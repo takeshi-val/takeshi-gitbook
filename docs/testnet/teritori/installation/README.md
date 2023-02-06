@@ -101,11 +101,11 @@ c4ed config node tcp://localhost:19657
 c4ed init $MONIKER --chain-id teritori-testnet-v3
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/teritori-testnet/genesis.json > $HOME/.c4e-chain/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/teritori-testnet/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/teritori-testnet/genesis.json > $HOME/.c4e-chain/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/teritori-testnet/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@teritori-testnet.rpc.kjnodes.com:19659\"|" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@teritori-testnet.rpc.takeshi.team:19659\"|" $HOME/.c4e-chain/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0utori\"|" $HOME/.c4e-chain/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:19317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/teritori-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/teritori-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
 [[ -f $HOME/.c4e-chain/data/upgrade-info.json ]] && cp $HOME/.c4e-chain/data/upgrade-info.json $HOME/.c4e-chain/cosmovisor/genesis/upgrade-info.json
 ```
 

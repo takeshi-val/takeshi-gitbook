@@ -101,11 +101,11 @@ ollod config node tcp://localhost:32657
 ollod init $MONIKER --chain-id ollo-testnet-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/ollo-testnet/genesis.json > $HOME/.ollo/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/ollo-testnet/addrbook.json > $HOME/.ollo/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/ollo-testnet/genesis.json > $HOME/.ollo/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/ollo-testnet/addrbook.json > $HOME/.ollo/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@ollo-testnet.rpc.kjnodes.com:32659\"|" $HOME/.ollo/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@ollo-testnet.rpc.takeshi.team:32659\"|" $HOME/.ollo/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0utollo\"|" $HOME/.ollo/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:32317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/ollo-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.ollo
+curl -L https://snapshots.takeshi.team/ollo-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.ollo
 [[ -f $HOME/.ollo/data/upgrade-info.json ]] && cp $HOME/.ollo/data/upgrade-info.json $HOME/.ollo/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **00:45 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 910919 | 19 minutes | [snapshot (0.48 GB)](https://snapshots.kjnodes.com/jackal-testnet/snapshot\_latest.tar.lz4) |
+| 910919 | 19 minutes | [snapshot (0.48 GB)](https://snapshots.takeshi.team/jackal-testnet/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.canine/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/jackal-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/jackal-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
 mv $HOME/.canine/priv_validator_state.json.backup $HOME/.canine/data/priv_validator_state.json
 ```
 

@@ -101,11 +101,11 @@ marsd config node tcp://localhost:45657
 marsd init $MONIKER --chain-id mars-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/mars/genesis.json > $HOME/.mars/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/mars/addrbook.json > $HOME/.mars/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/mars/genesis.json > $HOME/.mars/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/mars/addrbook.json > $HOME/.mars/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@mars.rpc.kjnodes.com:45659\"|" $HOME/.mars/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@mars.rpc.takeshi.team:45659\"|" $HOME/.mars/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0umars\"|" $HOME/.mars/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:45317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/mars/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mars
+curl -L https://snapshots.takeshi.team/mars/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mars
 [[ -f $HOME/.mars/data/upgrade-info.json ]] && cp $HOME/.mars/data/upgrade-info.json $HOME/.mars/cosmovisor/genesis/upgrade-info.json
 ```
 

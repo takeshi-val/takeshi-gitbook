@@ -87,11 +87,11 @@ sudo systemctl enable gravityd
 gravityd init $MONIKER --chain-id gravity-bridge-3
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/gravitybridge/genesis.json > $HOME/.gravity/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/gravitybridge/genesis.json > $HOME/.gravity/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.kjnodes.com:26659\"|" $HOME/.gravity/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.takeshi.team:26659\"|" $HOME/.gravity/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ugraviton\"|" $HOME/.gravity/config/app.toml
@@ -112,7 +112,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:26317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/gravitybridge/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.gravity
+curl -L https://snapshots.takeshi.team/gravitybridge/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.gravity
 [[ -f $HOME/.gravity/data/upgrade-info.json ]] && cp $HOME/.gravity/data/upgrade-info.json $HOME/.gravity/cosmovisor/genesis/upgrade-info.json
 ```
 

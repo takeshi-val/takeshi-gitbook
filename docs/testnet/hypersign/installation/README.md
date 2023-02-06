@@ -96,11 +96,11 @@ sudo systemctl enable hid-noded
 hid-noded init $MONIKER --chain-id jagrat
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/hypersign-testnet/genesis.json > $HOME/.hid-node/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/hypersign-testnet/addrbook.json > $HOME/.hid-node/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/hypersign-testnet/genesis.json > $HOME/.hid-node/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/hypersign-testnet/addrbook.json > $HOME/.hid-node/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@hypersign-testnet.rpc.kjnodes.com:31659\"|" $HOME/.hid-node/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@hypersign-testnet.rpc.takeshi.team:31659\"|" $HOME/.hid-node/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uhid\"|" $HOME/.hid-node/config/app.toml
@@ -121,7 +121,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:31317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/hypersign-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hid-node
+curl -L https://snapshots.takeshi.team/hypersign-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hid-node
 [[ -f $HOME/.hid-node/data/upgrade-info.json ]] && cp $HOME/.hid-node/data/upgrade-info.json $HOME/.hid-node/cosmovisor/genesis/upgrade-info.json
 ```
 

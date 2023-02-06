@@ -11,31 +11,31 @@ ${STAKE_BUTTON}
 
 ${RESTAKE}
 ## Chain explorer
-[https://explorer.kjnodes.com/${CHAIN_SERVICE}](https://explorer.kjnodes.com/${CHAIN_SERVICE})
+[https://explorer.takeshi.team/${CHAIN_SERVICE}](https://explorer.takeshi.team/${CHAIN_SERVICE})
 
 ## Public endpoints
 
-* api: [https://${CHAIN_NAME}.api.kjnodes.com](https://${CHAIN_NAME}.api.kjnodes.com)
-* rpc: [https://${CHAIN_NAME}.rpc.kjnodes.com](https://${CHAIN_NAME}.rpc.kjnodes.com)
-* grpc: [https://${CHAIN_NAME}.grpc.kjnodes.com](https://${CHAIN_NAME}.grpc.kjnodes.com)
+* api: [https://${CHAIN_NAME}.api.takeshi.team](https://${CHAIN_NAME}.api.takeshi.team)
+* rpc: [https://${CHAIN_NAME}.rpc.takeshi.team](https://${CHAIN_NAME}.rpc.takeshi.team)
+* grpc: [https://${CHAIN_NAME}.grpc.takeshi.team](https://${CHAIN_NAME}.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-${CHAIN_PEER}@${CHAIN_NAME}.rpc.kjnodes.com:${CHAIN_PORT}656
+${CHAIN_PEER}@${CHAIN_NAME}.rpc.takeshi.team:${CHAIN_PORT}656
 ```
 
 **seed-node**
 
 ```text
-${CHAIN_TENDERSEED_PEER}@${CHAIN_NAME}.rpc.kjnodes.com:${CHAIN_PORT}659
+${CHAIN_TENDERSEED_PEER}@${CHAIN_NAME}.rpc.takeshi.team:${CHAIN_PORT}659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/${CHAIN_NAME}/addrbook.json > $HOME/${CHAIN_DIR}/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/${CHAIN_NAME}/addrbook.json > $HOME/${CHAIN_DIR}/config/addrbook.json
 ```
 
 **live-peers** (${CHAIN_LIVE_PEERS_COUNT})

@@ -12,31 +12,31 @@ Sei is a Layer 1 blockchain on Cosmos with orderbook-focused infrastructure at i
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/sei-testnet](https://explorer.kjnodes.com/sei-testnet)
+[https://explorer.takeshi.team/sei-testnet](https://explorer.takeshi.team/sei-testnet)
 
 ## Public endpoints
 
-* api: [https://sei-testnet.api.kjnodes.com](https://sei-testnet.api.kjnodes.com)
-* rpc: [https://sei-testnet.rpc.kjnodes.com](https://sei-testnet.rpc.kjnodes.com)
-* grpc: [https://sei-testnet.grpc.kjnodes.com](https://sei-testnet.grpc.kjnodes.com)
+* api: [https://sei-testnet.api.takeshi.team](https://sei-testnet.api.takeshi.team)
+* rpc: [https://sei-testnet.rpc.takeshi.team](https://sei-testnet.rpc.takeshi.team)
+* grpc: [https://sei-testnet.grpc.takeshi.team](https://sei-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@sei-testnet.rpc.kjnodes.com:12656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@sei-testnet.rpc.takeshi.team:12656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@sei-testnet.rpc.kjnodes.com:12659
+3f472746f46493309650e5a033076689996c8881@sei-testnet.rpc.takeshi.team:12659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/sei-testnet/addrbook.json > $HOME/.sei/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/sei-testnet/addrbook.json > $HOME/.sei/config/addrbook.json
 ```
 
 **live-peers** (117)

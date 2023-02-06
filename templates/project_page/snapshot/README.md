@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **${CHAIN_SNAPSHOT_T
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| ${SNAPSHOT_BLOCK} | ${SNAPSHOT_AGE} | [snapshot (${SNAPSHOT_SIZE})](https://snapshots.kjnodes.com/${CHAIN_NAME}/snapshot\_latest.tar.lz4) |
+| ${SNAPSHOT_BLOCK} | ${SNAPSHOT_AGE} | [snapshot (${SNAPSHOT_SIZE})](https://snapshots.takeshi.team/${CHAIN_NAME}/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/${CHAIN_DIR}/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/${CHAIN_NAME}/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/${CHAIN_DIR}
+curl -L https://snapshots.takeshi.team/${CHAIN_NAME}/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/${CHAIN_DIR}
 mv $HOME/${CHAIN_DIR}/priv_validator_state.json.backup $HOME/${CHAIN_DIR}/data/priv_validator_state.json
 ```
 

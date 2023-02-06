@@ -12,31 +12,31 @@ Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid stak
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/quicksilver](https://explorer.kjnodes.com/quicksilver)
+[https://explorer.takeshi.team/quicksilver](https://explorer.takeshi.team/quicksilver)
 
 ## Public endpoints
 
-* api: [https://quicksilver.api.kjnodes.com](https://quicksilver.api.kjnodes.com)
-* rpc: [https://quicksilver.rpc.kjnodes.com](https://quicksilver.rpc.kjnodes.com)
-* grpc: [https://quicksilver.grpc.kjnodes.com](https://quicksilver.grpc.kjnodes.com)
+* api: [https://quicksilver.api.takeshi.team](https://quicksilver.api.takeshi.team)
+* rpc: [https://quicksilver.rpc.takeshi.team](https://quicksilver.rpc.takeshi.team)
+* grpc: [https://quicksilver.grpc.takeshi.team](https://quicksilver.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@quicksilver.rpc.kjnodes.com:11656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@quicksilver.rpc.takeshi.team:11656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.kjnodes.com:11659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.takeshi.team:11659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
 ```
 
 **live-peers** (82)

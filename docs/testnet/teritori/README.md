@@ -12,31 +12,31 @@ Teritori is a multi-chain hub designed to allow IBC and non IBC communities  to 
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/teritori-testnet](https://explorer.kjnodes.com/teritori-testnet)
+[https://explorer.takeshi.team/teritori-testnet](https://explorer.takeshi.team/teritori-testnet)
 
 ## Public endpoints
 
-* api: [https://teritori-testnet.api.kjnodes.com](https://teritori-testnet.api.kjnodes.com)
-* rpc: [https://teritori-testnet.rpc.kjnodes.com](https://teritori-testnet.rpc.kjnodes.com)
-* grpc: [https://teritori-testnet.grpc.kjnodes.com](https://teritori-testnet.grpc.kjnodes.com)
+* api: [https://teritori-testnet.api.takeshi.team](https://teritori-testnet.api.takeshi.team)
+* rpc: [https://teritori-testnet.rpc.takeshi.team](https://teritori-testnet.rpc.takeshi.team)
+* grpc: [https://teritori-testnet.grpc.takeshi.team](https://teritori-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@teritori-testnet.rpc.kjnodes.com:19656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@teritori-testnet.rpc.takeshi.team:19656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@teritori-testnet.rpc.kjnodes.com:19659
+3f472746f46493309650e5a033076689996c8881@teritori-testnet.rpc.takeshi.team:19659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/teritori-testnet/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/teritori-testnet/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 ```
 
 **live-peers** (28)

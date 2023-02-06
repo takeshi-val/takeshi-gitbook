@@ -12,31 +12,31 @@ Nolus aims to be the leading DeFi Lease platform. The protocol  intends to becom
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/nolus-testnet](https://explorer.kjnodes.com/nolus-testnet)
+[https://explorer.takeshi.team/nolus-testnet](https://explorer.takeshi.team/nolus-testnet)
 
 ## Public endpoints
 
-* api: [https://nolus-testnet.api.kjnodes.com](https://nolus-testnet.api.kjnodes.com)
-* rpc: [https://nolus-testnet.rpc.kjnodes.com](https://nolus-testnet.rpc.kjnodes.com)
-* grpc: [https://nolus-testnet.grpc.kjnodes.com](https://nolus-testnet.grpc.kjnodes.com)
+* api: [https://nolus-testnet.api.takeshi.team](https://nolus-testnet.api.takeshi.team)
+* rpc: [https://nolus-testnet.rpc.takeshi.team](https://nolus-testnet.rpc.takeshi.team)
+* grpc: [https://nolus-testnet.grpc.takeshi.team](https://nolus-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@nolus-testnet.rpc.kjnodes.com:43656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@nolus-testnet.rpc.takeshi.team:43656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@nolus-testnet.rpc.kjnodes.com:43659
+3f472746f46493309650e5a033076689996c8881@nolus-testnet.rpc.takeshi.team:43659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/nolus-testnet/addrbook.json > $HOME/.nolus/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/nolus-testnet/addrbook.json > $HOME/.nolus/config/addrbook.json
 ```
 
 **live-peers** (43)

@@ -12,31 +12,31 @@ Haqq is the blockchain network that issues Islamic Coin,  its native cryptocurre
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/haqq-testnet](https://explorer.kjnodes.com/haqq-testnet)
+[https://explorer.takeshi.team/haqq-testnet](https://explorer.takeshi.team/haqq-testnet)
 
 ## Public endpoints
 
-* api: [https://haqq-testnet.api.kjnodes.com](https://haqq-testnet.api.kjnodes.com)
-* rpc: [https://haqq-testnet.rpc.kjnodes.com](https://haqq-testnet.rpc.kjnodes.com)
-* grpc: [https://haqq-testnet.grpc.kjnodes.com](https://haqq-testnet.grpc.kjnodes.com)
+* api: [https://haqq-testnet.api.takeshi.team](https://haqq-testnet.api.takeshi.team)
+* rpc: [https://haqq-testnet.rpc.takeshi.team](https://haqq-testnet.rpc.takeshi.team)
+* grpc: [https://haqq-testnet.grpc.takeshi.team](https://haqq-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@haqq-testnet.rpc.kjnodes.com:35656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@haqq-testnet.rpc.takeshi.team:35656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@haqq-testnet.rpc.kjnodes.com:35659
+3f472746f46493309650e5a033076689996c8881@haqq-testnet.rpc.takeshi.team:35659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/haqq-testnet/addrbook.json > $HOME/.haqqd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/haqq-testnet/addrbook.json > $HOME/.haqqd/config/addrbook.json
 ```
 
 **live-peers** (27)

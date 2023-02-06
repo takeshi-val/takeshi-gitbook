@@ -12,31 +12,31 @@ Celestia is a minimal blockchain that only orders and publishes transactions and
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/celestia-testnet](https://explorer.kjnodes.com/celestia-testnet)
+[https://explorer.takeshi.team/celestia-testnet](https://explorer.takeshi.team/celestia-testnet)
 
 ## Public endpoints
 
-* api: [https://celestia-testnet.api.kjnodes.com](https://celestia-testnet.api.kjnodes.com)
-* rpc: [https://celestia-testnet.rpc.kjnodes.com](https://celestia-testnet.rpc.kjnodes.com)
-* grpc: [https://celestia-testnet.grpc.kjnodes.com](https://celestia-testnet.grpc.kjnodes.com)
+* api: [https://celestia-testnet.api.takeshi.team](https://celestia-testnet.api.takeshi.team)
+* rpc: [https://celestia-testnet.rpc.takeshi.team](https://celestia-testnet.rpc.takeshi.team)
+* grpc: [https://celestia-testnet.grpc.takeshi.team](https://celestia-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@celestia-testnet.rpc.kjnodes.com:20656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@celestia-testnet.rpc.takeshi.team:20656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@celestia-testnet.rpc.kjnodes.com:20659
+3f472746f46493309650e5a033076689996c8881@celestia-testnet.rpc.takeshi.team:20659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/celestia-testnet/addrbook.json > $HOME/.celestia-app/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/celestia-testnet/addrbook.json > $HOME/.celestia-app/config/addrbook.json
 ```
 
 **live-peers** (7)

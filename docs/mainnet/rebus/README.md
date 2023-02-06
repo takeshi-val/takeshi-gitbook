@@ -14,31 +14,31 @@ Rebuschain is a platform that will provide DeFi (Decentralized Finance)  investm
 
 [Restake with kjnodes](https://restake.app/rebus/rebusvaloper1vndzy8y55ylgpmmsc34uy8rm6kqlml6ffs9lrv) (every day at 08:00, 20:00)
 ## Chain explorer
-[https://explorer.kjnodes.com/rebus](https://explorer.kjnodes.com/rebus)
+[https://explorer.takeshi.team/rebus](https://explorer.takeshi.team/rebus)
 
 ## Public endpoints
 
-* api: [https://rebus.api.kjnodes.com](https://rebus.api.kjnodes.com)
-* rpc: [https://rebus.rpc.kjnodes.com](https://rebus.rpc.kjnodes.com)
-* grpc: [https://rebus.grpc.kjnodes.com](https://rebus.grpc.kjnodes.com)
+* api: [https://rebus.api.takeshi.team](https://rebus.api.takeshi.team)
+* rpc: [https://rebus.rpc.takeshi.team](https://rebus.rpc.takeshi.team)
+* grpc: [https://rebus.grpc.takeshi.team](https://rebus.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@rebus.rpc.kjnodes.com:21656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@rebus.rpc.takeshi.team:21656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rebus.rpc.kjnodes.com:21659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@rebus.rpc.takeshi.team:21659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/rebus/addrbook.json > $HOME/.rebusd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/rebus/addrbook.json > $HOME/.rebusd/config/addrbook.json
 ```
 
 **live-peers** (30)

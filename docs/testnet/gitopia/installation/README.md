@@ -108,11 +108,11 @@ gitopiad config node tcp://localhost:41657
 gitopiad init $MONIKER --chain-id gitopia-janus-testnet-2
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/gitopia-testnet/genesis.json > $HOME/.gitopia/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/gitopia-testnet/addrbook.json > $HOME/.gitopia/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/gitopia-testnet/genesis.json > $HOME/.gitopia/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/gitopia-testnet/addrbook.json > $HOME/.gitopia/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.kjnodes.com:41659\"|" $HOME/.gitopia/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.takeshi.team:41659\"|" $HOME/.gitopia/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.001utlore\"|" $HOME/.gitopia/config/app.toml
@@ -133,7 +133,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:41317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/gitopia-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.gitopia
+curl -L https://snapshots.takeshi.team/gitopia-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.gitopia
 [[ -f $HOME/.gitopia/data/upgrade-info.json ]] && cp $HOME/.gitopia/data/upgrade-info.json $HOME/.gitopia/cosmovisor/genesis/upgrade-info.json
 ```
 

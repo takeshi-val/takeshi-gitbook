@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **01:45 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 19603058 | 1 hours | [snapshot (6.14 GB)](https://snapshots.kjnodes.com/sei-testnet/snapshot\_latest.tar.lz4) |
+| 19603058 | 1 hours | [snapshot (6.14 GB)](https://snapshots.takeshi.team/sei-testnet/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.sei/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/sei-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.sei
+curl -L https://snapshots.takeshi.team/sei-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.sei
 mv $HOME/.sei/priv_validator_state.json.backup $HOME/.sei/data/priv_validator_state.json
 ```
 

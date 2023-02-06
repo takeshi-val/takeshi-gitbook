@@ -12,31 +12,31 @@ Gitopia is the next-generation Code Collaboration Platform fuelled by  a decentr
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/gitopia-testnet](https://explorer.kjnodes.com/gitopia-testnet)
+[https://explorer.takeshi.team/gitopia-testnet](https://explorer.takeshi.team/gitopia-testnet)
 
 ## Public endpoints
 
-* api: [https://gitopia-testnet.api.kjnodes.com](https://gitopia-testnet.api.kjnodes.com)
-* rpc: [https://gitopia-testnet.rpc.kjnodes.com](https://gitopia-testnet.rpc.kjnodes.com)
-* grpc: [https://gitopia-testnet.grpc.kjnodes.com](https://gitopia-testnet.grpc.kjnodes.com)
+* api: [https://gitopia-testnet.api.takeshi.team](https://gitopia-testnet.api.takeshi.team)
+* rpc: [https://gitopia-testnet.rpc.takeshi.team](https://gitopia-testnet.rpc.takeshi.team)
+* grpc: [https://gitopia-testnet.grpc.takeshi.team](https://gitopia-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@gitopia-testnet.rpc.kjnodes.com:41656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@gitopia-testnet.rpc.takeshi.team:41656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.kjnodes.com:41659
+3f472746f46493309650e5a033076689996c8881@gitopia-testnet.rpc.takeshi.team:41659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/gitopia-testnet/addrbook.json > $HOME/.gitopia/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/gitopia-testnet/addrbook.json > $HOME/.gitopia/config/addrbook.json
 ```
 
 **live-peers** (61)

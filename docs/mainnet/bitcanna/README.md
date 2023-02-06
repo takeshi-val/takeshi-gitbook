@@ -12,31 +12,31 @@ BitCanna is a proof-of-stake (POS) decentralized payment network designed exclus
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/bitcanna](https://explorer.kjnodes.com/bitcanna)
+[https://explorer.takeshi.team/bitcanna](https://explorer.takeshi.team/bitcanna)
 
 ## Public endpoints
 
-* api: [https://bitcanna.api.kjnodes.com](https://bitcanna.api.kjnodes.com)
-* rpc: [https://bitcanna.rpc.kjnodes.com](https://bitcanna.rpc.kjnodes.com)
-* grpc: [https://bitcanna.grpc.kjnodes.com](https://bitcanna.grpc.kjnodes.com)
+* api: [https://bitcanna.api.takeshi.team](https://bitcanna.api.takeshi.team)
+* rpc: [https://bitcanna.rpc.takeshi.team](https://bitcanna.rpc.takeshi.team)
+* grpc: [https://bitcanna.grpc.takeshi.team](https://bitcanna.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.takeshi.team:42656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.takeshi.team:42659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/bitcanna/addrbook.json > $HOME/.bcna/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/bitcanna/addrbook.json > $HOME/.bcna/config/addrbook.json
 ```
 
 **live-peers** (10)

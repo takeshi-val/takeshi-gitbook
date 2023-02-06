@@ -101,11 +101,11 @@ bcnad config node tcp://localhost:42657
 bcnad init $MONIKER --chain-id bitcanna-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/bitcanna/genesis.json > $HOME/.bcna/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/bitcanna/addrbook.json > $HOME/.bcna/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/bitcanna/genesis.json > $HOME/.bcna/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/bitcanna/addrbook.json > $HOME/.bcna/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659\"|" $HOME/.bcna/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.takeshi.team:42659\"|" $HOME/.bcna/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ubcna\"|" $HOME/.bcna/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:42317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.kjnodes.com/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bcna
+curl -L https://snapshots.takeshi.team/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bcna
 [[ -f $HOME/.bcna/data/upgrade-info.json ]] && cp $HOME/.bcna/data/upgrade-info.json $HOME/.bcna/cosmovisor/genesis/upgrade-info.json
 ```
 

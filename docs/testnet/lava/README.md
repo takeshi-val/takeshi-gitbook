@@ -12,31 +12,31 @@ Lava powers a trustless market for RPC data access. The protocol  governs over p
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/lava-testnet](https://explorer.kjnodes.com/lava-testnet)
+[https://explorer.takeshi.team/lava-testnet](https://explorer.takeshi.team/lava-testnet)
 
 ## Public endpoints
 
-* api: [https://lava-testnet.api.kjnodes.com](https://lava-testnet.api.kjnodes.com)
-* rpc: [https://lava-testnet.rpc.kjnodes.com](https://lava-testnet.rpc.kjnodes.com)
-* grpc: [https://lava-testnet.grpc.kjnodes.com](https://lava-testnet.grpc.kjnodes.com)
+* api: [https://lava-testnet.api.takeshi.team](https://lava-testnet.api.takeshi.team)
+* rpc: [https://lava-testnet.rpc.takeshi.team](https://lava-testnet.rpc.takeshi.team)
+* grpc: [https://lava-testnet.grpc.takeshi.team](https://lava-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@lava-testnet.rpc.kjnodes.com:44656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@lava-testnet.rpc.takeshi.team:44656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.kjnodes.com:44659
+3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.takeshi.team:44659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/lava-testnet/addrbook.json > $HOME/.lava/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/lava-testnet/addrbook.json > $HOME/.lava/config/addrbook.json
 ```
 
 **live-peers** (24)

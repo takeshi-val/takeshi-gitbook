@@ -12,31 +12,31 @@ Agoric is an interoperable Proof-of-Stake chain in the Cosmos ecosystem.  Agoric
 
 
 ## Chain explorer
-[https://explorer.kjnodes.com/agoric-testnet](https://explorer.kjnodes.com/agoric-testnet)
+[https://explorer.takeshi.team/agoric-testnet](https://explorer.takeshi.team/agoric-testnet)
 
 ## Public endpoints
 
-* api: [https://agoric-testnet.api.kjnodes.com](https://agoric-testnet.api.kjnodes.com)
-* rpc: [https://agoric-testnet.rpc.kjnodes.com](https://agoric-testnet.rpc.kjnodes.com)
-* grpc: [https://agoric-testnet.grpc.kjnodes.com](https://agoric-testnet.grpc.kjnodes.com)
+* api: [https://agoric-testnet.api.takeshi.team](https://agoric-testnet.api.takeshi.team)
+* rpc: [https://agoric-testnet.rpc.takeshi.team](https://agoric-testnet.rpc.takeshi.team)
+* grpc: [https://agoric-testnet.grpc.takeshi.team](https://agoric-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@agoric-testnet.rpc.kjnodes.com:27656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@agoric-testnet.rpc.takeshi.team:27656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@agoric-testnet.rpc.kjnodes.com:27659
+3f472746f46493309650e5a033076689996c8881@agoric-testnet.rpc.takeshi.team:27659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.kjnodes.com/agoric-testnet/addrbook.json > $HOME/.agoric/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/agoric-testnet/addrbook.json > $HOME/.agoric/config/addrbook.json
 ```
 
 **live-peers** (20)
