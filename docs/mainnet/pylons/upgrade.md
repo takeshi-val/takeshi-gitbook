@@ -4,9 +4,9 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/rebus.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kujira.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: reb\_1111-1 | **Latest Version Tag**: v0.2.0 | **Custom Port**: 21
+**Chain ID**: kaiyo-1 | **Latest Version Tag**: v0.7.1 | **Custom Port**: 13
 
 {% hint style="info" %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade. You just have to build new binaries and move it into cosmovisor upgrades directory.
@@ -17,17 +17,17 @@ Since we are using Cosmovisor, it makes it very easy to prepare for upcomming up
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf rebus.core
-git clone https://github.com/rebuschain/rebus.core.git
-cd rebus.core
-git checkout v0.2.0
+rm -rf core
+git clone https://github.com/Team-Kujira/core.git
+cd core
+git checkout v0.7.1
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.rebusd/cosmovisor/upgrades/v0.2.0/bin
-mv build/rebusd $HOME/.rebusd/cosmovisor/upgrades/v0.2.0/bin/
+mkdir -p $HOME/.kujira/cosmovisor/upgrades/v0.7.1/bin
+mv build/kujirad $HOME/.kujira/cosmovisor/upgrades/v0.7.1/bin/
 rm -rf build
 ```
 

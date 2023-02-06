@@ -1,52 +1,46 @@
-# Canto
+# Provenance
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kujira.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt=""><figcaption></figcaption></figure>
 
-Kujira is a Layer 1 protocol built on Cosmos, which can be used for hosting community-selected projects.
+BitCanna is a proof-of-stake (POS) decentralized payment network designed exclusively to serve the cannabis industry.
 
-**Chain ID**: kaiyo-1 | **Latest Version Tag**: v0.7.1 | **Wasm**: ON
+**Chain ID**: canto_7700-1 | **Latest Version Tag**: v1.5.3 | **Wasm**: OFF
 
-[Website](https://kujira.app) | [Discord](https://discord.gg/teamkujira) | [Twitter](https://twitter.com/TeamKujira)
-
-[![Stake with kjnodes](https://i.ibb.co/cr44Q8j/button-stake-with-kjnodes.png)](https://restake.app/kujira/kujiravaloper1tnuqj73jfn3724lqz34c27tuv80nv336sadqym)
-
-## Restake
-
-[Restake with kjnodes](https://restake.app/kujira/kujiravaloper1tnuqj73jfn3724lqz34c27tuv80nv336sadqym) (every day at 08:00, 20:00)
+[Website](https://www.bitcanna.io) | [Discord](https://discord.gg/9AVrzaVQvs) | [Twitter](https://twitter.com/BitCannaGlobal)
 
 ## Chain explorer
 
-[https://explorer.takeshi.team/kujira](https://explorer.takeshi.team/kujira)
+[https://explorer.takeshi.team/bitcanna](https://explorer.takeshi.team/bitcanna)
 
 ## Public endpoints
 
-* api: [https://kujira.api.takeshi.team](https://kujira.api.takeshi.team)
-* rpc: [https://kujira.rpc.takeshi.team](https://kujira.rpc.takeshi.team)
-* grpc: [https://kujira.grpc.takeshi.team](https://kujira.grpc.takeshi.team)
+* api: [https://bitcanna.api.takeshi.team](https://bitcanna.api.takeshi.team)
+* rpc: [https://bitcanna.rpc.takeshi.team](https://bitcanna.rpc.takeshi.team)
+* grpc: [https://bitcanna.grpc.takeshi.team](https://bitcanna.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@kujira.rpc.takeshi.team:13656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.takeshi.team:42656
 ```
 
 **seed-node**
 
 ```
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@kujira.rpc.takeshi.team:13659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.takeshi.team:42659
 ```
 
 **addrbook**
 
 ```bash
-curl -Ls https://snapshots.takeshi.team/kujira/addrbook.json > $HOME/.kujira/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/bitcanna/addrbook.json > $HOME/.cantod/config/addrbook.json
 ```
 
 **live-peers** (10)
 
 ```bash
-peers="ccffabe81f2de8a81e171f93fe1209392bf9993f@65.108.234.59:26656,d6f2eee997d108d4fde5683e31d678427376dfce@77.68.27.75:26656,935c1065ad23338a5e6a75f08fb650f9f46dbd3e@65.108.201.167:26656,213dbb8301ce1c0f5662a9b723bd613f15e1dd4e@75.119.157.167:30656,b80cf7882c8cab4894d41ccd4f5a00406d8b5f7d@146.59.52.48:30095,d3427d444b6909529d73025fe32a73dfea7b90d1@148.251.85.115:26656,129771a48f43b83c6144c7d282ad1da62434cc07@15.204.197.12:26656,c124ce0b508e8b9ed1c5b6957f362225659b5343@136.243.248.190:26656,d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@65.109.88.38:13656,04b384fd77f70082a9a6e4d8fb3db827340f4e74@148.251.13.186:11856"
-sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.kujira/config/config.toml
+peers="d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@65.109.88.38:42656,cb0848b84987c37ba0fa465585c6b9d6cec6deab@65.108.77.98:26696,d8a0facda705edbbdd2d79fb302e017df009e9da@207.244.231.189:26656,a1ceb81a5498642753f8600a5c3b9ca056af3051@67.222.144.195:16656,881b4ec9a1d37587c44476a22c0864b08b1c88fe@195.3.221.21:13056,471518432477e31ea348af246c0b54095d41352c@78.47.210.209:26656,90ee680b1738344354c48c23ba1e1fd68e071d80@142.132.248.138:26696,b7295f18b7150cc128d47c0546e2225179fc5427@202.61.194.254:60856,0a658df9d9fab096983a12e6f878e87281a15ce6@194.163.172.37:27656,4dabde84771e8689403ce7c8b76d27e555ab2f00@65.21.136.170:50656"
+sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.cantod/config/config.toml
 ```
