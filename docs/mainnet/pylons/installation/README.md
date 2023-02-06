@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: kaiyo-1 | **Latest Version Tag**: v0.7.1 | **Custom Port**: 13
+**Chain ID**: darchub | **Latest Version Tag**: v0.6.2 | **Custom Port**: 13
 
 ### Setup validator name
 
@@ -45,7 +45,7 @@ cd $HOME
 rm -rf konstellation
 git clone https://github.com/Team-konstellation/konstellation.git
 cd konstellation
-git checkout v0.7.1
+git checkout v0.6.2
 
 # Build binaries
 make build
@@ -93,12 +93,12 @@ sudo systemctl enable knstld
 
 ```bash
 # Set node configuration
-knstld config chain-id kaiyo-1
+knstld config chain-id darchub
 knstld config keyring-backend file
 knstld config node tcp://localhost:13657
 
 # Initialize the node
-knstld init $MONIKER --chain-id kaiyo-1
+knstld init $MONIKER --chain-id darchub
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/konstellation/genesis.json > $HOME/.knstld/config/genesis.json

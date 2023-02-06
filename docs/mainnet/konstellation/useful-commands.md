@@ -68,7 +68,7 @@ knstld tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=kaiyo-1 \
+--chain-id=darchub \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -88,7 +88,7 @@ knstld tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=kaiyo-1 \
+--chain-id=darchub \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -100,7 +100,7 @@ knstld tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-knstld tx slashing unjail --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx slashing unjail --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Jail reason
@@ -132,43 +132,43 @@ knstld q staking validator $(knstld keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-knstld tx distribution withdraw-all-rewards --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx distribution withdraw-all-rewards --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-knstld tx distribution withdraw-rewards $(knstld keys show wallet --bech val -a) --commission --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx distribution withdraw-rewards $(knstld keys show wallet --bech val -a) --commission --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-knstld tx staking delegate $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx staking delegate $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-knstld tx staking delegate <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx staking delegate <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-knstld tx staking redelegate $(knstld keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx staking redelegate $(knstld keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-knstld tx staking unbond $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx staking unbond $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-knstld tx bank send wallet <TO_WALLET_ADDRESS> 1000000ukuji --from wallet --chain-id kaiyo-1
+knstld tx bank send wallet <TO_WALLET_ADDRESS> 1000000ukuji --from wallet --chain-id darchub
 ```
 
 ## 🗳 Governance
@@ -188,25 +188,25 @@ knstld query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-knstld tx gov vote 1 yes --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx gov vote 1 yes --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Vote 'No'
 
 ```bash
-knstld tx gov vote 1 no --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx gov vote 1 no --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-knstld tx gov vote 1 abstain --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx gov vote 1 abstain --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-knstld tx gov vote 1 nowithveto --from wallet --chain-id kaiyo-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
+knstld tx gov vote 1 nowithveto --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
 
 ## ⚡️ Utility

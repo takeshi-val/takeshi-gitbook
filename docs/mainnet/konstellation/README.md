@@ -4,15 +4,9 @@
 
 konstellation is a Layer 1 protocol built on Cosmos, which can be used for hosting community-selected projects.
 
-**Chain ID**: kaiyo-1 | **Latest Version Tag**: v0.7.1 | **Wasm**: ON
+**Chain ID**: darchub | **Latest Version Tag**: v0.6.2 | **Wasm**: ON
 
 [Website](https://konstellation.app) | [Discord](https://discord.gg/teamkonstellation) | [Twitter](https://twitter.com/Teamkonstellation)
-
-[![Stake with kjnodes](https://i.ibb.co/cr44Q8j/button-stake-with-kjnodes.png)](https://restake.app/konstellation/konstellationvaloper1tnuqj73jfn3724lqz34c27tuv80nv336sadqym)
-
-## Restake
-
-[Restake with kjnodes](https://restake.app/konstellation/konstellationvaloper1tnuqj73jfn3724lqz34c27tuv80nv336sadqym) (every day at 08:00, 20:00)
 
 ## Chain explorer
 
