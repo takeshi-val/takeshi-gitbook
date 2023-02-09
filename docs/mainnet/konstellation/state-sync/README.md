@@ -4,7 +4,7 @@ description: With our state sync services you will be able to catch up latest ch
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 State Sync allows a new node to join the network by fetching a snapshot of the application state 
@@ -18,16 +18,16 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop pylonsd
-cp $HOME/.pylons/data/priv_validator_state.json $HOME/.pylons/priv_validator_state.json.backup
-pylonsd tendermint unsafe-reset-all --home $HOME/.pylons
+sudo systemctl stop knstld
+cp $HOME/.knstld/data/priv_validator_state.json $HOME/.knstld/priv_validator_state.json.backup
+knstld tendermint unsafe-reset-all --home $HOME/.knstld
 ```
 
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://pylons.rpc.takeshi.team:443
-STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@pylons.rpc.takeshi.team:21656
+STATE_SYNC_RPC=https://konstellation.rpc.takeshi.team:443
+STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@konstellation.rpc.takeshi.team:13656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -38,15 +38,23 @@ sed -i \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
   -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.pylons/config/config.toml
+  $HOME/.knstld/config/config.toml
 
-mv $HOME/.pylons/priv_validator_state.json.backup $HOME/.pylons/data/priv_validator_state.json
+mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
 ```
 
+### Download latest wasm
 
+{% hint style='info' %}
+Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
+{% endhint %}
+
+```bash
+curl -L https://snapshots.takeshi.team/konstellation/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.knstld
+```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start pylonsd && sudo journalctl -u pylonsd -f --no-hostname -o cat
+sudo systemctl start knstld && sudo journalctl -u knstld -f --no-hostname -o cat
 ```

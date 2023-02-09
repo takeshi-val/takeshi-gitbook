@@ -308,7 +308,7 @@ sudo rm /etc/systemd/system/c4ed.service
 sudo systemctl daemon-reload
 rm -f $(which c4ed)
 rm -rf $HOME/.c4e-chain
-rm -rf $HOME/teritori-chain
+rm -rf $HOME/c4e-chain
 ```
 
 ## ⚙️ Service Management

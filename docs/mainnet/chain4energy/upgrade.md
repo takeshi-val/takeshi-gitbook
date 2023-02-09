@@ -17,9 +17,9 @@ Since we are using Cosmovisor, it makes it very easy to prepare for upcomming up
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf teritori-chain
-git clone https://github.com/TERITORI/teritori-chain.git
-cd teritori-chain
+rm -rf c4e-chain
+git clone https://github.com/c4e-chain/c4e-chain.git
+cd c4e-chain
 git checkout v1.1.0
 
 # Build binaries

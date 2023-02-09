@@ -4,9 +4,9 @@ description: Setting up your validator node has never been so easy. Get your val
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: reb_1111-1 | **Latest Version Tag**: v0.2.0 | **Custom Port**: 21
+**Chain ID**: darchub | **Latest Version Tag**: v0.6.2 | **Custom Port**: 13
 
 ### Setup validator name
 
@@ -42,22 +42,22 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf pylons
-git clone https://github.com/pylonschain/pylons.git
-cd pylons
-git checkout v0.2.0
+rm -rf konstellation
+git clone https://github.com/Team-konstellation/konstellation.git
+cd konstellation
+git checkout v0.6.2
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.pylons/cosmovisor/genesis/bin
-mv build/pylonsd $HOME/.pylons/cosmovisor/genesis/bin/
+mkdir -p $HOME/.knstld/cosmovisor/genesis/bin
+mv build/knstld $HOME/.knstld/cosmovisor/genesis/bin/
 rm -rf build
 
 # Create application symlinks
-ln -s $HOME/.pylons/cosmovisor/genesis $HOME/.pylons/cosmovisor/current
-sudo ln -s $HOME/.pylons/cosmovisor/current/bin/pylonsd /usr/local/bin/pylonsd
+ln -s $HOME/.knstld/cosmovisor/genesis $HOME/.knstld/cosmovisor/current
+sudo ln -s $HOME/.knstld/cosmovisor/current/bin/knstld /usr/local/bin/knstld
 ```
 
 ### Install Cosmovisor and create a service
@@ -67,9 +67,9 @@ sudo ln -s $HOME/.pylons/cosmovisor/current/bin/pylonsd /usr/local/bin/pylonsd
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
-sudo tee /etc/systemd/system/pylonsd.service > /dev/null << EOF
+sudo tee /etc/systemd/system/knstld.service > /dev/null << EOF
 [Unit]
-Description=pylons node service
+Description=konstellation node service
 After=network-online.target
 
 [Service]
@@ -78,37 +78,37 @@ ExecStart=$(which cosmovisor) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.pylons"
-Environment="DAEMON_NAME=pylonsd"
+Environment="DAEMON_HOME=$HOME/.knstld"
+Environment="DAEMON_NAME=knstld"
 Environment="UNSAFE_SKIP_BACKUP=true"
 
 [Install]
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable pylonsd
+sudo systemctl enable knstld
 ```
 
 ### Initialize the node
 
 ```bash
 # Set node configuration
-pylonsd config chain-id reb_1111-1
-pylonsd config keyring-backend file
-pylonsd config node tcp://localhost:21657
+knstld config chain-id darchub
+knstld config keyring-backend file
+knstld config node tcp://localhost:13657
 
 # Initialize the node
-pylonsd init $MONIKER --chain-id reb_1111-1
+knstld init $MONIKER --chain-id darchub
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/pylons/genesis.json > $HOME/.pylons/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/pylons/addrbook.json > $HOME/.pylons/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/konstellation/genesis.json > $HOME/.knstld/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/konstellation/addrbook.json > $HOME/.knstld/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@pylons.rpc.takeshi.team:21659\"|" $HOME/.pylons/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@konstellation.rpc.takeshi.team:13659\"|" $HOME/.knstld/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0apylons\"|" $HOME/.pylons/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.00119ukuji,0.00150factory/konstellation1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk,0.00150ibc/295548A78785A1007F232DE286149A6FF512F180AF5657780FC89C009E2C348F,0.000125ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2,0.00126ibc/47BD209179859CDE4A2806763D7189B6E6FE13A17880FE2B42DE1E6C1E329E23,0.00652ibc/3607EB5B5E64DD1C0E12E07F077FF470D5BC4706AFCBC98FE1BA960E5AE4CE07,617283951ibc/F3AA7EF362EC5E791FE78A0F4CCC69FEE1F9A7485EB1A8CAB3F6601C00522F10,0.000288ibc/EFF323CC632EC4F747C61BCE238A758EFDB7699C3226565F7C20DA06509D59A5,0.000125ibc/DA59C009A0B3B95E0549E6BF7B075C8239285989FF457A8EDDBB56F10B2A6986,0.00137ibc/A358D7F19237777AF6D8AD0E0F53268F8B18AE8A53ED318095C14D6D7F3B2DB5,0.0488ibc/4F393C3FCA4190C0A6756CE7F6D897D5D1BE57D6CCB80D0BC87393566A7B6602,78492936ibc/004EBF085BBED1029326D56BE8A2E67C08CECE670A94AC1947DF413EF5130EB2,964351ibc/1B38805B1C75352B28169284F96DF56BDEBD9E8FAC005BDCC8CF0378C82AA8E7\"|" $HOME/.knstld/config/app.toml
 
 # Set pruning
 sed -i \
@@ -116,22 +116,22 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.pylons/config/app.toml
+  $HOME/.knstld/config/app.toml
 
 # Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:21658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:21657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:21060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:21656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":21660\"%" $HOME/.pylons/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:21317\"%; s%^address = \":8080\"%address = \":21080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:21090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:21091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:21545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:21546\"%" $HOME/.pylons/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:13658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:13657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:13060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:13656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":13660\"%" $HOME/.knstld/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:13317\"%; s%^address = \":8080\"%address = \":13080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:13090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:13091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:13545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:13546\"%" $HOME/.knstld/config/app.toml
 ```
 
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/pylons/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.pylons
-[[ -f $HOME/.pylons/data/upgrade-info.json ]] && cp $HOME/.pylons/data/upgrade-info.json $HOME/.pylons/cosmovisor/genesis/upgrade-info.json
+curl -L https://snapshots.takeshi.team/konstellation/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.knstld
+[[ -f $HOME/.knstld/data/upgrade-info.json ]] && cp $HOME/.knstld/data/upgrade-info.json $HOME/.knstld/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start pylonsd && sudo journalctl -u pylonsd -f --no-hostname -o cat
+sudo systemctl start knstld && sudo journalctl -u knstld -f --no-hostname -o cat
 ```

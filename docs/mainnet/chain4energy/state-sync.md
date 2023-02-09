@@ -49,7 +49,7 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.takeshi.team/teritori/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.c4e-chain
+curl -L https://snapshots.takeshi.team/c4e-chain/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.c4e-chain
 ```
 
 ### Restart the service and check the log
