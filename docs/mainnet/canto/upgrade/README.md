@@ -24,12 +24,5 @@ cd bcna
 git checkout v1.5.3
 
 # Build binaries
-make build
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.cantod/cosmovisor/upgrades/trichomemonster-ica/bin
-mv build/cantod $HOME/.cantod/cosmovisor/upgrades/trichomemonster-ica/bin/
-rm -rf build
-```
-
-*Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!*

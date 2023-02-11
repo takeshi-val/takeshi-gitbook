@@ -50,23 +50,13 @@ cd c4e-chain
 git checkout v1.1.0
 
 # Build binaries
-make build
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.c4e-chain/cosmovisor/genesis/bin
-mv build/c4ed $HOME/.c4e-chain/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.c4e-chain/cosmovisor/genesis $HOME/.c4e-chain/cosmovisor/current
-sudo ln -s $HOME/.c4e-chain/cosmovisor/current/bin/c4ed /usr/local/bin/c4ed
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
 sudo tee /etc/systemd/system/c4ed.service > /dev/null << EOF
@@ -76,7 +66,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which c4ed) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535

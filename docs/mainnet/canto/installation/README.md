@@ -48,23 +48,13 @@ cd bcna
 git checkout v1.5.3
 
 # Build binaries
-make build
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.cantod/cosmovisor/genesis/bin
-mv build/cantod $HOME/.cantod/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.cantod/cosmovisor/genesis $HOME/.cantod/cosmovisor/current
-sudo ln -s $HOME/.cantod/cosmovisor/current/bin/cantod /usr/local/bin/cantod
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
 sudo tee /etc/systemd/system/cantod.service > /dev/null << EOF
@@ -74,7 +64,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which cantod) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
