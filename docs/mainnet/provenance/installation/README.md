@@ -4,9 +4,9 @@ description: Setting up your validator node has never been so easy. Get your val
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/jackal.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: jackal-1 | **Latest Version Tag**: v1.1.2-hotfix | **Custom Port**: 37
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.1.2-hotfix | **Custom Port**: 37
 
 ### Setup validator name
 
@@ -43,7 +43,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 # Clone project repository
 cd $HOME
 rm -rf canine-chain
-git clone https://github.com/JackalLabs/canine-chain.git
+git clone https://github.com/provenanceLabs/canine-chain.git
 cd canine-chain
 git checkout v1.1.2-hotfix
 
@@ -69,7 +69,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 # Create service
 sudo tee /etc/systemd/system/canined.service > /dev/null << EOF
 [Unit]
-Description=jackal node service
+Description=provenance node service
 After=network-online.target
 
 [Service]
@@ -93,19 +93,19 @@ sudo systemctl enable canined
 
 ```bash
 # Set node configuration
-canined config chain-id jackal-1
+canined config chain-id pio-mainnet-1
 canined config keyring-backend file
 canined config node tcp://localhost:37657
 
 # Initialize the node
-canined init $MONIKER --chain-id jackal-1
+canined init $MONIKER --chain-id pio-mainnet-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/jackal/genesis.json > $HOME/.canine/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/provenance/genesis.json > $HOME/.canine/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/provenance/addrbook.json > $HOME/.canine/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.takeshi.team:37659\"|" $HOME/.canine/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@provenance.rpc.takeshi.team:37659\"|" $HOME/.canine/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002ujkl\"|" $HOME/.canine/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:37317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/jackal/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/provenance/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
 [[ -f $HOME/.canine/data/upgrade-info.json ]] && cp $HOME/.canine/data/upgrade-info.json $HOME/.canine/cosmovisor/genesis/upgrade-info.json
 ```
 

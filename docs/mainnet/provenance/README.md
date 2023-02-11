@@ -1,41 +1,41 @@
 # Konstellation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/jackal.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt=""><figcaption></figcaption></figure>
 
-The Jackal Protocol is a fast, scalable, and secure blockchain that empowers individuals, developers, and enterprises to increase their data privacy and cybersecurity posture without sacrificing ease of use. This protocol strives to offer world-class applications to protect the planet's most important data–your data.
+The provenance Protocol is a fast, scalable, and secure blockchain that empowers individuals, developers, and enterprises to increase their data privacy and cybersecurity posture without sacrificing ease of use. This protocol strives to offer world-class applications to protect the planet's most important data–your data.
 
-**Chain ID**: jackal-1 | **Latest Version Tag**: v1.1.2-hotfix | **Wasm**: ON
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.1.2-hotfix | **Wasm**: ON
 
-[Website](https://jackalprotocol.com) | [Discord](https://discord.com/invite/5GKym3p6rj) | [Twitter](https://twitter.com/Jackal\_Protocol)
+[Website](https://provenanceprotocol.com) | [Discord](https://discord.com/invite/5GKym3p6rj) | [Twitter](https://twitter.com/provenance\_Protocol)
 
 ## Chain explorer
 
-[https://explorer.takeshi.team/jackal](https://explorer.takeshi.team/jackal)
+[https://explorer.takeshi.team/provenance](https://explorer.takeshi.team/provenance)
 
 ## Public endpoints
 
-* api: [https://jackal.api.takeshi.team](https://jackal.api.takeshi.team)
-* rpc: [https://jackal.rpc.takeshi.team](https://jackal.rpc.takeshi.team)
-* grpc: [https://jackal.grpc.takeshi.team](https://jackal.grpc.takeshi.team)
+* api: [https://provenance.api.takeshi.team](https://provenance.api.takeshi.team)
+* rpc: [https://provenance.rpc.takeshi.team](https://provenance.rpc.takeshi.team)
+* grpc: [https://provenance.grpc.takeshi.team](https://provenance.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.takeshi.team:37656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@provenance.rpc.takeshi.team:37656
 ```
 
 **seed-node**
 
 ```
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@jackal.rpc.takeshi.team:37659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@provenance.rpc.takeshi.team:37659
 ```
 
 **addrbook**
 
 ```bash
-curl -Ls https://snapshots.takeshi.team/jackal/addrbook.json > $HOME/.canine/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/provenance/addrbook.json > $HOME/.canine/config/addrbook.json
 ```
 
 **live-peers** (21)

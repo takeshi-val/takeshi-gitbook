@@ -4,7 +4,7 @@ description: With our state sync services you will be able to catch up latest ch
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/jackal.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 State Sync allows a new node to join the network by fetching a snapshot of the application state 
@@ -26,8 +26,8 @@ canined tendermint unsafe-reset-all --home $HOME/.canine
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://jackal.rpc.takeshi.team:443
-STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@jackal.rpc.takeshi.team:37656
+STATE_SYNC_RPC=https://provenance.rpc.takeshi.team:443
+STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@provenance.rpc.takeshi.team:37656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -50,7 +50,7 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.takeshi.team/jackal/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/provenance/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine
 ```
 
 ### Restart the service and check the log

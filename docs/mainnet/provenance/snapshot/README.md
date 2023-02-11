@@ -4,7 +4,7 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/jackal.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 Snapshots allows a new node to join the network by recovering application state from a backup file. 
@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **00:45 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 1330988 | 2 hours | [snapshot (0.99 GB)](https://snapshots.takeshi.team/jackal/snapshot\_latest.tar.lz4) |
+| 1330988 | 2 hours | [snapshot (0.99 GB)](https://snapshots.takeshi.team/provenance/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.canine/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/jackal/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/provenance/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
 mv $HOME/.canine/priv_validator_state.json.backup $HOME/.canine/data/priv_validator_state.json
 ```
 

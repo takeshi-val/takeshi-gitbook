@@ -4,7 +4,7 @@ description: Useful set of commands for node operators. From key management to c
 
 # Useful commands
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/jackal.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -66,7 +66,7 @@ canined tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=jackal-1 \
+--chain-id=pio-mainnet-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -86,7 +86,7 @@ canined tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=jackal-1 \
+--chain-id=pio-mainnet-1 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -98,7 +98,7 @@ canined tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-canined tx slashing unjail --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx slashing unjail --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ canined q staking validator $(canined keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-canined tx distribution withdraw-all-rewards --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx distribution withdraw-all-rewards --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-canined tx distribution withdraw-rewards $(canined keys show wallet --bech val -a) --commission --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx distribution withdraw-rewards $(canined keys show wallet --bech val -a) --commission --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-canined tx staking delegate $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx staking delegate $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-canined tx staking delegate <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx staking delegate <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-canined tx staking redelegate $(canined keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx staking redelegate $(canined keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-canined tx staking unbond $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx staking unbond $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-canined tx bank send wallet <TO_WALLET_ADDRESS> 1000000ujkl --from wallet --chain-id jackal-1
+canined tx bank send wallet <TO_WALLET_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ canined query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-canined tx gov vote 1 yes --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx gov vote 1 yes --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'No'
 
 ```bash
-canined tx gov vote 1 no --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx gov vote 1 no --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-canined tx gov vote 1 abstain --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx gov vote 1 abstain --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-canined tx gov vote 1 nowithveto --from wallet --chain-id jackal-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+canined tx gov vote 1 nowithveto --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 ## ⚡️ Utility
