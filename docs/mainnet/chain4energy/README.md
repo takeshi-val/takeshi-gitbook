@@ -6,7 +6,7 @@ The Cosmos Hub is the blockchain protocol underlying an  increasingly large numb
 
 **Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 | **Wasm**: OFF
 
-[Website](https://hub.cosmos.network) | [Discord](https://discord.gg/cosmosnetwork) | [Twitter](https://twitter.com/chain4energy)
+[Website](https://c4e.io/) | [Discord](https://discord.gg/chain4energy) | [Twitter](https://twitter.com/Chain4Energy)
 
 
 
