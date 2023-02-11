@@ -1,42 +1,42 @@
-# dymension
+# kichain
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
 The Ki Foundation’s mission is about bridging the gap
 between traditional wealth and Decentralized Finance.
 
-**Chain ID**: dymension-2 | **Latest Version Tag**: v4.2.0 | **Wasm**: ON
+**Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Wasm**: ON
 
 [Website](https://foundation.ki/) | [Discord](https://discord.gg/vqWc7MGd87) | [Twitter](https://twitter.com/Ki_Foundation)
 
 ## Chain explorer
 
-[https://explorer.takeshi.team/dymension](https://explorer.takeshi.team/dymension)
+[https://explorer.takeshi.team/kichain](https://explorer.takeshi.team/kichain)
 
 ## Public endpoints
 
-* api: [https://dymension.api.takeshi.team](https://dymension.api.takeshi.team)
-* rpc: [https://dymension.rpc.takeshi.team](https://dymension.rpc.takeshi.team)
-* grpc: [https://dymension.grpc.takeshi.team](https://dymension.grpc.takeshi.team)
+* api: [https://kichain.api.takeshi.team](https://kichain.api.takeshi.team)
+* rpc: [https://kichain.rpc.takeshi.team](https://kichain.rpc.takeshi.team)
+* grpc: [https://kichain.grpc.takeshi.team](https://kichain.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@dymension.rpc.takeshi.team:27656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@kichain.rpc.takeshi.team:27656
 ```
 
 **seed-node**
 
 ```
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@dymension.rpc.takeshi.team:27659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@kichain.rpc.takeshi.team:27659
 ```
 
 **addrbook**
 
 ```bash
-curl -Ls https://snapshots.takeshi.team/dymension/addrbook.json > $HOME/.kid/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/kichain/addrbook.json > $HOME/.kid/config/addrbook.json
 ```
 
 **live-peers** (29)

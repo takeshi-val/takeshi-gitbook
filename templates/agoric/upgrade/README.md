@@ -23,10 +23,10 @@ git clone ${GIT_URL} ${LATEST_VERSION_TAG}
 cd ${LATEST_VERSION_TAG}
 git checkout ${LATEST_VERSION_TAG}
 
-# Install and build dymension Javascript packages
+# Install and build kichain Javascript packages
 yarn install && yarn build
 
-# Install and build dymension Cosmos SDK support
+# Install and build kichain Cosmos SDK support
 (cd packages/cosmic-swingset && make)
 
 # Prepare binaries for Cosmovisor

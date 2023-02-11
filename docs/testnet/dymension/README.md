@@ -1,10 +1,10 @@
 # Services
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
-dymension is an interoperable Proof-of-Stake chain in the Cosmos ecosystem.  dymension JavaScript smart contract platform enables 15M+ developers across the  globe to rapidly build and deploy dapps on-chain.
+kichain is an interoperable Proof-of-Stake chain in the Cosmos ecosystem.  kichain JavaScript smart contract platform enables 15M+ developers across the  globe to rapidly build and deploy dapps on-chain.
 
-**Chain ID**: dymension-emerynet-5 | **Latest Version Tag**: pismoA | **Wasm**: OFF
+**Chain ID**: kichain-emerynet-5 | **Latest Version Tag**: pismoA | **Wasm**: OFF
 
 [Website](https://foundation.ki/) | [Discord](https://discord.gg/vqWc7MGd87) | [Twitter](https://twitter.com/Ki_Foundation)
 
@@ -12,31 +12,31 @@ dymension is an interoperable Proof-of-Stake chain in the Cosmos ecosystem.  dym
 
 
 ## Chain explorer
-[https://explorer.takeshi.team/dymension-testnet](https://explorer.takeshi.team/dymension-testnet)
+[https://explorer.takeshi.team/kichain-testnet](https://explorer.takeshi.team/kichain-testnet)
 
 ## Public endpoints
 
-* api: [https://dymension-testnet.api.takeshi.team](https://dymension-testnet.api.takeshi.team)
-* rpc: [https://dymension-testnet.rpc.takeshi.team](https://dymension-testnet.rpc.takeshi.team)
-* grpc: [https://dymension-testnet.grpc.takeshi.team](https://dymension-testnet.grpc.takeshi.team)
+* api: [https://kichain-testnet.api.takeshi.team](https://kichain-testnet.api.takeshi.team)
+* rpc: [https://kichain-testnet.rpc.takeshi.team](https://kichain-testnet.rpc.takeshi.team)
+* grpc: [https://kichain-testnet.grpc.takeshi.team](https://kichain-testnet.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@dymension-testnet.rpc.takeshi.team:27656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@kichain-testnet.rpc.takeshi.team:27656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@dymension-testnet.rpc.takeshi.team:27659
+3f472746f46493309650e5a033076689996c8881@kichain-testnet.rpc.takeshi.team:27659
 ```
 
 **addrbook**
 ```bash
-curl -Ls https://snapshots.takeshi.team/dymension-testnet/addrbook.json > $HOME/.kid/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/kichain-testnet/addrbook.json > $HOME/.kid/config/addrbook.json
 ```
 
 **live-peers** (20)

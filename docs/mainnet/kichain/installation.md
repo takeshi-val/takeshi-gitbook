@@ -6,15 +6,15 @@ description: >-
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: dymension-2 | **Latest Version Tag**: v4.2.0 | **Custom Port**: 27
+**Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Custom Port**: 27
 
 ### Setup your VARS
 
 ```bash
 # Set VARS
-KI_CHAIN=dymension-2
+KI_CHAIN=kichain-2
 KI_NODENAME="YOUR_NODE_NAME"
 KI_WALLET="YOUR_WALLET_NAME"
 
@@ -62,7 +62,7 @@ kid version
 # Create service
 sudo tee /etc/systemd/system/kid.service > /dev/null << EOF
 [Unit]
-Description=dymension node service
+Description=kichain node service
 After=network-online.target
 
 [Service]
@@ -95,11 +95,11 @@ kid config node tcp://localhost:27657
 kid init $KI_NODENAME --chain-id $KI_CHAIN
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/dymension/genesis.json > $HOME/.kid/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/dymension/addrbook.json > $HOME/.kid/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/kichain/genesis.json > $HOME/.kid/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/kichain/addrbook.json > $HOME/.kid/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@dymension.rpc.takeshi.team:27659\"|" $HOME/.kid/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@kichain.rpc.takeshi.team:27659\"|" $HOME/.kid/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025uxki\"|" $HOME/.kid/config/app.toml
@@ -120,7 +120,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/dymension/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
+curl -L https://snapshots.takeshi.team/kichain/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
 mv $HOME/.kid/priv_validator_state.json.backup $HOME/.kid/data/priv_validator_state.json
 ```
 

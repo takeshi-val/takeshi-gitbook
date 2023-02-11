@@ -4,9 +4,9 @@ description: Setting up your validator node has never been so easy. Get your val
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: dymension-emerynet-5 | **Latest Version Tag**: pismoA | **Custom Port**: 27
+**Chain ID**: kichain-emerynet-5 | **Latest Version Tag**: pismoA | **Custom Port**: 27
 
 ### Setup validator name
 
@@ -56,14 +56,14 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 # Clone project repository
 cd $HOME
 rm -rf pismoA
-git clone https://github.com/dymension/dymension-sdk.git pismoA
+git clone https://github.com/kichain/kichain-sdk.git pismoA
 cd pismoA
 git checkout pismoA
 
-# Install and build dymension Javascript packages
+# Install and build kichain Javascript packages
 yarn install && yarn build
 
-# Install and build dymension Cosmos SDK support
+# Install and build kichain Cosmos SDK support
 (cd packages/cosmic-swingset && make)
 
 # Prepare binaries for Cosmovisor
@@ -87,7 +87,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 # Create service
 sudo tee /etc/systemd/system/kid.service > /dev/null << EOF
 [Unit]
-Description=dymension-testnet node service
+Description=kichain-testnet node service
 After=network-online.target
 
 [Service]
@@ -111,19 +111,19 @@ sudo systemctl enable kid
 
 ```bash
 # Set node configuration
-kid config chain-id dymension-emerynet-5
+kid config chain-id kichain-emerynet-5
 kid config keyring-backend test
 kid config node tcp://localhost:27657
 
 # Initialize the node
-kid init $MONIKER --chain-id dymension-emerynet-5
+kid init $MONIKER --chain-id kichain-emerynet-5
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/dymension-testnet/genesis.json > $HOME/.kid/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/dymension-testnet/addrbook.json > $HOME/.kid/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/kichain-testnet/genesis.json > $HOME/.kid/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/kichain-testnet/addrbook.json > $HOME/.kid/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@dymension-testnet.rpc.takeshi.team:27659\"|" $HOME/.kid/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@kichain-testnet.rpc.takeshi.team:27659\"|" $HOME/.kid/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025uxki\"|" $HOME/.kid/config/app.toml
@@ -144,7 +144,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/dymension-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
+curl -L https://snapshots.takeshi.team/kichain-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
 [[ -f $HOME/.kid/data/upgrade-info.json ]] && cp $HOME/.kid/data/upgrade-info.json $HOME/.kid/cosmovisor/genesis/upgrade-info.json
 ```
 
