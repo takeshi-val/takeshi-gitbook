@@ -8,8 +8,7 @@ description: >-
 
 ## MAINNET
 
-
-<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
 
@@ -31,7 +30,7 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/osmosis.png" alt="" data-size="line"> [Osmosis](mainnet/osmosis/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](mainnet/quicksilver/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](testnet/quicksilver/)
 
 ## TESTNET
 
@@ -47,4 +46,4 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](testnet/quicksilver/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](broken-reference)
