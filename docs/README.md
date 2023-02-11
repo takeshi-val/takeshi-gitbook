@@ -8,6 +8,7 @@ description: >-
 
 ## MAINNET
 
+
 <img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
@@ -16,7 +17,7 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/konstellation/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](mainnet/pylons/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt="" data-size="line"> [Provenance](mainnet/provenance/)
 
@@ -34,7 +35,7 @@ description: >-
 
 ## TESTNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [dymension](testnet/dymension.md)
+<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [dymension](testnet/dymension/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/celestia.png" alt="" data-size="line"> [Celestia](testnet/celestia/)
 
