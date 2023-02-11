@@ -62,7 +62,6 @@ c4ed version --long
 ```bash
 # Set node configuration
 c4ed config chain-id perun-1
-c4ed config keyring-backend file
 c4ed config node tcp://localhost:34657
 
 # Initialize the node
