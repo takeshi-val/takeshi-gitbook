@@ -25,10 +25,4 @@ git checkout v1.1.0
 # Build binaries
 make build
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.c4e-chain/cosmovisor/upgrades/v1.1.0/bin
-mv build/c4ed $HOME/.c4e-chain/cosmovisor/upgrades/v1.1.0/bin/
-rm -rf build
-```
-
-_Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!_
+# Restart
