@@ -6,15 +6,15 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 | **Custom Port**: 34
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 
 
 ### Setup validator name
 
 ```bash
 C4E_HOME="$HOME/.c4e-chain"
 C4E_CHAIN="perun-1"
-C4E_MONIKER="TAKESHI"
-C4E_WALLET="TAKESHI_WALLET"
+C4E_MONIKER="YOUR_MONIKER"
+C4E_WALLET="WALLET_NAME"
 
 echo 'export C4E_HOME='${C4E_HOME} >> $HOME/.bash_profile
 echo 'export C4E_CHAIN='${C4E_CHAIN} >> $HOME/.bash_profile
@@ -77,7 +77,7 @@ c4ed init node --chain-id $C4E_CHAIN --home $C4E_HOME
 wget -O $C4E_HOME/config/genesis.json "https://raw.githubusercontent.com/chain4energy/c4e-chains/main/perun-1/genesis.json"
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@c4e-rpc.takeshi.team:34659\"|" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@c4e-seed.takeshi.team:10256\"|" $HOME/.c4e-chain/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uc4e\"|" $HOME/.c4e-chain/config/app.toml
