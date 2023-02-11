@@ -4,9 +4,9 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: kichain-emerynet-5 | **Latest Version Tag**: pismoA | **Custom Port**: 27
+**Chain ID**: dymension-emerynet-5 | **Latest Version Tag**: pismoA | **Custom Port**: 27
 
 {% hint style='info' %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
@@ -19,22 +19,22 @@ You just have to build new binaries and move it into cosmovisor upgrades directo
 # Clone project repository
 cd $HOME
 rm -rf pismoA
-git clone https://github.com/kichain/kichain-sdk.git pismoA
+git clone https://github.com/dymension/dymension-sdk.git pismoA
 cd pismoA
 git checkout pismoA
 
-# Install and build kichain Javascript packages
+# Install and build dymension Javascript packages
 yarn install && yarn build
 
-# Install and build kichain Cosmos SDK support
+# Install and build dymension Cosmos SDK support
 (cd packages/cosmic-swingset && make)
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.kid/cosmovisor/upgrades/kichaintest-upgrade-8/bin
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/.kid/cosmovisor/upgrades/kichaintest-upgrade-8/bin/ag-chain-cosmos
-ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-nchainz $HOME/.kid/cosmovisor/upgrades/kichaintest-upgrade-8/bin/ag-nchainz
-cp golang/cosmos/build/kid $HOME/.kid/cosmovisor/upgrades/kichaintest-upgrade-8/bin/
-cp golang/cosmos/build/ag-cosmos-helper $HOME/.kid/cosmovisor/upgrades/kichaintest-upgrade-8/bin/
+mkdir -p $HOME/.kid/cosmovisor/upgrades/dymensiontest-upgrade-8/bin
+ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/.kid/cosmovisor/upgrades/dymensiontest-upgrade-8/bin/ag-chain-cosmos
+ln -s $HOME/pismoA/packages/cosmic-swingset/bin/ag-nchainz $HOME/.kid/cosmovisor/upgrades/dymensiontest-upgrade-8/bin/ag-nchainz
+cp golang/cosmos/build/kid $HOME/.kid/cosmovisor/upgrades/dymensiontest-upgrade-8/bin/
+cp golang/cosmos/build/ag-cosmos-helper $HOME/.kid/cosmovisor/upgrades/dymensiontest-upgrade-8/bin/
 ```
 
 *Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!*

@@ -6,7 +6,7 @@ description: >-
 
 # Useful commands
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -68,7 +68,7 @@ kid tx staking create-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=kichain-2 \
+--chain-id=dymension-2 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -88,7 +88,7 @@ kid tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=kichain-2 \
+--chain-id=dymension-2 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
@@ -100,7 +100,7 @@ kid tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-kid tx slashing unjail --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx slashing unjail --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Jail reason
@@ -132,43 +132,43 @@ kid q staking validator $(kid keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-kid tx distribution withdraw-all-rewards --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx distribution withdraw-all-rewards --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-kid tx distribution withdraw-rewards $(kid keys show wallet --bech val -a) --commission --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx distribution withdraw-rewards $(kid keys show wallet --bech val -a) --commission --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-kid tx staking delegate $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx staking delegate $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-kid tx staking delegate <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx staking delegate <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-kid tx staking redelegate $(kid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx staking redelegate $(kid keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-kid tx staking unbond $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx staking unbond $(kid keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-kid tx bank send wallet <TO_WALLET_ADDRESS> 1000000uxki --from wallet --chain-id kichain-2
+kid tx bank send wallet <TO_WALLET_ADDRESS> 1000000uxki --from wallet --chain-id dymension-2
 ```
 
 ## 🗳 Governance
@@ -188,25 +188,25 @@ kid query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-kid tx gov vote 1 yes --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx gov vote 1 yes --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'No'
 
 ```bash
-kid tx gov vote 1 no --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx gov vote 1 no --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-kid tx gov vote 1 abstain --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx gov vote 1 abstain --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-kid tx gov vote 1 nowithveto --from wallet --chain-id kichain-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+kid tx gov vote 1 nowithveto --from wallet --chain-id dymension-2 --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
 ```
 
 ## ⚡️ Utility
@@ -308,7 +308,7 @@ sudo rm /etc/systemd/system/kid.service
 sudo systemctl daemon-reload
 rm -f $(which kid)
 rm -rf $HOME/.kid
-rm -rf $HOME/kichain-sdk
+rm -rf $HOME/dymension-sdk
 ```
 
 ## ⚙️ Service Management

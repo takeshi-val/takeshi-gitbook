@@ -4,7 +4,7 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 Snapshots allows a new node to join the network by recovering application state from a backup file. 
@@ -14,11 +14,11 @@ snapshot server is periodically beeing state-synced.
 
 Snapshots are taken automatically every 6 hours starting at **04:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: kichain-upgrade-8
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: dymension-upgrade-8
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 8492808 | 5 hours | [snapshot (2.63 GB)](https://snapshots.takeshi.team/kichain/snapshot\_latest.tar.lz4) |
+| 8492808 | 5 hours | [snapshot (2.63 GB)](https://snapshots.takeshi.team/dymension/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.kid/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/kichain/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
+curl -L https://snapshots.takeshi.team/dymension/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.kid
 mv $HOME/.kid/priv_validator_state.json.backup $HOME/.kid/data/priv_validator_state.json
 ```
 
