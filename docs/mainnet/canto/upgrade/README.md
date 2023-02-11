@@ -19,7 +19,7 @@ You just have to build new binaries and move it into cosmovisor upgrades directo
 # Clone project repository
 cd $HOME
 rm -rf bcna
-git clone https://github.com/BitCannaGlobal/bcna.git
+git clone https://github.com/cantoGlobal/bcna.git
 cd bcna
 git checkout v1.5.3
 

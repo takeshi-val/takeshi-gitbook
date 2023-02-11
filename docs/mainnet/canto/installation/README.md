@@ -43,7 +43,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 # Clone project repository
 cd $HOME
 rm -rf bcna
-git clone https://github.com/BitCannaGlobal/bcna.git
+git clone https://github.com/cantoGlobal/bcna.git
 cd bcna
 git checkout v1.5.3
 
@@ -69,7 +69,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 # Create service
 sudo tee /etc/systemd/system/cantod.service > /dev/null << EOF
 [Unit]
-Description=bitcanna node service
+Description=canto node service
 After=network-online.target
 
 [Service]
@@ -101,11 +101,11 @@ cantod config node tcp://localhost:42657
 cantod init $MONIKER --chain-id canto_7700-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/bitcanna/genesis.json > $HOME/.cantod/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/bitcanna/addrbook.json > $HOME/.cantod/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/canto/genesis.json > $HOME/.cantod/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/canto/addrbook.json > $HOME/.cantod/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.takeshi.team:42659\"|" $HOME/.cantod/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@canto.rpc.takeshi.team:42659\"|" $HOME/.cantod/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ubcna\"|" $HOME/.cantod/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:42317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.cantod
+curl -L https://snapshots.takeshi.team/canto/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.cantod
 [[ -f $HOME/.cantod/data/upgrade-info.json ]] && cp $HOME/.cantod/data/upgrade-info.json $HOME/.cantod/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -2,40 +2,40 @@
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt=""><figcaption></figcaption></figure>
 
-BitCanna is a proof-of-stake (POS) decentralized payment network designed exclusively to serve the cannabis industry.
+canto is a proof-of-stake (POS) decentralized payment network designed exclusively to serve the cannabis industry.
 
 **Chain ID**: canto_7700-1 | **Latest Version Tag**: v1.5.3 | **Wasm**: OFF
 
-[Website](https://www.bitcanna.io) | [Discord](https://discord.gg/9AVrzaVQvs) | [Twitter](https://twitter.com/BitCannaGlobal)
+[Website](https://www.canto.io) | [Discord](https://discord.gg/9AVrzaVQvs) | [Twitter](https://twitter.com/cantoGlobal)
 
 ## Chain explorer
 
-[https://explorer.takeshi.team/bitcanna](https://explorer.takeshi.team/bitcanna)
+[https://explorer.takeshi.team/canto](https://explorer.takeshi.team/canto)
 
 ## Public endpoints
 
-* api: [https://bitcanna.api.takeshi.team](https://bitcanna.api.takeshi.team)
-* rpc: [https://bitcanna.rpc.takeshi.team](https://bitcanna.rpc.takeshi.team)
-* grpc: [https://bitcanna.grpc.takeshi.team](https://bitcanna.grpc.takeshi.team)
+* api: [https://canto.api.takeshi.team](https://canto.api.takeshi.team)
+* rpc: [https://canto.rpc.takeshi.team](https://canto.rpc.takeshi.team)
+* grpc: [https://canto.grpc.takeshi.team](https://canto.grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.takeshi.team:42656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@canto.rpc.takeshi.team:42656
 ```
 
 **seed-node**
 
 ```
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.takeshi.team:42659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@canto.rpc.takeshi.team:42659
 ```
 
 **addrbook**
 
 ```bash
-curl -Ls https://snapshots.takeshi.team/bitcanna/addrbook.json > $HOME/.cantod/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/canto/addrbook.json > $HOME/.cantod/config/addrbook.json
 ```
 
 **live-peers** (10)

@@ -18,7 +18,7 @@ Since we are using Cosmovisor, it makes it very easy to prepare for upcomming up
 # Clone project repository
 cd $HOME
 rm -rf bcna
-git clone https://github.com/BitCannaGlobal/bcna.git
+git clone https://github.com/cantoGlobal/bcna.git
 cd bcna
 git checkout v1.5.3
 

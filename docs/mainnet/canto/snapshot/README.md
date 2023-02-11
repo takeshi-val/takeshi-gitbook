@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **05:15 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 7037250 | 4 hours | [snapshot (0.79 GB)](https://snapshots.takeshi.team/bitcanna/snapshot\_latest.tar.lz4) |
+| 7037250 | 4 hours | [snapshot (0.79 GB)](https://snapshots.takeshi.team/canto/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.cantod/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/bitcanna/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.cantod
+curl -L https://snapshots.takeshi.team/canto/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.cantod
 mv $HOME/.cantod/priv_validator_state.json.backup $HOME/.cantod/data/priv_validator_state.json
 ```
 
