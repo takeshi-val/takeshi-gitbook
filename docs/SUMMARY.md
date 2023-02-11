@@ -79,6 +79,7 @@
 
 ## TESTNET
 
+* [Dymension](testnet/dymension.md)
 * [kichain](testnet/kichain/README.md)
   * [Installation](testnet/kichain/installation.md)
   * [Upgrade](testnet/kichain/upgrade.md)
