@@ -13,7 +13,7 @@ Chain4Energy is a revolutionary Web 3.0 Energy Marketplace for the global energy
 
 * api: [https://api-c4e.takeshi.team](https://api-c4e.takeshi.team)
 * rpc: [https://rpc-c4e.takeshi.team](https://rpc-c4e.takeshi.team)
-* grpc: [https://grpc-c4e.takeshi.team](https://grpc-c4e.takeshi.team)
+
 
 ## Peering
 
@@ -34,7 +34,7 @@ a85a651a3cf1746694560c5b6f76d566c04ca581@c4e-seed.takeshi.team:10256
 curl -Ls https://snapshots.takeshi.team/chain4energy/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
 ```
 
-**live-peers** (50)
+**live-peers** 
 ```bash
 SEEDS="a85a651a3cf1746694560c5b6f76d566c04ca581@c4e-seed.takeshi.team:10256"
 PEERS=""

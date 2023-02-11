@@ -50,5 +50,5 @@ mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start c4ed && sudo journalctl -u c4ed -f --no-hostname -o cat
+sudo systemctl start c4ed && sudo journalctl -u c4ed -f 
 ```
