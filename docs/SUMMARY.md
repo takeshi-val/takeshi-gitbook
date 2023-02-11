@@ -80,11 +80,11 @@
 ## TESTNET
 
 * [kichain](testnet/kichain/README.md)
-  * [Installation](testnet/kichain/installation/README.md)
-  * [Upgrade](testnet/kichain/upgrade/README.md)
-  * [Snapshot](testnet/kichain/snapshot/README.md)
-  * [State sync](testnet/kichain/state-sync/README.md)
-  * [Useful commands](testnet/kichain/useful-commands/README.md)
+  * [Installation](testnet/kichain/installation.md)
+  * [Upgrade](testnet/kichain/upgrade.md)
+  * [Snapshot](testnet/kichain/snapshot.md)
+  * [State sync](testnet/kichain/state-sync.md)
+  * [Useful commands](testnet/kichain/useful-commands.md)
   * [Installation](testnet/kichain/installation-1.md)
   * [Upgrade](testnet/kichain/upgrade-1.md)
   * [Snapshot](testnet/kichain/snapshot-1.md)
