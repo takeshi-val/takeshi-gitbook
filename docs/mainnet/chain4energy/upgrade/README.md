@@ -7,12 +7,17 @@
 
 ```bash
 # Clone project repository
+
+```bash
+
 cd $HOME
-rm -rf c4e-chain
-git clone https://github.com/cosmos/c4e-chain.git
+git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-git checkout v1.1.0
+gti checkout v1.1.0
+make install
 
-# Build binaries
-make build
 
+
+sudo systemctl restart c4ed && journalctl -u c4ed -f
+
+```
