@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: innuendo-5 | **Latest Version Tag**: v1.3.2 | **Custom Port**: 11
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.2 | **Custom Port**: 11
 
 ### Setup validator name
 
@@ -45,7 +45,7 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.3.2
+git checkout v1.2.2
 
 # Build binaries
 make build
@@ -69,7 +69,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 # Create service
 sudo tee /etc/systemd/system/quicksilverd.service > /dev/null << EOF
 [Unit]
-Description=quicksilver-testnet node service
+Description=quicksilver node service
 After=network-online.target
 
 [Service]
@@ -93,19 +93,19 @@ sudo systemctl enable quicksilverd
 
 ```bash
 # Set node configuration
-quicksilverd config chain-id innuendo-5
-quicksilverd config keyring-backend test
+quicksilverd config chain-id quicksilver-2
+quicksilverd config keyring-backend file
 quicksilverd config node tcp://localhost:11657
 
 # Initialize the node
-quicksilverd init $MONIKER --chain-id innuendo-5
+quicksilverd init $MONIKER --chain-id quicksilver-2
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/quicksilver-testnet/genesis.json > $HOME/.quicksilverd/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/quicksilver-testnet/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/quicksilver/genesis.json > $HOME/.quicksilverd/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@quicksilver-testnet.rpc.takeshi.team:11659\"|" $HOME/.quicksilverd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.takeshi.team:11659\"|" $HOME/.quicksilverd/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001uqck\"|" $HOME/.quicksilverd/config/app.toml
@@ -126,7 +126,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:11317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/quicksilver-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
+curl -L https://snapshots.takeshi.team/quicksilver/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
 [[ -f $HOME/.quicksilverd/data/upgrade-info.json ]] && cp $HOME/.quicksilverd/data/upgrade-info.json $HOME/.quicksilverd/cosmovisor/genesis/upgrade-info.json
 ```
 

@@ -14,11 +14,11 @@ snapshot server is periodically beeing state-synced.
 
 Snapshots are taken automatically every 6 hours starting at **02:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.3.2
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.2.2
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 221972 | 1 hours | [snapshot (0.61 GB)](https://snapshots.takeshi.team/quicksilver-testnet/snapshot\_latest.tar.lz4) |
+| 421244 | 1 hours | [snapshot (0.77 GB)](https://snapshots.takeshi.team/quicksilver/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -33,7 +33,7 @@ rm -rf $HOME/.quicksilverd/data
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/quicksilver-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
+curl -L https://snapshots.takeshi.team/quicksilver/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
 mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
 ```
 
