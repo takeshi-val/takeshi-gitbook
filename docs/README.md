@@ -34,7 +34,7 @@ description: >-
 
 ## TESTNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [kichain](testnet/kichain/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [dymension](testnet/dymension/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/celestia.png" alt="" data-size="line"> [Celestia](testnet/celestia/)
 
