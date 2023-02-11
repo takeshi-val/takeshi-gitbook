@@ -60,7 +60,7 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 
 ```bash
 c4ed tx staking create-validator \
---amount=1000000uatom \
+--amount=1000000uc4e \
 --pubkey=$(c4ed tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
@@ -74,7 +74,7 @@ c4ed tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0uatom \
+--gas-prices=0uc4e \
 -y
 ```
 
@@ -91,14 +91,14 @@ c4ed tx staking edit-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0uatom \
+--gas-prices=0uc4e \
 -y
 ```
 
 #### Unjail validator
 
 ```bash
-c4ed tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx slashing unjail --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Jail reason
@@ -130,43 +130,43 @@ c4ed q staking validator $(c4ed keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-c4ed tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx distribution withdraw-all-rewards --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx distribution withdraw-rewards $(c4ed keys show wallet --bech val -a) --commission --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000uatom --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx staking delegate $(c4ed keys show wallet --bech val -a) 1000000uc4e --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000uatom --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx staking delegate <TO_VALOPER_ADDRESS> 1000000uc4e --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uatom --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx staking redelegate $(c4ed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uc4e --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000uatom --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx staking unbond $(c4ed keys show wallet --bech val -a) 1000000uc4e --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000uatom --from wallet --chain-id perun-1
+c4ed tx bank send wallet <TO_WALLET_ADDRESS> 1000000uc4e --from wallet --chain-id perun-1
 ```
 
 ## 🗳 Governance
@@ -186,25 +186,25 @@ c4ed query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-c4ed tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx gov vote 1 yes --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Vote 'No'
 
 ```bash
-c4ed tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx gov vote 1 no --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-c4ed tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx gov vote 1 abstain --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-c4ed tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uatom -y
+c4ed tx gov vote 1 nowithveto --from wallet --chain-id perun-1 --gas-adjustment 1.4 --gas auto --gas-prices 0uc4e -y
 ```
 
 ## ⚡️ Utility
@@ -277,7 +277,7 @@ curl -sS http://localhost:34657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uatom\"/" $HOME/.c4e-chain/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uc4e\"/" $HOME/.c4e-chain/config/app.toml
 ```
 
 #### Enable prometheus

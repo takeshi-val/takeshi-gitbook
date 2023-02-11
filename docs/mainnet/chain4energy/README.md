@@ -16,8 +16,8 @@ The Cosmos Hub is the blockchain protocol underlying an  increasingly large numb
 
 ## Public endpoints
 
-* api: [https://chain4energy.api.takeshi.team](https://chain4energy.api.takeshi.team)
-* rpc: [https://chain4energy.rpc.takeshi.team](https://chain4energy.rpc.takeshi.team)
+* api: [https://c4e-api.takeshi.team](https://c4e-api.takeshi.team)
+* rpc: [https://c4e-rpc.takeshi.team](https://c4e-rpc.takeshi.team)
 * grpc: [https://chain4energy.grpc.takeshi.team](https://chain4energy.grpc.takeshi.team)
 
 ## Peering
@@ -25,13 +25,13 @@ The Cosmos Hub is the blockchain protocol underlying an  increasingly large numb
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@chain4energy.rpc.takeshi.team:34656
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@c4e-rpc.takeshi.team:34656
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@chain4energy.rpc.takeshi.team:34659
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@c4e-rpc.takeshi.team:34659
 ```
 
 **addrbook**

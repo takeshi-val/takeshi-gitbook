@@ -10,12 +10,17 @@ description: Setting up your validator node has never been so easy. Get your val
 
 ### Setup validator name
 
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
-{% endhint %}
-
 ```bash
-MONIKER="YOUR_MONIKER"
+C4E_HOME="$HOME/.c4e-chain"
+C4E_CHAIN="perun-1"
+C4E_MONIKER="TAKESHI"
+C4E_WALLET="TAKESHI_WALLET"
+
+echo 'export C4E_HOME='${C4E_HOME} >> $HOME/.bash_profile
+echo 'export C4E_CHAIN='${C4E_CHAIN} >> $HOME/.bash_profile
+echo 'export C4E_MONIKER='${C4E_MONIKER} >> $HOME/.bash_profile
+echo 'export C4E_WALLET='${C4E_WALLET} >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ### Install dependencies
@@ -42,43 +47,21 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf c4e-chain
-git clone https://github.com/cosmos/c4e-chain.git
+git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-git checkout v1.1.0
+gti checkout v1.1.0
 
-# Build binaries
-make build
+# Install binaries
+make install
+
+#check version
+c4ed version --long
+
+#server_name: c4ed
+#version: 1.1.0
+#commit: d67fd60d07b41c52977539b9fb9c0c67de23837e
 
 ```
-
-### Create a service
-
-```bash
-
-# Create service
-sudo tee /etc/systemd/system/c4ed.service > /dev/null << EOF
-[Unit]
-Description=chain4energy node service
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which c4ed) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.c4e-chain"
-Environment="DAEMON_NAME=c4ed"
-Environment="UNSAFE_SKIP_BACKUP=true"
-
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable c4ed
-```
-
 ### Initialize the node
 
 ```bash
@@ -88,17 +71,16 @@ c4ed config keyring-backend file
 c4ed config node tcp://localhost:34657
 
 # Initialize the node
-c4ed init $MONIKER --chain-id perun-1
+c4ed init node --chain-id $C4E_CHAIN --home $C4E_HOME
 
-# Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/chain4energy/genesis.json > $HOME/.c4e-chain/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/chain4energy/addrbook.json > $HOME/.c4e-chain/config/addrbook.json
+# Download genesis
+wget -O $C4E_HOME/config/genesis.json "https://raw.githubusercontent.com/chain4energy/c4e-chains/main/perun-1/genesis.json"
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@chain4energy.rpc.takeshi.team:34659\"|" $HOME/.c4e-chain/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@c4e-rpc.takeshi.team:34659\"|" $HOME/.c4e-chain/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uatom\"|" $HOME/.c4e-chain/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0uc4e\"|" $HOME/.c4e-chain/config/app.toml
 
 # Set pruning
 sed -i \
@@ -113,6 +95,34 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:34317\"%; s%^address = \":8080\"%address = \":34080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:34090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:34091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:34545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:34546\"%" $HOME/.c4e-chain/config/app.toml
 ```
 
+### Create a service
+
+```bash
+
+# Create service
+tee $HOME/c4ed.service > /dev/null <<EOF
+[Unit]
+Description=BCC
+After=network.target
+[Service]
+Type=simple
+User=$USER
+ExecStart=$(which c4ed) start 
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo mv $HOME/c4ed.service /etc/systemd/system/
+
+sudo systemctl daemon-reload
+sudo systemctl enable c4ed
+```
+
+
+
 ### Download latest chain snapshot
 
 ```bash
@@ -123,5 +133,5 @@ curl -L https://snapshots.takeshi.team/chain4energy/snapshot_latest.tar.lz4 | ta
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start c4ed && sudo journalctl -u c4ed -f --no-hostname -o cat
+sudo systemctl start c4ed && sudo journalctl -u c4ed -f 
 ```
