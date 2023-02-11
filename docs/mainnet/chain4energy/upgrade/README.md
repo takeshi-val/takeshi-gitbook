@@ -1,7 +1,4 @@
 ---
-description: Prepare for and the upcomming chain upgrade using Cosmovisor.
----
-
 # Upgrade
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
