@@ -18,17 +18,17 @@ You just have to build new binaries and move it into cosmovisor upgrades directo
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf gaia
-git clone https://github.com/cosmos/gaia.git
-cd gaia
+rm -rf c4e-chain
+git clone https://github.com/cosmos/c4e-chain.git
+cd c4e-chain
 git checkout v1.1.0
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.gaia/cosmovisor/upgrades/v7-Theta/bin
-mv build/c4ed $HOME/.gaia/cosmovisor/upgrades/v7-Theta/bin/
+mkdir -p $HOME/.c4e-chain/cosmovisor/upgrades/v7-Theta/bin
+mv build/c4ed $HOME/.c4e-chain/cosmovisor/upgrades/v7-Theta/bin/
 rm -rf build
 ```
 

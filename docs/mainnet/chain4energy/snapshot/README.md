@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **04:45 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 13900456 | 4 hours | [snapshot (3.7 GB)](https://snapshots.takeshi.team/cosmoshub/snapshot\_latest.tar.lz4) |
+| 13900456 | 4 hours | [snapshot (3.7 GB)](https://snapshots.takeshi.team/chain4energy/snapshot\_latest.tar.lz4) |
 
 ## Instructions
 
@@ -26,15 +26,15 @@ Snapshots are taken automatically every 6 hours starting at **04:45 UTC**
 
 ```bash
 sudo systemctl stop c4ed
-cp $HOME/.gaia/data/priv_validator_state.json $HOME/.gaia/priv_validator_state.json.backup
-rm -rf $HOME/.gaia/data
+cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validator_state.json.backup
+rm -rf $HOME/.c4e-chain/data
 ```
 
 ### Download latest snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/cosmoshub/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.gaia
-mv $HOME/.gaia/priv_validator_state.json.backup $HOME/.gaia/data/priv_validator_state.json
+curl -L https://snapshots.takeshi.team/chain4energy/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
+mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
 ```
 
 ### Restart the service and check the log
