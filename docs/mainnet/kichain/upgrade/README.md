@@ -8,11 +8,6 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | 
 
-{% hint style='info' %}
-Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
-You just have to build new binaries and move it into cosmovisor upgrades directory.
-{% endhint %}
-
 ## Download and build upgrade binaries
 
 ```bash

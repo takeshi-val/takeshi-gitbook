@@ -46,16 +46,12 @@ wget -O $HOME/.gravity/cosmovisor/genesis/bin/gravityd https://github.com/Gravit
 wget -O $HOME/.gravity/cosmovisor/genesis/bin/gbt https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.8.1/gbt
 chmod +x $HOME/.gravity/cosmovisor/genesis/bin/*
 
-# Create application symlinks
-ln -s $HOME/.gravity/cosmovisor/genesis $HOME/.gravity/cosmovisor/current
-sudo ln -s $HOME/.gravity/cosmovisor/current/bin/gravityd /usr/local/bin/gravityd
+
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
 sudo tee /etc/systemd/system/gravityd.service > /dev/null << EOF

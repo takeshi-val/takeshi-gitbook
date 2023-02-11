@@ -8,11 +8,6 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 **Chain ID**: gravity-bridge-3 | **Latest Version Tag**: v1.8.1 | **Custom Port**: 26
 
-{% hint style='info' %}
-Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
-You just have to build new binaries and move it into cosmovisor upgrades directory.
-{% endhint %}
-
 ## Download and build upgrade binaries
 
 ```bash
