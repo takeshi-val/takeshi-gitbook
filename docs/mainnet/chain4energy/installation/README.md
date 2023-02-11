@@ -122,12 +122,22 @@ sudo systemctl enable c4ed
 ```
 
 
-
-### Download latest chain snapshot
+### Use state sync for start 
 
 ```bash
-curl -L https://snapshots.takeshi.team/chain4energy/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.c4e-chain
-[[ -f $HOME/.c4e-chain/data/upgrade-info.json ]] && cp $HOME/.c4e-chain/data/upgrade-info.json $HOME/.c4e-chain/cosmovisor/genesis/upgrade-info.json
+STATE_SYNC_RPC=https://rpc-c4e.takeshi.team:443
+
+LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
+SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
+SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+sed -i \
+  -e "s|^enable *=.*|enable = true|" \
+  -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
+  -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
+  -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
+  -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
+  $HOME/.c4e-chain/config/config.toml
 ```
 
 ### Start service and check the logs
