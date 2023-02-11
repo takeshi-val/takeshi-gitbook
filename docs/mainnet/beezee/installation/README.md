@@ -63,7 +63,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which bzed) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
