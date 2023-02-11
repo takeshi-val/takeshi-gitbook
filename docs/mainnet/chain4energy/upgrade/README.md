@@ -6,9 +6,7 @@
 ## Download and build upgrade binaries
 
 ```bash
-# Clone project repository
-
-```bash
+# Clone project repository 
 
 cd $HOME
 git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
