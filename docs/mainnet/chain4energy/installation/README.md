@@ -102,7 +102,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:34317\"
 # Create service
 tee $HOME/c4ed.service > /dev/null <<EOF
 [Unit]
-Description=c4e
+Description=c4ed
 After=network.target
 [Service]
 Type=simple
