@@ -71,11 +71,11 @@
   * [State sync](mainnet/stride/state-sync/README.md)
   * [Useful commands](mainnet/stride/useful-commands/README.md)
 * [Quicksilver](mainnet/quicksilver/README.md)
-  * [Installation](mainnet/quicksilver/installation/README.md)
-  * [Upgrade](mainnet/quicksilver/upgrade/README.md)
-  * [Snapshot](mainnet/quicksilver/snapshot/README.md)
-  * [State sync](mainnet/quicksilver/state-sync/README.md)
-  * [Useful commands](mainnet/quicksilver/useful-commands/README.md)
+  * [Installation](mainnet/quicksilver/installation.md)
+  * [Upgrade](mainnet/quicksilver/upgrade.md)
+  * [Snapshot](mainnet/quicksilver/snapshot.md)
+  * [State sync](mainnet/quicksilver/state-sync.md)
+  * [Useful commands](mainnet/quicksilver/useful-commands.md)
 
 ## TESTNET
 
