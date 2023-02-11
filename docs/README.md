@@ -35,7 +35,7 @@ description: >-
 
 ## TESTNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [dymension](testnet/dymension/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](testnet/dymension/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/celestia.png" alt="" data-size="line"> [Celestia](testnet/celestia/)
 
