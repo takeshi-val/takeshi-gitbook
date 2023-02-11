@@ -4,7 +4,7 @@
 
 konstellation is a Layer 1 protocol built on Cosmos, which can be used for hosting community-selected projects.
 
-**Chain ID**: darchub | **Latest Version Tag**: v0.6.2 | **Wasm**: ON
+**Chain ID**: darchub | **Latest Version Tag**: v0.6.2 
 
 [Website](https://konstellation.app) | [Discord](https://discord.gg/teamkonstellation) | [Twitter](https://twitter.com/Teamkonstellation)
 
