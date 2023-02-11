@@ -26,10 +26,3 @@ git checkout v5.1.1
 # Build binaries
 make build
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.stride/cosmovisor/upgrades/v5/bin
-mv build/strided $HOME/.stride/cosmovisor/upgrades/v5/bin/
-rm -rf build
-```
-
-*Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!*

@@ -50,21 +50,9 @@ git checkout v5.1.1
 # Build binaries
 make build
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.stride/cosmovisor/genesis/bin
-mv build/strided $HOME/.stride/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.stride/cosmovisor/genesis $HOME/.stride/cosmovisor/current
-sudo ln -s $HOME/.stride/cosmovisor/current/bin/strided /usr/local/bin/strided
-```
-
-### Install Cosmovisor and create a service
+### Сreate a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
 sudo tee /etc/systemd/system/strided.service > /dev/null << EOF
