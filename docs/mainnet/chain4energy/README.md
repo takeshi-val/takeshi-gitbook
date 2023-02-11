@@ -1,6 +1,6 @@
 # Services
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/cosmoshub.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
 
 The Cosmos Hub is the blockchain protocol underlying an  increasingly large number of blockchains built on the  Cosmos Network, allowing them to communicate with each other.
 
