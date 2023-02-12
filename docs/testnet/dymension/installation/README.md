@@ -55,35 +55,16 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf dymension
-git clone https://github.com/dymension/dymension-sdk.git dymension
+git clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta
 cd dymension
-git checkout dymension
-
-# Install and build dymension Javascript packages
-yarn install && yarn build
-
-# Install and build dymension Cosmos SDK support
-(cd packages/cosmic-swingset && make)
-
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.dymension/cosmovisor/genesis/bin
-ln -s $HOME/dymension/packages/cosmic-swingset/bin/ag-chain-cosmos $HOME/.dymension/cosmovisor/genesis/bin/ag-chain-cosmos
-ln -s $HOME/dymension/packages/cosmic-swingset/bin/ag-nchainz $HOME/.dymension/cosmovisor/genesis/bin/ag-nchainz
-cp golang/cosmos/build/dymd $HOME/.dymension/cosmovisor/genesis/bin/
-cp golang/cosmos/build/ag-cosmos-helper $HOME/.dymension/cosmovisor/genesis/bin/
-
-# Create application symlinks
-ln -s $HOME/.dymension/cosmovisor/genesis $HOME/.dymension/cosmovisor/current
-sudo ln -s $HOME/.dymension/cosmovisor/current/bin/dymd /usr/local/bin/dymd
+make install
+#chek version
+v0.2.0-beta
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/dymd.service > /dev/null << EOF
 [Unit]
@@ -92,7 +73,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which dymd) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -112,21 +93,19 @@ sudo systemctl enable dymd
 ```bash
 # Set node configuration
 dymd config chain-id 35-C
-dymd config keyring-backend test
 dymd config node tcp://localhost:27657
 
 # Initialize the node
 dymd init $MONIKER --chain-id 35-C
 
-# Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/dymension-testnet/genesis.json > $HOME/.dymension/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/dymension-testnet/addrbook.json > $HOME/.dymension/config/addrbook.json
+# Download genesis 
+wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/35-C/pre-genesis.json"
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@dymension-testnet.rpc.takeshi.team:27659\"|" $HOME/.dymension/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"b78dd0e25e28ec0b43412205f7c6780be8775b43@dym.seed.takeshi.team:10356\"|" $HOME/.dymension/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025uxki\"|" $HOME/.dymension/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025udym\"|" $HOME/.dymension/config/app.toml
 
 # Set pruning
 sed -i \
