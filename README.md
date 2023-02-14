@@ -8,7 +8,7 @@ description: >-
 
 ## MAINNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="150*150"> [Kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
 
