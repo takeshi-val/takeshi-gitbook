@@ -2,7 +2,7 @@
 description: Discover base tools contributed to the projects by takeshi.team.
 ---
 
-# 🖤 Supported chains
+# Supported chains
 
 ## MAINNET
 
