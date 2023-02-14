@@ -24,7 +24,7 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/stride.png" alt="" data-size="line"> [Stride](mainnet/stride/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/logo_C4E.png" alt="" data-size="line"> [Chain4Energy](mainnet/chain4energy/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" alt="" data-size="line"> [Chain4Energy](mainnet/chain4energy/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt="" data-size="line"> [BeeZee](mainnet/beezee/)
 
