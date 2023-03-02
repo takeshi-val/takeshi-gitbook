@@ -84,9 +84,8 @@ sed -i \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.c4e-chain/config/app.toml
 
-```bash
-
 # Create service
+
 tee $HOME/c4ed.service > /dev/null <<EOF
 [Unit]
 Description=c4ed
