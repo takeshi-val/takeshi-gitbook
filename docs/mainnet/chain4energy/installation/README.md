@@ -45,7 +45,7 @@ go version
 cd $HOME
 git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-gti checkout v1.1.0
+git checkout v1.1.0
 
 # Install binaries
 make install
