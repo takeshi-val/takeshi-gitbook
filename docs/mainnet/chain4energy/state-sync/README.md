@@ -19,7 +19,6 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 
 ```bash
 sudo systemctl stop c4ed
-cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validator_state.json.backup
 c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain
 ```
 
@@ -39,13 +38,9 @@ sed -i \
   -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
-  -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
   $HOME/.c4e-chain/config/config.toml
 
-mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
 ```
-
-
 
 ### Restart the service and check the log
 
