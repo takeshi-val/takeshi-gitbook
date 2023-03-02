@@ -13,7 +13,7 @@ Chain4Energy is a revolutionary Web 3.0 Energy Marketplace for the global energy
 
 * api: [https://api-c4e.takeshi.team](https://api-c4e.takeshi.team)
 * rpc: [https://rpc-c4e.takeshi.team](https://rpc-c4e.takeshi.team)
-* grpc: [grpc://grpc-c4e.takeshi.team](grpc://grpc-c4e.takeshi.team)
+* grpc: [grpc-c4e.takeshi.team](grpc://grpc-c4e.takeshi.team)
 
 
 
