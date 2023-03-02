@@ -122,7 +122,6 @@ sed -i \
   -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
-  -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
   $HOME/.c4e-chain/config/config.toml
 ```
 
