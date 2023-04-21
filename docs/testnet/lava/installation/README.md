@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/lava.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.4.4 | **Custom Port**: 44
+**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.9.8 | **Custom Port**: 44
 
 ### Setup validator name
 
@@ -45,36 +45,25 @@ cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
 cd lava
-git checkout v0.4.4
+git checkout v0.9.8
 
-# Build binaries
-make build
+# Install binaries
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.lava/cosmovisor/genesis/bin
-mv build/lavad $HOME/.lava/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.lava/cosmovisor/genesis $HOME/.lava/cosmovisor/current
-sudo ln -s $HOME/.lava/cosmovisor/current/bin/lavad /usr/local/bin/lavad
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/lavad.service > /dev/null << EOF
 [Unit]
-Description=lava-testnet node service
+Description=Lava
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which lavad) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -85,6 +74,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 EOF
+
 sudo systemctl daemon-reload
 sudo systemctl enable lavad
 ```
@@ -95,7 +85,6 @@ sudo systemctl enable lavad
 # Set node configuration
 lavad config chain-id lava-testnet-1
 lavad config keyring-backend test
-lavad config node tcp://localhost:44657
 
 # Initialize the node
 lavad init $MONIKER --chain-id lava-testnet-1
@@ -105,7 +94,7 @@ curl -Ls https://snapshots.takeshi.team/lava-testnet/genesis.json > $HOME/.lava/
 curl -Ls https://snapshots.takeshi.team/lava-testnet/addrbook.json > $HOME/.lava/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.takeshi.team:44659\"|" $HOME/.lava/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@lava-rpc.takeshi.team:44659\"|" $HOME/.lava/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ulava\"|" $HOME/.lava/config/app.toml
@@ -130,13 +119,6 @@ sed -i 's/create_empty_blocks_interval = ".*s"/create_empty_blocks_interval = "6
 sed -i 's/timeout_propose = ".*s"/timeout_propose = "60s"/g' $HOME/.lava/config/config.toml
 sed -i 's/timeout_commit = ".*s"/timeout_commit = "60s"/g' $HOME/.lava/config/config.toml
 sed -i 's/timeout_broadcast_tx_commit = ".*s"/timeout_broadcast_tx_commit = "601s"/g' $HOME/.lava/config/config.toml
-```
-
-### Download latest chain snapshot
-
-```bash
-curl -L https://snapshots.takeshi.team/lava-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.lava
-[[ -f $HOME/.lava/data/upgrade-info.json ]] && cp $HOME/.lava/data/upgrade-info.json $HOME/.lava/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs

@@ -4,7 +4,7 @@
 
 Lava powers a trustless market for RPC data access. The protocol  governs over peer to peer and private Provider-Application pairings,  ensuring high quality RPC service while creating consensus around data served.
 
-**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.4.4 | **Wasm**: OFF
+**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.9.8 | **Wasm**: OFF
 
 [Website](https://lavanet.xyz) | [Discord](https://discord.com/invite/Tbk5NxTCdA) | [Twitter](https://twitter.com/lavanetxyz)
 
@@ -12,26 +12,26 @@ Lava powers a trustless market for RPC data access. The protocol  governs over p
 
 
 ## Chain explorer
-[https://explorer.takeshi.team/lava-testnet](https://explorer.takeshi.team/lava-testnet)
+[https://lava.explorers.guru](https://lava.explorers.guru/)
 
 ## Public endpoints
 
-* api: [https://lava-testnet.api.takeshi.team](https://lava-testnet.api.takeshi.team)
-* rpc: [https://lava-testnet.rpc.takeshi.team](https://lava-testnet.rpc.takeshi.team)
-* grpc: [https://lava-testnet.grpc.takeshi.team](https://lava-testnet.grpc.takeshi.team)
+* api: [https://lava-testnet.api.takeshi.team](https://lava-api.takeshi.team)
+* rpc: [https://lava-testnet.rpc.takeshi.team](https://lava-rpc.takeshi.team)
+* grpc: [https://lava-testnet.grpc.takeshi.team](https://lava-grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@lava-testnet.rpc.takeshi.team:44656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@lava-rpc.takeshi.team:44656
 ```
 
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.takeshi.team:44659
+3f472746f46493309650e5a033076689996c8881@lava-rpc.takeshi.team:44659
 ```
 
 **addrbook**
@@ -41,6 +41,6 @@ curl -Ls https://snapshots.takeshi.team/lava-testnet/addrbook.json > $HOME/.lava
 
 **live-peers** (24)
 ```bash
-peers="f9f49cc8ffbdee85fb8a9551f644f5554a610ebe@91.107.137.90:26656,24a2bb2d06343b0f74ed0a6dc1d409ce0d996451@188.40.98.169:27656,3a750868d3284cc4a07be4a878333e38b44b94bf@144.91.111.1:26656,d5519e378247dfb61dfe90652d1fe3e2b3005a5b@65.109.68.190:44656,f30d07170a092f82702e3c12334fa9fd828b71c6@168.119.124.130:47656,f68c57ca955420779773f9320a6b7710c2b29f73@188.191.36.222:26656,3c47fd1662bcb17a4713c23e41d7b25e34478b8e@103.19.25.157:26672,5c2a752c9b1952dbed075c56c600c3a79b58c395@185.16.39.172:27066,bd1e1f8df77e7b61200c490c9fabe6bbc4412d4e@91.223.3.144:26856,13a9209a4d08803a3becac57de8eb02dd51f8f41@65.109.23.114:19956,6a55747d1f93e46696f233ac563e28fea24afc47@38.242.237.192:36656,90451ff8f47b8f4b077e95837f112135fea14531@207.180.231.123:31656,c44a02dba51e23ac06b006fb1285988c89051ce7@85.10.198.171:26556,7022dbc496c5cc645df6a44f792b40aa150844a3@62.141.44.209:38656,433be6210ad6350bebebad68ec50d3e0d90cb305@217.13.223.167:60856,8636a0d9276ee1b99c772e51904ea010862bc772@135.181.133.37:27656,eb7832932626c1c636d16e0beb49e0e4498fbd5e@65.108.231.124:20656,bb8c8cea499a1fa7e97922b5a9882c2360c6575a@176.103.222.21:26656,d3eb474a1f90d004e49638e384069c32d7dcc8a2@185.252.232.110:26656,dfa93668152cb6b3a822c987f9c22110a1c2f314@178.18.255.221:26656,3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@3.252.219.158:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@34.246.190.1:26656,602c87226395588e141076abbc967945465bba8e@65.109.68.93:36656,6dd9c6d619f9e6fc75f39bacd313f811ca64b2c6@65.108.224.180:26656"
+peers="c32d101819cedf78ea986e6d832e2306fb6d0649@185.248.24.224:16656,ed780f77754e8c4657b145144f0f95225d43bb03@65.108.224.156:27656,013f0163d37428ed99eacd8ee84059da5c243981@5.161.132.217:26656,9a151159039fd8abce61ddb21e5342605787792b@5.75.228.39:26656,5b337f7ba27e2fdd27918be18af93f8728034267@65.108.41.168:26656,25da069c4dca143029ddae47bf2b7de69c2a8678@65.108.9.164:21156,92f8e4caaadb2f00c95e03068933f2045a93e910@65.109.65.163:21156,6ba3b6ec03839afffa64c83e18ff80a681f4968d@65.108.194.40:21756,e1383b216c42acc842193c5ac7321ce6c0d73db0@78.47.37.142:26656,370ae92bd28701e0c1d8dc912ccf0d40fe0db3d5@157.90.245.166:26656,3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@3.252.219.158:26656,3456c9ba0df46cbb526717d73fa51ff0ed9a53a1@95.216.14.58:60756,2a588e5ddcfd8c9095cc6f34b5b6966e31020cfd@65.21.123.172:11656,c0efea9152aed75fcf3022b8af45243818c59d6a@49.12.13.104:26656,3173b2d34ce415ee9a1bf08646d85688bf49e299@5.189.186.222:36656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@34.246.190.1:26656,2c419186cd96b59fe8b3307c54c27d6805414aba@65.108.8.28:60756,4732ed188fbe7603f81d9f4c825397277bb72217@5.75.235.195:26656,cb722cc36541920d3907cd67743db5444f53e80b@95.70.184.178:24656,8bb931d994a19c6647e6165cae98b14bcc2e22c2@144.76.99.105:38656,5c2a752c9b1952dbed075c56c600c3a79b58c395@185.16.39.172:27066,4ad3f3731073a016fa0c99118b2a5a2d313928f5@207.180.233.148:26656,8b154033143fdedf4835dfc7b030c7d781bfd54e@195.201.219.227:26656,b1a9277efbd2634979b8bf90ebfde19f3af830bd@75.119.146.252:44656,99327e5cf0f31ac3bb1ca8e39cc9f17c823b7ec1@109.236.88.8:26656,f1bb78a30c9381bed392fda141a5c1f6fa4d25e6@144.76.114.49:26656,4e0a2772bb3672e54c2ea655c30abdac62191f14@45.84.138.66:18656,3b18b1dc95e02a36327b13fc45c225b23fb08ed8@78.47.187.72:26656,5c107bb2b72c930a5ab3406a1f7c7345b7229b49@148.251.11.99:11656,d5519e378247dfb61dfe90652d1fe3e2b3005a5b@65.109.68.190:44656"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.lava/config/config.toml
 ```
