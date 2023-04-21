@@ -16,17 +16,16 @@ Lava powers a trustless market for RPC data access. The protocol  governs over p
 
 ## Public endpoints
 
-* api: [https://lava-testnet.api.takeshi.team](https://lava-api.takeshi.team)
-* rpc: [https://lava-testnet.rpc.takeshi.team](https://lava-rpc.takeshi.team)
-* grpc: [https://lava-testnet.grpc.takeshi.team](https://lava-grpc.takeshi.team)
+* api: [https://lava-api.takeshi.team](https://lava-api.takeshi.team)
+* rpc: [https://lava-rpc.takeshi.team](https://lava-rpc.takeshi.team)
+* grpc: [https://lava-grpc.takeshi.team](https://lava-grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@lava-rpc.takeshi.team:44656
-```
+f19e1a6973b0f8e43189e618eb8e61693e892231@lava-rpc.takeshi.team:443```
 
 **seed-node**
 
