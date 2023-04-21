@@ -12,8 +12,6 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/canto.png" alt="" data-size="line"> [Canto](mainnet/canto/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/cosmoshub.png" alt="" data-size="line"> [Cosmos Hub](mainnet/cosmoshub/)
-
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](broken-reference)
