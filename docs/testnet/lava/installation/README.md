@@ -56,21 +56,16 @@ make install
 
 ```bash
 # Create service
-sudo tee /etc/systemd/system/lavad.service > /dev/null << EOF
+sudo tee /etc/systemd/system/lavad.service > /dev/null <<EOF
 [Unit]
-Description=Lava
+Description=lava
 After=network-online.target
-
 [Service]
 User=$USER
-ExecStart=$(which lavad) run start
+ExecStart=$(which lavad) start
 Restart=on-failure
-RestartSec=10
+RestartSec=3
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.lava"
-Environment="DAEMON_NAME=lavad"
-Environment="UNSAFE_SKIP_BACKUP=true"
-
 [Install]
 WantedBy=multi-user.target
 EOF
