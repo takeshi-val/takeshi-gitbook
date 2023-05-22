@@ -6,7 +6,7 @@ The provenance Protocol is a fast, scalable, and secure blockchain that empowers
 
 **Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.15.0 | **Wasm**: ON
 
-[Website](https://provenanceprotocol.com) | [Discord](https://discord.com/invite/5GKym3p6rj) | [Twitter](https://twitter.com/provenance\_Protocol)
+[Website](https://provenance.io) | [Discord](https://discord.gg/kNZC8nwCFP) | [Twitter](https://twitter.com/provenancefdn)
 
 ## Chain explorer
 
@@ -14,9 +14,9 @@ The provenance Protocol is a fast, scalable, and secure blockchain that empowers
 
 ## Public endpoints
 
-* api: [https://provenance.api.takeshi.team](https://provenance.api.takeshi.team)
-* rpc: [https://provenance.rpc.takeshi.team](https://provenance.rpc.takeshi.team)
-* grpc: [https://provenance.grpc.takeshi.team](https://provenance.grpc.takeshi.team)
+* api: [https://api-provenance.takeshi.team](https://api-provenance.takeshi.team)
+* rpc: [https://rpc-provenance.takeshi.team](https://rpc-provenance.takeshi.team)
+* grpc: [https://grpc-provenance.takeshi.team](https://grpc-provenance.takeshi.team)
 
 ## Peering
 
