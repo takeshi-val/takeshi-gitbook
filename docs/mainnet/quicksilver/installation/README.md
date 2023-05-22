@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.10 | **Custom Port**: 11
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.11 
 
 ### Setup validator name
 
@@ -45,7 +45,7 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.2.10
+git checkout v1.2.11
 
 # Build binaries
 make install
@@ -84,8 +84,6 @@ sudo systemctl enable quicksilverd
 ```bash
 # Set node configuration
 quicksilverd config chain-id quicksilver-2
-quicksilverd config keyring-backend file
-quicksilverd config node tcp://localhost:11657
 
 # Initialize the node
 quicksilverd init $MONIKER --chain-id quicksilver-2
@@ -95,7 +93,7 @@ curl -Ls https://snapshots.takeshi.team/quicksilver/genesis.json > $HOME/.quicks
 curl -Ls https://snapshots.takeshi.team/quicksilver/addrbook.json > $HOME/.quicksilverd/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.takeshi.team:11659\"|" $HOME/.quicksilverd/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@quicksilver-seed.takeshi.team:10456\"|" $HOME/.quicksilverd/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001uqck\"|" $HOME/.quicksilverd/config/app.toml
@@ -123,5 +121,5 @@ curl -L https://snapshots.takeshi.team/quicksilver/snapshot_latest.tar.lz4 | tar
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f --no-hostname -o cat
+sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f 
 ```

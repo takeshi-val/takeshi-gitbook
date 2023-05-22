@@ -4,34 +4,31 @@
 
 Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.9 | **Wasm**: OFF
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.11 | **Wasm**: OFF
 
 [Website](https://quicksilver.zone) | [Discord](https://discord.gg/quicksilverprotocol) | [Twitter](https://twitter.com/quicksilverzone)
 
 
 
 
-## Chain explorer
-[https://explorer.takeshi.team/quicksilver](https://explorer.takeshi.team/quicksilver)
-
 ## Public endpoints
 
-* api: [https://quicksilver.api.takeshi.team](https://quicksilver.api.takeshi.team)
-* rpc: [https://quicksilver.rpc.takeshi.team](https://quicksilver.rpc.takeshi.team)
-* grpc: [https://quicksilver.grpc.takeshi.team](https://quicksilver.grpc.takeshi.team)
+* api: [https://api-quicksilver.takeshi.team](https://api-quicksilver.takeshi.team)
+* rpc: [https://rpc-quicksilver.takeshi.team/](https://rpc-quicksilver.takeshi.team)
+* grpc: [https://grpc-quicksilver.takeshi.team](https://grpc-quicksilver.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@quicksilver.rpc.takeshi.team:11656
+a85a651a3cf1746694560c5b6f76d566c04ca581@quicksilver-seed.takeshi.team:10456
 ```
 
 **seed-node**
 
 ```text
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@quicksilver.rpc.takeshi.team:11659
+a85a651a3cf1746694560c5b6f76d566c04ca581@quicksilver-seed.takeshi.team:10456
 ```
 
 **addrbook**

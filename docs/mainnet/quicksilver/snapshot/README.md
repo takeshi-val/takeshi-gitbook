@@ -14,7 +14,7 @@ snapshot server is periodically beeing state-synced.
 
 Snapshots are taken automatically every 6 hours starting at **02:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.2.10
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.2.11
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
@@ -40,5 +40,5 @@ mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f --no-hostname -o cat
+sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f 
 ```
