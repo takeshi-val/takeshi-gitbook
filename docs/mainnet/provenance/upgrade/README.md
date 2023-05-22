@@ -6,7 +6,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.1.2-hotfix | **Custom Port**: 37
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.15.0 
 
 {% hint style='info' %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
@@ -18,18 +18,16 @@ You just have to build new binaries and move it into cosmovisor upgrades directo
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf canine-chain
-git clone https://github.com/provenanceLabs/canine-chain.git
-cd canine-chain
-git checkout v1.1.2-hotfix
+rm -rf provenance
+git clone https://github.com/provenance-io/provenance.git
+cd provenance
+git checkout v1.15.0
 
 # Build binaries
-make build
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.canine/cosmovisor/upgrades/v1.1.2-hotfix/bin
-mv build/canined $HOME/.canine/cosmovisor/upgrades/v1.1.2-hotfix/bin/
-rm -rf build
+# restart
+sudo systemctl restart provenanced && journalctl -u provenanced -f
 ```
 
-*Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!*
+

@@ -18,16 +18,15 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop canined
-cp $HOME/.canine/data/priv_validator_state.json $HOME/.canine/priv_validator_state.json.backup
-canined tendermint unsafe-reset-all --home $HOME/.canine
+sudo systemctl stop provenanced
+cp $HOME/.provenance/data/priv_validator_state.json $HOME/.provenance/priv_validator_state.json.backup
+provenanced tendermint unsafe-reset-all --home $HOME/.provenance
 ```
 
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://provenance.rpc.takeshi.team:443
-STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@provenance.rpc.takeshi.team:37656
+STATE_SYNC_RPC=https://rpc-provenance.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -38,9 +37,9 @@ sed -i \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
   -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.canine/config/config.toml
+  $HOME/.provenance/config/config.toml
 
-mv $HOME/.canine/priv_validator_state.json.backup $HOME/.canine/data/priv_validator_state.json
+mv $HOME/.provenance/priv_validator_state.json.backup $HOME/.provenance/data/priv_validator_state.json
 ```
 
 ### Download latest wasm
@@ -50,11 +49,11 @@ Currently state sync does not support copy of the `wasm` folder. Therefore, you 
 {% endhint %}
 
 ```bash
-curl -L https://snapshots.takeshi.team/provenance/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.canine
+curl -L https://snapshots.takeshi.team/provenance/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.provenance
 ```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start canined && sudo journalctl -u canined -f --no-hostname -o cat
+sudo systemctl start provenanced && sudo journalctl -u provenanced -f 
 ```

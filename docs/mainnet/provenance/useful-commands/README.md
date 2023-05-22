@@ -11,43 +11,43 @@ description: Useful set of commands for node operators. From key management to c
 #### Add new key
 
 ```bash
-canined keys add wallet
+provenanced keys add wallet
 ```
 
 #### Recover existing key
 
 ```bash
-canined keys add wallet --recover
+provenanced keys add wallet --recover
 ```
 
 #### List all keys
 
 ```bash
-canined keys list
+provenanced keys list
 ```
 
 #### Delete key
 
 ```bash
-canined keys delete wallet
+provenanced keys delete wallet
 ```
 
 #### Export key to the file
 
 ```bash
-canined keys export wallet
+provenanced keys export wallet
 ```
 
 #### Import key from the file
 
 ```bash
-canined keys import wallet wallet.backup
+provenanced keys import wallet wallet.backup
 ```
 
 #### Query wallet balance
 
 ```bash
-canined q bank balances $(canined keys show wallet -a)
+provenanced q bank balances $(provenanced keys show wallet -a)
 ```
 
 ## 👷 Validator management
@@ -59,9 +59,9 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 #### Create new validator
 
 ```bash
-canined tx staking create-validator \
+provenanced tx staking create-validator \
 --amount=1000000ujkl \
---pubkey=$(canined tendermint show-validator) \
+--pubkey=$(provenanced tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
@@ -81,7 +81,7 @@ canined tx staking create-validator \
 #### Edit existing validator
 
 ```bash
-canined tx staking edit-validator \
+provenanced tx staking edit-validator \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
@@ -98,31 +98,31 @@ canined tx staking edit-validator \
 #### Unjail validator
 
 ```bash
-canined tx slashing unjail --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx slashing unjail --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Jail reason
 
 ```bash
-canined query slashing signing-info $(canined tendermint show-validator)
+provenanced query slashing signing-info $(provenanced tendermint show-validator)
 ```
 
 #### List all active validators
 
 ```bash
-canined q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+provenanced q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### List all inactive validators
 
 ```bash
-canined q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+provenanced q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
 
 #### View validator details
 
 ```bash
-canined q staking validator $(canined keys show wallet --bech val -a)
+provenanced q staking validator $(provenanced keys show wallet --bech val -a)
 ```
 
 ## 💲 Token management
@@ -130,43 +130,43 @@ canined q staking validator $(canined keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-canined tx distribution withdraw-all-rewards --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx distribution withdraw-all-rewards --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-canined tx distribution withdraw-rewards $(canined keys show wallet --bech val -a) --commission --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx distribution withdraw-rewards $(provenanced keys show wallet --bech val -a) --commission --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-canined tx staking delegate $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx staking delegate $(provenanced keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-canined tx staking delegate <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx staking delegate <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-canined tx staking redelegate $(canined keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx staking redelegate $(provenanced keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-canined tx staking unbond $(canined keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx staking unbond $(provenanced keys show wallet --bech val -a) 1000000ujkl --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-canined tx bank send wallet <TO_WALLET_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1
+provenanced tx bank send wallet <TO_WALLET_ADDRESS> 1000000ujkl --from wallet --chain-id pio-mainnet-1
 ```
 
 ## 🗳 Governance
@@ -174,37 +174,37 @@ canined tx bank send wallet <TO_WALLET_ADDRESS> 1000000ujkl --from wallet --chai
 #### List all proposals
 
 ```bash
-canined query gov proposals
+provenanced query gov proposals
 ```
 
 #### View proposal by id
 
 ```bash
-canined query gov proposal 1
+provenanced query gov proposal 1
 ```
 
 #### Vote 'Yes'
 
 ```bash
-canined tx gov vote 1 yes --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx gov vote 1 yes --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'No'
 
 ```bash
-canined tx gov vote 1 no --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx gov vote 1 no --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-canined tx gov vote 1 abstain --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx gov vote 1 abstain --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-canined tx gov vote 1 nowithveto --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx gov vote 1 nowithveto --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
 
 ## ⚡️ Utility
@@ -213,8 +213,8 @@ canined tx gov vote 1 nowithveto --from wallet --chain-id pio-mainnet-1 --gas-ad
 
 ```bash
 CUSTOM_PORT=10
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.canine/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.canine/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.provenance/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.provenance/config/app.toml
 ```
 
 #### Update Indexer
@@ -222,13 +222,13 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTO
 ##### Disable indexer
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.canine/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.provenance/config/config.toml
 ```
 
 ##### Enable indexer
 
 ```bash
-sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.canine/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.provenance/config/config.toml
 ```
 
 #### Update pruning
@@ -239,7 +239,7 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.canine/config/app.toml
+  $HOME/.provenance/config/app.toml
 ```
 
 ## 🚨 Maintenance
@@ -247,25 +247,25 @@ sed -i \
 #### Get validator info
 
 ```bash
-canined status 2>&1 | jq .ValidatorInfo
+provenanced status 2>&1 | jq .ValidatorInfo
 ```
 
 #### Get sync info
 
 ```bash
-canined status 2>&1 | jq .SyncInfo
+provenanced status 2>&1 | jq .SyncInfo
 ```
 
 #### Get node peer
 
 ```bash
-echo $(canined tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.canine/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+echo $(provenanced tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.provenance/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
 
 #### Check if validator key is correct
 
 ```bash
-[[ $(canined q staking validator $(canined keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(canined status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+[[ $(provenanced q staking validator $(provenanced keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(provenanced status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
 
 #### Get live peers
@@ -277,19 +277,19 @@ curl -sS http://localhost:37657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ujkl\"/" $HOME/.canine/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ujkl\"/" $HOME/.provenance/config/app.toml
 ```
 
 #### Enable prometheus
 
 ```bash
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.canine/config/config.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.provenance/config/config.toml
 ```
 
 #### Reset chain data
 
 ```bash
-canined tendermint unsafe-reset-all --home $HOME/.canine --keep-addr-book
+provenanced tendermint unsafe-reset-all --home $HOME/.provenance --keep-addr-book
 ```
 
 #### Remove node
@@ -300,13 +300,13 @@ Please, before proceeding with the next step! All chain data will be lost! Make 
 
 ```bash
 cd $HOME
-sudo systemctl stop canined
-sudo systemctl disable canined
-sudo rm /etc/systemd/system/canined.service
+sudo systemctl stop provenanced
+sudo systemctl disable provenanced
+sudo rm /etc/systemd/system/provenanced.service
 sudo systemctl daemon-reload
-rm -f $(which canined)
-rm -rf $HOME/.canine
-rm -rf $HOME/canine-chain
+rm -f $(which provenanced)
+rm -rf $HOME/.provenance
+rm -rf $HOME/provenance-chain
 ```
 
 ## ⚙️ Service Management
@@ -320,41 +320,41 @@ sudo systemctl daemon-reload
 #### Enable service
 
 ```bash
-sudo systemctl enable canined
+sudo systemctl enable provenanced
 ```
 
 #### Disable service
 
 ```bash
-sudo systemctl disable canined
+sudo systemctl disable provenanced
 ```
 
 #### Start service
 
 ```bash
-sudo systemctl start canined
+sudo systemctl start provenanced
 ```
 
 #### Stop service
 
 ```bash
-sudo systemctl stop canined
+sudo systemctl stop provenanced
 ```
 
 #### Restart service
 
 ```bash
-sudo systemctl restart canined
+sudo systemctl restart provenanced
 ```
 
 #### Check service status
 
 ```bash
-sudo systemctl status canined
+sudo systemctl status provenanced
 ```
 
 #### Check service logs
 
 ```bash
-sudo journalctl -u canined -f --no-hostname -o cat
+sudo journalctl -u provenanced -f --no-hostname -o cat
 ```

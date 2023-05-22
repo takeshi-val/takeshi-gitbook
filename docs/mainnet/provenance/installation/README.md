@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.1.2-hotfix | **Custom Port**: 37
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.15.0 | **Custom Port**: 37
 
 ### Setup validator name
 
@@ -42,73 +42,59 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf canine-chain
-git clone https://github.com/provenanceLabs/canine-chain.git
-cd canine-chain
-git checkout v1.1.2-hotfix
+rm -rf provenance-chain
+git clone https://github.com/provenance-io/provenance.git
+cd provenance-chain
+git checkout v1.15.0
 
 # Build binaries
-make build
-
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.canine/cosmovisor/genesis/bin
-mv build/canined $HOME/.canine/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.canine/cosmovisor/genesis $HOME/.canine/cosmovisor/current
-sudo ln -s $HOME/.canine/cosmovisor/current/bin/canined /usr/local/bin/canined
+make install
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
-sudo tee /etc/systemd/system/canined.service > /dev/null << EOF
+sudo tee /etc/systemd/system/provenanced.service > /dev/null << EOF
 [Unit]
 Description=provenance node service
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which provenanced) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.canine"
-Environment="DAEMON_NAME=canined"
+Environment="DAEMON_HOME=$HOME/.provenance"
+Environment="DAEMON_NAME=provenanced"
 Environment="UNSAFE_SKIP_BACKUP=true"
 
 [Install]
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable canined
+sudo systemctl enable provenanced
 ```
 
 ### Initialize the node
 
 ```bash
 # Set node configuration
-canined config chain-id pio-mainnet-1
-canined config keyring-backend file
-canined config node tcp://localhost:37657
+provenanced config chain-id pio-mainnet-1
 
 # Initialize the node
-canined init $MONIKER --chain-id pio-mainnet-1
+provenanced init $MONIKER --chain-id pio-mainnet-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/provenance/genesis.json > $HOME/.canine/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/provenance/addrbook.json > $HOME/.canine/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/provenance/genesis.json > $HOME/.provenance/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/provenance/addrbook.json > $HOME/.provenance/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@provenance.rpc.takeshi.team:37659\"|" $HOME/.canine/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@provenance-seed.takeshi.team:10556\"|" $HOME/.provenance/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002ujkl\"|" $HOME/.canine/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002ujkl\"|" $HOME/.provenance/config/app.toml
 
 # Set pruning
 sed -i \
@@ -116,22 +102,22 @@ sed -i \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.canine/config/app.toml
+  $HOME/.provenance/config/app.toml
 
 # Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:37658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:37657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:37060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:37656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":37660\"%" $HOME/.canine/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:37317\"%; s%^address = \":8080\"%address = \":37080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:37090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:37091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:37545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:37546\"%" $HOME/.canine/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:37658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:37657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:37060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:37656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":37660\"%" $HOME/.provenance/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:37317\"%; s%^address = \":8080\"%address = \":37080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:37090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:37091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:37545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:37546\"%" $HOME/.provenance/config/app.toml
 ```
 
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/provenance/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.canine
-[[ -f $HOME/.canine/data/upgrade-info.json ]] && cp $HOME/.canine/data/upgrade-info.json $HOME/.canine/cosmovisor/genesis/upgrade-info.json
+curl -L https://snapshots.takeshi.team/provenance/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.provenance
+[[ -f $HOME/.provenance/data/upgrade-info.json ]] && cp $HOME/.provenance/data/upgrade-info.json $HOME/.provenance/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start canined && sudo journalctl -u canined -f --no-hostname -o cat
+sudo systemctl start provenanced && sudo journalctl -u provenanced -f 
 ```
