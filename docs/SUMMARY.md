@@ -11,13 +11,6 @@
   * [State sync](mainnet/beezee/state-sync/README.md)
   * [Useful commands](mainnet/beezee/useful-commands/README.md)
 
-* [Cosmos Hub](mainnet/cosmoshub/README.md)
-  * [Installation](mainnet/cosmoshub/installation/README.md)
-  * [Upgrade](mainnet/cosmoshub/upgrade/README.md)
-  * [Snapshot](mainnet/cosmoshub/snapshot/README.md)
-  * [State sync](mainnet/cosmoshub/state-sync/README.md)
-  * [Useful commands](mainnet/cosmoshub/useful-commands/README.md)
-
 * [Konstellation](mainnet/konstellation/README.md)
   * [Installation](mainnet/konstellation/installation/README.md)
   * [Upgrade](mainnet/konstellation/upgrade/README.md)
@@ -65,20 +58,6 @@
   * [Snapshot](mainnet/pylons/snapshot/README.md)
   * [State sync](mainnet/pylons/state-sync/README.md)
   * [Useful commands](mainnet/pylons/useful-commands/README.md)
-
-* [Canto](mainnet/canto/README.md)
-  * [Installation](mainnet/canto/installation/README.md)
-  * [Upgrade](mainnet/canto/upgrade/README.md)
-  * [Snapshot](mainnet/canto/snapshot/README.md)
-  * [State sync](mainnet/canto/state-sync/README.md)
-  * [Useful commands](mainnet/canto/useful-commands/README.md)
-
-* [Stride](mainnet/stride/README.md)
-  * [Installation](mainnet/stride/installation/README.md)
-  * [Upgrade](mainnet/stride/upgrade/README.md)
-  * [Snapshot](mainnet/stride/snapshot/README.md)
-  * [State sync](mainnet/stride/state-sync/README.md)
-  * [Useful commands](mainnet/stride/useful-commands/README.md)
 
 * [Quicksilver](mainnet/quicksilver/README.md)
   * [Installation](mainnet/quicksilver/installation/README.md)
