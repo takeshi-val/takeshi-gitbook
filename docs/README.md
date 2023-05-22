@@ -12,7 +12,7 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](broken-reference)
+<img src="https://github.com/takeshi-val/Logo/raw/main/pylons.png" alt="" data-size="line"> [Pylons](broken-reference/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" alt="" data-size="line"> [Provenance](mainnet/provenance/)
 
@@ -36,4 +36,4 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](mainnet/quicksilver/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](broken-reference)
