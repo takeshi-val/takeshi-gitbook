@@ -14,7 +14,7 @@ snapshot server is periodically beeing state-synced.
 
 Snapshots are taken automatically every 6 hours starting at **02:15 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.2.2
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.2.10
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
