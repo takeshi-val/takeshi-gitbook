@@ -42,9 +42,9 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf provenance-chain
+rm -rf provenance
 git clone https://github.com/provenance-io/provenance.git
-cd provenance-chain
+cd provenance
 git checkout v1.15.0
 
 # Build binaries
