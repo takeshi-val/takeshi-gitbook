@@ -4,7 +4,7 @@
 
 Chain4Energy is a revolutionary Web 3.0 Energy Marketplace for the global energy economy.
 
-**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 | **Wasm**: OFF
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.2.0 | **Wasm**: OFF
 
 [Website](https://c4e.io/) | [Discord](https://discord.gg/chain4energy) | [Twitter](https://twitter.com/Chain4Energy)
 

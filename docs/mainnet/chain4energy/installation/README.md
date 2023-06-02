@@ -1,7 +1,7 @@
 ---
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: perun-1 | **Latest Version Tag**: v1.1.0 
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.2.0 
 
 ### Setup validator name
 
@@ -43,19 +43,18 @@ go version
 
 ```bash
 cd $HOME
-git clone --depth 1 --branch  v1.1.0  https://github.com/chain4energy/c4e-chain.git
+git clone --depth 1 --branch  v1.2.0  https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-git checkout v1.1.0
+git checkout v1.2.0
 
 # Install binaries
 make install
 
 #check version
-c4ed version --long
+c4ed version 
 
-#server_name: c4ed
-#version: 1.1.0
-#commit: d67fd60d07b41c52977539b9fb9c0c67de23837e
+#version: 1.2.0
+
 
 ```
 ### Initialize the node
