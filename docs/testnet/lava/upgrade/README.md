@@ -6,7 +6,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/lava.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.9.8 | **Custom Port**: 44
+**Chain ID**: lava-testnet-1 | **Latest Version Tag**: v0.15.1 | **Custom Port**: 44
 
 {% hint style='info' %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
@@ -21,7 +21,7 @@ cd $HOME
 rm -rf lava
 git clone https://github.com/lavanet/lava.git
 cd lava
-git checkout v0.9.8
+git checkout v0.15.1
 
 # Install binaries
 make install
