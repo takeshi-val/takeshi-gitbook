@@ -32,7 +32,6 @@ d5519e378247dfb61dfe90652d1fe3e2b3005a5b@celestia-testnet.rpc.takeshi.team:20656
 3f472746f46493309650e5a033076689996c8881@celestia-testnet.rpc.takeshi.team:20659
 ```
 
-**addrbook**
 
 ```bash
 curl -Ls https://snapshots.takeshi.team/celestia-testnet/addrbook.json > $HOME/.celestia-app/config/addrbook.json
