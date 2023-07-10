@@ -60,6 +60,11 @@
 
 ## TESTNET
 
+* [Althea](testnet/althea/README.md)
+  * [Installation](testnet/althea/installation/README.md)
+  * [Upgrade](testnet/althea/upgrade/README.md)
+  * [State sync](testnet/althea/state-sync/README.md)
+  * [Commands](testnet/althea/commands/README.md)
 * [Hypersign](testnet/hypersign/README.md)
   * [Installation](testnet/hypersign/installation/README.md)
   * [Upgrade](testnet/hypersign/upgrade/README.md)
