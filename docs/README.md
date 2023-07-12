@@ -30,6 +30,10 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](testnet/dymension/)
 
+{% content-ref url="testnet/althea/" %}
+[althea](testnet/althea/)
+{% endcontent-ref %}
+
 <img src="https://github.com/takeshi-val/Logo/raw/main/hypersign.png" alt="" data-size="line"> [Hypersign](testnet/hypersign/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/lava.png" alt="" data-size="line"> [Lava](testnet/lava/)
