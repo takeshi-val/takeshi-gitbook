@@ -52,4 +52,4 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/elys.png" alt="" data-size="line"> [Elys](testnet/elys/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/ojo.png" alt="" data-size="line"> [Quicksilver](testnet/ojo/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/ojo.png" alt="" data-size="line"> [Ojo](testnet/ojo/)
