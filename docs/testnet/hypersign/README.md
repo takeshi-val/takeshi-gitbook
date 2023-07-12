@@ -31,7 +31,7 @@ d5519e378247dfb61dfe90652d1fe3e2b3005a5b@hypersign-testnet.rpc.takeshi.team:3165
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@hypersign-testnet.rpc.takeshi.team:31659
+a85a651a3cf1746694560c5b6f76d566c04ca581@hypersign-testnet.rpc.takeshi.team:31659
 ```
 
 **addrbook**

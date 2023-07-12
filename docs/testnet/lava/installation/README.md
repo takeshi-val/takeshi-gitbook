@@ -89,7 +89,7 @@ curl -Ls https://snapshots.takeshi.team/lava-testnet/genesis.json > $HOME/.lava/
 curl -Ls https://snapshots.takeshi.team/lava-testnet/addrbook.json > $HOME/.lava/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@lava-rpc.takeshi.team:44659\"|" $HOME/.lava/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@lava-rpc.takeshi.team:44659\"|" $HOME/.lava/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ulava\"|" $HOME/.lava/config/app.toml

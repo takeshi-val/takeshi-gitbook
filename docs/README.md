@@ -26,6 +26,8 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](mainnet/quicksilver/)
 
+<img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt="" data-size="line"> [Composable](mainnet/composable/)
+
 ## TESTNET
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt="" data-size="line"> [Althea](testnet/althea/)
@@ -47,9 +49,5 @@ description: >-
 <img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](testnet/quicksilver/)
-
-{% content-ref url="testnet/althea/" %}
-[althea](testnet/althea/)
-{% endcontent-ref %}
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/ojo.png" alt="" data-size="line"> [Ojo](testnet/ojo/)

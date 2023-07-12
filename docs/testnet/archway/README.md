@@ -10,7 +10,7 @@ Archway is an incentivized smart contract chain for Cosmos  ecosystem which give
 
 
 
-Subscribe to our free [🤖 Testnet Proposal Bot](https://t.me/kjnodes_testnet_proposal_bot) to never miss upcoming proposals
+
 
 
 ## Chain explorer
@@ -33,7 +33,7 @@ d5519e378247dfb61dfe90652d1fe3e2b3005a5b@archway-testnet.rpc.takeshi.team:15656
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@archway-testnet.rpc.takeshi.team:15659
+a85a651a3cf1746694560c5b6f76d566c04ca581@archway-testnet.rpc.takeshi.team:15659
 ```
 
 **addrbook**

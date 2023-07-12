@@ -106,7 +106,7 @@ curl -Ls https://snapshots.takeshi.team/althea-testnet/genesis.json > $HOME/.alt
 curl -Ls https://snapshots.takeshi.team/althea-testnet/addrbook.json > $HOME/.althea/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@althea-testnet.rpc.takeshi.team:15259\"|" $HOME/.althea/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@althea-testnet.rpc.takeshi.team:15259\"|" $HOME/.althea/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ualthea\"|" $HOME/.althea/config/app.toml

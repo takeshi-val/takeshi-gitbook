@@ -105,7 +105,7 @@ curl -Ls https://snapshots.takeshi.team/nibiru-testnet/genesis.json > $HOME/.nib
 curl -Ls https://snapshots.takeshi.team/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.takeshi.team:39659\"|" $HOME/.nibid/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@nibiru-testnet.rpc.takeshi.team:39659\"|" $HOME/.nibid/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025unibi\"|" $HOME/.nibid/config/app.toml

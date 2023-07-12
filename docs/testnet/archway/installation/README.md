@@ -106,7 +106,7 @@ curl -Ls https://snapshots.takeshi.team/archway-testnet/genesis.json > $HOME/.ar
 curl -Ls https://snapshots.takeshi.team/archway-testnet/addrbook.json > $HOME/.archway/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@archway-testnet.rpc.takeshi.team:15659\"|" $HOME/.archway/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@archway-testnet.rpc.takeshi.team:15659\"|" $HOME/.archway/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0aconst\"|" $HOME/.archway/config/app.toml

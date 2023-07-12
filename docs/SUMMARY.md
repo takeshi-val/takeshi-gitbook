@@ -57,6 +57,11 @@
   * [Snapshot](mainnet/quicksilver/snapshot/README.md)
   * [State sync](mainnet/quicksilver/state-sync/README.md)
   * [Useful commands](mainnet/quicksilver/useful-commands/README.md)
+* [Composable](mainnet/composable/README.md)
+  * [Installation](mainnet/composable/installation/README.md)
+  * [Upgrade](mainnet/composable/upgrade/README.md)
+  * [State sync](mainnet/composable/state-sync/README.md)
+  * [Useful commands](mainnet/composable/useful-commands/README.md)
 
 ## TESTNET
 

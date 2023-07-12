@@ -10,9 +10,6 @@ Althea's unique cooperative vision for the internet  brings peering from the dat
 
 
 
-Subscribe to our free [🤖 Testnet Proposal Bot](https://t.me/kjnodes_testnet_proposal_bot) to never miss upcoming proposals
-
-
 ## Chain explorer
 [https://explorer.takeshi.team/althea-testnet](https://explorer.takeshi.team/althea-testnet)
 
@@ -33,7 +30,7 @@ d5519e378247dfb61dfe90652d1fe3e2b3005a5b@althea-testnet.rpc.takeshi.team:15256
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@althea-testnet.rpc.takeshi.team:15259
+a85a651a3cf1746694560c5b6f76d566c04ca581@althea-testnet.rpc.takeshi.team:15259
 ```
 
 **addrbook**

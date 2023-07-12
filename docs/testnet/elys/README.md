@@ -10,7 +10,7 @@ Elys is a fast layer 1 blockchain powered by the Cosmos-SDK.  It is the first, a
 
 
 
-Subscribe to our free [🤖 Testnet Proposal Bot](https://t.me/kjnodes_testnet_proposal_bot) to never miss upcoming proposals
+
 
 
 ## Chain explorer
@@ -33,7 +33,7 @@ d5519e378247dfb61dfe90652d1fe3e2b3005a5b@elys-testnet.rpc.takeshi.team:15356
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@elys-testnet.rpc.takeshi.team:15359
+a85a651a3cf1746694560c5b6f76d566c04ca581@elys-testnet.rpc.takeshi.team:15359
 ```
 
 **addrbook**

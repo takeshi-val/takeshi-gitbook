@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: banksy-testnet-3 | **Latest Version Tag**: v3.0.3-testnet | **Custom Port**: 159
+**Chain ID**: centauri-1 | **Latest Version Tag**: v2.3.5 | **Custom Port**: 159
 
 ### Setup validator name
 
@@ -42,22 +42,22 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-rm -rf composable-testnet
-git clone https://github.com/notional-labs/composable-testnet.git
-cd composable-testnet
-git checkout v3.0.3-testnet
+rm -rf composable-centauri
+git clone https://github.com/notional-labs/composable-centauri.git
+cd composable-centauri
+git checkout v2.3.5
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
 mkdir -p $HOME/.banksy/cosmovisor/genesis/bin
-mv bin/centaurid $HOME/.banksy/cosmovisor/genesis/bin/
+mv bin/banksyd $HOME/.banksy/cosmovisor/genesis/bin/
 rm -rf build
 
 # Create application symlinks
 sudo ln -s $HOME/.banksy/cosmovisor/genesis $HOME/.banksy/cosmovisor/current -f
-sudo ln -s $HOME/.banksy/cosmovisor/current/bin/centaurid /usr/local/bin/centaurid -f
+sudo ln -s $HOME/.banksy/cosmovisor/current/bin/banksyd /usr/local/bin/banksyd -f
 ```
 
 ### Install Cosmovisor and create a service
@@ -67,9 +67,9 @@ sudo ln -s $HOME/.banksy/cosmovisor/current/bin/centaurid /usr/local/bin/centaur
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
-sudo tee /etc/systemd/system/centaurid.service > /dev/null << EOF
+sudo tee /etc/systemd/system/banksyd.service > /dev/null << EOF
 [Unit]
-Description=composable-testnet node service
+Description=composable node service
 After=network-online.target
 
 [Service]
@@ -79,7 +79,7 @@ Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
 Environment="DAEMON_HOME=$HOME/.banksy"
-Environment="DAEMON_NAME=centaurid"
+Environment="DAEMON_NAME=banksyd"
 Environment="UNSAFE_SKIP_BACKUP=true"
 Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.banksy/cosmovisor/current/bin"
 
@@ -87,26 +87,26 @@ Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable centaurid
+sudo systemctl enable banksyd
 ```
 
 ### Initialize the node
 
 ```bash
 # Set node configuration
-centaurid config chain-id banksy-testnet-3
-centaurid config keyring-backend test
-centaurid config node tcp://localhost:15957
+banksyd config chain-id centauri-1
+banksyd config keyring-backend file
+banksyd config node tcp://localhost:15957
 
 # Initialize the node
-centaurid init $MONIKER --chain-id banksy-testnet-3
+banksyd init $MONIKER --chain-id centauri-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/composable-testnet/genesis.json > $HOME/.banksy/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/composable-testnet/addrbook.json > $HOME/.banksy/config/addrbook.json
+curl -Ls https://snapshots.takeshi.team/composable/genesis.json > $HOME/.banksy/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/composable/addrbook.json > $HOME/.banksy/config/addrbook.json
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@composable-testnet.rpc.takeshi.team:15959\"|" $HOME/.banksy/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@composable.rpc.takeshi.team:15959\"|" $HOME/.banksy/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ppica\"|" $HOME/.banksy/config/app.toml
@@ -127,12 +127,12 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:15917\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/composable-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.banksy
+curl -L https://snapshots.takeshi.team/composable/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.banksy
 [[ -f $HOME/.banksy/data/upgrade-info.json ]] && cp $HOME/.banksy/data/upgrade-info.json $HOME/.banksy/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start centaurid && sudo journalctl -u centaurid -f --no-hostname -o cat
+sudo systemctl start banksyd && sudo journalctl -u banksyd -f --no-hostname -o cat
 ```

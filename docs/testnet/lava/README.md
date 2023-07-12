@@ -30,7 +30,7 @@ f19e1a6973b0f8e43189e618eb8e61693e892231@lava-rpc.takeshi.team:443```
 **seed-node**
 
 ```text
-3f472746f46493309650e5a033076689996c8881@lava-rpc.takeshi.team:44659
+a85a651a3cf1746694560c5b6f76d566c04ca581@lava-rpc.takeshi.team:44659
 ```
 
 **addrbook**
