@@ -110,3 +110,8 @@
   * [Snapshot](testnet/nibiru/snapshot/README.md)
   * [State sync](testnet/nibiru/state-sync/README.md)
   * [Useful commands](testnet/nibiru/useful-commands/README.md)
+* [Elys](testnet/elys/README.md)
+  * [Installation](testnet/elys/installation/README.md)
+  * [Upgrade](testnet/elys/upgrade/README.md)
+  * [State sync](testnet/elys/state-sync/README.md)
+  * [Useful commands](testnet/elys/useful-commands/README.md)
