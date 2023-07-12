@@ -4,7 +4,7 @@ description: With our state sync services you will be able to catch up latest ch
 
 # State sync
 
-<figure><img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/althea.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/archway.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style='info' %}
 State Sync allows a new node to join the network by fetching a snapshot of the application state 
@@ -18,16 +18,16 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop althea
-cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
-althea tendermint unsafe-reset-all --keep-addr-book --home $HOME/.althea
+sudo systemctl stop archwayd
+cp $HOME/.archway/data/priv_validator_state.json $HOME/.archway/priv_validator_state.json.backup
+archwayd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.archway
 ```
 
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://althea-testnet.rpc.takeshi.team:443
-STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@althea-testnet.rpc.takeshi.team:15256
+STATE_SYNC_RPC=https://archway-testnet.rpc.takeshi.team:443
+STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@archway-testnet.rpc.takeshi.team:15656
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -38,15 +38,23 @@ sed -i \
   -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
   -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
   -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.althea/config/config.toml
+  $HOME/.archway/config/config.toml
 
-mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
+mv $HOME/.archway/priv_validator_state.json.backup $HOME/.archway/data/priv_validator_state.json
 ```
 
+### Download latest wasm
 
+{% hint style='info' %}
+Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
+{% endhint %}
+
+```bash
+curl -L https://snapshots.takeshi.team/archway-testnet/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.archway
+```
 
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start althea && sudo journalctl -u althea -f --no-hostname -o cat
+sudo systemctl start archwayd && sudo journalctl -u archwayd -f --no-hostname -o cat
 ```
