@@ -21,12 +21,6 @@ Althea's unique cooperative vision for the internet  brings peering from the dat
 
 ## Peering
 
-**state-sync**
-
-```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@althea-testnet.rpc.takeshi.team:15256
-```
-
 **seed-node**
 
 ```text
