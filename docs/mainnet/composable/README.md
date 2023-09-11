@@ -4,7 +4,7 @@
 
 The complete infrastructure for cross-chain smart  contracts, applications, and modular functionality.
 
-**Chain ID**: centauri-1 | **Latest Version Tag**: v2.3.5 | **Wasm**: OFF
+**Chain ID**: centauri-1 | **Latest Version Tag**: v4.5.0 | **Wasm**: OFF
 
 [Website](https://www.composable.finance) | [Discord](https://discord.gg/composable) | [Twitter](https://twitter.com/ComposableFin)
 

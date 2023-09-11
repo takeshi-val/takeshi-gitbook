@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: centauri-1 | **Latest Version Tag**: v2.3.5 | **Custom Port**: 159
+**Chain ID**: centauri-1 | **Latest Version Tag**: v4.5.0 
 
 ### Setup validator name
 
@@ -45,27 +45,15 @@ cd $HOME
 rm -rf composable-centauri
 git clone https://github.com/notional-labs/composable-centauri.git
 cd composable-centauri
-git checkout v2.3.5
+git checkout v4.5.0
 
 # Build binaries
-make build
-
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.banksy/cosmovisor/genesis/bin
-mv bin/banksyd $HOME/.banksy/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-sudo ln -s $HOME/.banksy/cosmovisor/genesis $HOME/.banksy/cosmovisor/current -f
-sudo ln -s $HOME/.banksy/cosmovisor/current/bin/banksyd /usr/local/bin/banksyd -f
+make install
 ```
 
 ### Install Cosmovisor and create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
 sudo tee /etc/systemd/system/banksyd.service > /dev/null << EOF
 [Unit]
@@ -74,7 +62,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which centaurid) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535

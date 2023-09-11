@@ -6,7 +6,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: centauri-1 | **Latest Version Tag**: v2.3.5 | **Custom Port**: 159
+**Chain ID**: centauri-1 | **Latest Version Tag**: v4.5.0 
 
 {% hint style='info' %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
