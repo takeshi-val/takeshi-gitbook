@@ -8,16 +8,6 @@ description: Setting up your validator node has never been so easy. Get your val
 
 **Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.2-beta 
 
-### Setup validator name
-
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
-{% endhint %}
-
-```bash
-MONIKER="YOUR_MONIKER"
-```
-
 ### Install dependencies
 
 #### Update system and install build tools
@@ -85,7 +75,7 @@ dymd config chain-id froopyland_100-1
 
 
 # Initialize the node
-dymd init $MONIKER --chain-id froopyland_100-1
+dymd init node --chain-id froopyland_100-1
 
 # Download genesis 
 wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/froopyland/genesis.json"

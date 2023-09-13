@@ -6,25 +6,14 @@ description: With our state sync services you will be able to catch up latest ch
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-State Sync allows a new node to join the network by fetching a snapshot of the application state 
-at a recent height instead of fetching and replaying all historical blocks. Since the 
-application state is generally much smaller than the blocks, and restoring it is much 
-faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
-{% endhint %}
-
-{% hint style='warning' %}
-Currently dymension does not support State sync 😢
-{% endhint %}
-
 ## Instructions
 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop althea
+sudo systemctl stop dymd
 cp $HOME/.dymension/data/priv_validator_state.json $HOME/.dymension/priv_validator_state.json.backup
-dymd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.althea
+dymd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.dymension
 ```
 
 ### Get and configure the state sync information
@@ -46,8 +35,6 @@ sed -i \
 
 mv $HOME/.dymension/priv_validator_state.json.backup $HOME/.dymension/data/priv_validator_state.json
 ```
-
-
 
 ### Restart the service and check the log
 
