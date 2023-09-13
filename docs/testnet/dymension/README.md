@@ -4,7 +4,7 @@
 
 Dymension is a home for easily deployable and lightning fast app-chains, called RollApps.
 
-**Chain ID**: 35-C | **Latest Version Tag**: v0.2.0-beta | **Wasm**: OFF
+**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.0-rc2 | **Wasm**: OFF
 
 [Website](https://dymension.xyz/) | [Discord](https://discord.gg/dymension) | [Twitter](https://twitter.com/dymensionXYZ)
 

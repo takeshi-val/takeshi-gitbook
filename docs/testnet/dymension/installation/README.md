@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: 35-C | **Latest Version Tag**: v0.2.0-beta 
+**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.2-beta 
 
 ### Setup validator name
 
