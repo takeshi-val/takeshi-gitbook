@@ -4,7 +4,7 @@
 
 Dymension is a home for easily deployable and lightning fast app-chains, called RollApps.
 
-**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.0-rc2 | **Wasm**: OFF
+**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.2-beta | **Wasm**: OFF
 
 [Website](https://dymension.xyz/) | [Discord](https://discord.gg/dymension) | [Twitter](https://twitter.com/dymensionXYZ)
 
@@ -14,22 +14,22 @@ Dymension is a home for easily deployable and lightning fast app-chains, called 
 
 ## Public endpoints
 
-* api: [https://dymension-testnet.api.takeshi.team](https://dym-api.takeshi.team)
-* rpc: [https://dymension-testnet.rpc.takeshi.team](https://dym-rpc.takeshi.team)
-* grpc: [https://dymension-testnet.grpc.takeshi.team](https://dym-grpc.takeshi.team)
+* api: [https://dymension-api.takeshi.team](https://dymension-api.takeshi.team)
+* rpc: [https://dymension-rpc.takeshi.team](https://dymension-rpc.takeshi.team)
+* grpc: [https://dymension-grpc.takeshi.team](https://dymension-grpc.takeshi.team)
 
 ## Peering
 
 **state-sync**
 
 ```text
-d5519e378247dfb61dfe90652d1fe3e2b3005a5b@dym-rpc.takeshi.team:27656
+d5519e378247dfb61dfe90652d1fe3e2b3005a5b@dymension-rpc.takeshi.team:443
 ```
 
 **seed-node**
 
 ```text
-a85a651a3cf1746694560c5b6f76d566c04ca581@dym-rpc.takeshi.team:27659
+a85a651a3cf1746694560c5b6f76d566c04ca581@dymension-seed.takeshi.team:443
 ```
 
 **addrbook**

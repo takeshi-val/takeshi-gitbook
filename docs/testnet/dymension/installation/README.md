@@ -42,8 +42,9 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v1.0.2-beta 
+git clone https://github.com/dymensionxyz/dymension.git
 cd dymension
+git checkout v1.0.2-beta
 make install
 
 #chek version
