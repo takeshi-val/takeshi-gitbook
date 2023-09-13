@@ -20,24 +20,11 @@ MONIKER="YOUR_MONIKER"
 
 ### Install dependencies
 
-#### Add package repository for Node.js
-
-```bash
-curl -Ls https://deb.nodesource.com/setup_16.x | sudo bash
-```
-
-#### Add package repository for Yarn
-
-```bash
-curl -Ls https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-```
-
 #### Update system and install build tools
 
 ```bash
 sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential nodejs=16.* yarn
+sudo apt -qy install curl git jq lz4 
 sudo apt -qy upgrade
 ```
 
@@ -55,11 +42,12 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta
+git clone https://github.com/dymensionxyz/dymension.git --branch v1.0.2-beta 
 cd dymension
 make install
+
 #chek version
-v0.2.0-beta
+v1.0.2-beta 
 ```
 
 ### Create a service
@@ -92,14 +80,14 @@ sudo systemctl enable dymd
 
 ```bash
 # Set node configuration
-dymd config chain-id 35-C
-dymd config node tcp://localhost:27657
+dymd config chain-id froopyland_100-1
+
 
 # Initialize the node
-dymd init $MONIKER --chain-id 35-C
+dymd init $MONIKER --chain-id froopyland_100-1
 
 # Download genesis 
-wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/35-C/pre-genesis.json"
+wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/froopyland/genesis.json"
 
 # Add seeds
 sed -i -e "s|^seeds *=.*|seeds = \"b78dd0e25e28ec0b43412205f7c6780be8775b43@dym.seed.takeshi.team:10356\"|" $HOME/.dymension/config/config.toml
@@ -118,13 +106,6 @@ sed -i \
 # Set custom ports
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:27658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:27657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:27060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:27656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":27660\"%" $HOME/.dymension/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"%; s%^address = \":8080\"%address = \":27080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:27090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:27091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:27545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:27546\"%" $HOME/.dymension/config/app.toml
-```
-
-### Download latest chain snapshot
-
-```bash
-curl -L https://snapshots.takeshi.team/dymension-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.dymension
-[[ -f $HOME/.dymension/data/upgrade-info.json ]] && cp $HOME/.dymension/data/upgrade-info.json $HOME/.dymension/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
