@@ -8,10 +8,6 @@ Dymension is a home for easily deployable and lightning fast app-chains, called 
 
 [Website](https://dymension.xyz/) | [Discord](https://discord.gg/dymension) | [Twitter](https://twitter.com/dymensionXYZ)
 
-
-## Chain explorer
-[https://explorer.takeshi.team/dymension-testnet](https://explorer.takeshi.team/dymension-testnet)
-
 ## Public endpoints
 
 * api: [https://dymension-api.takeshi.team](https://dymension-api.takeshi.team)
