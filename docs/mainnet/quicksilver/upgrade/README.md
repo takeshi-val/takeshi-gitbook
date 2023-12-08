@@ -6,7 +6,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.14
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.17
 
 
 ## Download and build upgrade binaries
@@ -17,7 +17,7 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.2.14
+git checkout v1.2.17
 
 # Build binaries
 make install

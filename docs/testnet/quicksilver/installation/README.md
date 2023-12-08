@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.2 | **Custom Port**: 11
+**Chain ID**: rhye-1 | **Latest Version Tag**: v1.4.4-rc.3 
 
 ### Setup validator name
 
@@ -45,26 +45,16 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.2.2
+git checkout v1.4.4-rc.3
 
-# Build binaries
-make build
+# Install binaries
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.quicksilverd/cosmovisor/genesis/bin
-mv build/quicksilverd $HOME/.quicksilverd/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.quicksilverd/cosmovisor/genesis $HOME/.quicksilverd/cosmovisor/current
-sudo ln -s $HOME/.quicksilverd/cosmovisor/current/bin/quicksilverd /usr/local/bin/quicksilverd
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
 
 # Create service
 sudo tee /etc/systemd/system/quicksilverd.service > /dev/null << EOF
@@ -74,7 +64,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which quicksilverd) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -93,12 +83,10 @@ sudo systemctl enable quicksilverd
 
 ```bash
 # Set node configuration
-quicksilverd config chain-id quicksilver-2
-quicksilverd config keyring-backend file
-quicksilverd config node tcp://localhost:11657
+quicksilverd config chain-id rhye-1
 
 # Initialize the node
-quicksilverd init $MONIKER --chain-id quicksilver-2
+quicksilverd init $MONIKER --chain-id rhye-1
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/quicksilver/genesis.json > $HOME/.quicksilverd/config/genesis.json
@@ -118,20 +106,9 @@ sed -i \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.quicksilverd/config/app.toml
 
-# Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:11658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:11657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:11060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:11656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":11660\"%" $HOME/.quicksilverd/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:11317\"%; s%^address = \":8080\"%address = \":11080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:11090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:11091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:11545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:11546\"%" $HOME/.quicksilverd/config/app.toml
 ```
-
-### Download latest chain snapshot
-
-```bash
-curl -L https://snapshots.takeshi.team/quicksilver/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.quicksilverd
-[[ -f $HOME/.quicksilverd/data/upgrade-info.json ]] && cp $HOME/.quicksilverd/data/upgrade-info.json $HOME/.quicksilverd/cosmovisor/genesis/upgrade-info.json
-```
-
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f --no-hostname -o cat
+sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f 
 ```
