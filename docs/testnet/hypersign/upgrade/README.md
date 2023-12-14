@@ -6,7 +6,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/hypersign.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: jagrat | **Latest Version Tag**: v0.1.5 | **Custom Port**: 31
+**Chain ID**: prajna-1 | **Latest Version Tag**: v0.2.0 
 
 {% hint style='info' %}
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade.
@@ -21,15 +21,13 @@ cd $HOME
 rm -rf hid-node
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
-git checkout v0.1.5
+git checkout v0.2.0
 
-# Build binaries
-make build
+# Install binaries
+make install
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.hid-node/cosmovisor/upgrades/v015/bin
-mv build/hid-noded $HOME/.hid-node/cosmovisor/upgrades/v015/bin/
-rm -rf build
+# Restart service
+sudo systemctl restart hid-noded && journalctl -u hid-noded -f
 ```
 
 *Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!*

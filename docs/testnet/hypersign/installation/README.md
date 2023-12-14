@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/hypersign.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: jagrat | **Latest Version Tag**: v0.1.5 | **Custom Port**: 31
+**Chain ID**: prajna-1 | **Latest Version Tag**: v0.2.0 
 
 ### Setup validator name
 
@@ -45,28 +45,15 @@ cd $HOME
 rm -rf hid-node
 git clone https://github.com/hypersign-protocol/hid-node.git
 cd hid-node
-git checkout v0.1.5
+git checkout v0.2.0
 
-# Build binaries
-make build
-
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.hid-node/cosmovisor/genesis/bin
-mv build/hid-noded $HOME/.hid-node/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-ln -s $HOME/.hid-node/cosmovisor/genesis $HOME/.hid-node/cosmovisor/current
-sudo ln -s $HOME/.hid-node/cosmovisor/current/bin/hid-noded /usr/local/bin/hid-noded
+# Install binaries
+make install
 ```
 
-### Install Cosmovisor and create a service
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
-# Create service
 sudo tee /etc/systemd/system/hid-noded.service > /dev/null << EOF
 [Unit]
 Description=hypersign-testnet node service
@@ -74,7 +61,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which hid-noded) run start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
@@ -93,7 +80,7 @@ sudo systemctl enable hid-noded
 
 ```bash
 # Initialize the node
-hid-noded init $MONIKER --chain-id jagrat
+hid-noded init $MONIKER --chain-id prajna-1
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/hypersign-testnet/genesis.json > $HOME/.hid-node/config/genesis.json
@@ -112,21 +99,10 @@ sed -i \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.hid-node/config/app.toml
-
-# Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:31658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:31657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:31060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:31656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":31660\"%" $HOME/.hid-node/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:31317\"%; s%^address = \":8080\"%address = \":31080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:31090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:31091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:31545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:31546\"%" $HOME/.hid-node/config/app.toml
-```
-
-### Download latest chain snapshot
-
-```bash
-curl -L https://snapshots.takeshi.team/hypersign-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.hid-node
-[[ -f $HOME/.hid-node/data/upgrade-info.json ]] && cp $HOME/.hid-node/data/upgrade-info.json $HOME/.hid-node/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start hid-noded && sudo journalctl -u hid-noded -f --no-hostname -o cat
+sudo systemctl start hid-noded && sudo journalctl -u hid-noded -f 
 ```
