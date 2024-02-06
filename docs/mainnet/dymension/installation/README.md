@@ -84,7 +84,7 @@ dymd config chain-id dymension_1100-1
 dymd init node --chain-id dymension_1100-1
 
 # Download genesis 
-wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/froopyland/genesis.json"
+wget -O $HOME/.dymension/config/genesis.json "https://github.com/dymensionxyz/networks/raw/main/mainnet/dymension/genesis.json"
 
 # Add seeds
 sed -i -e "s|^seeds *=.*|seeds = \"284313184f63d9f06b218a67a0e2de126b64258d@seeds.silknodes.io:25155\"|" $HOME/.dymension/config/config.toml
