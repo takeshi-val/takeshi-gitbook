@@ -4,6 +4,11 @@
 
 ## MAINNET
 
+* [Dymension](mainnet/dymension/README.md)
+  * [Installation](mainnet/dymension/installation/README.md)
+  * [Upgrade](mainnet/dymension/upgrade/README.md)
+  * [State sync](mainnet/dymension/state-sync/README.md)
+  * [Useful commands](mainnet/dymension/useful-commands/README.md)
 * [BeeZee](mainnet/beezee/README.md)
   * [Installation](mainnet/beezee/installation/README.md)
   * [Upgrade](mainnet/beezee/upgrade/README.md)

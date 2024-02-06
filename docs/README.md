@@ -8,6 +8,8 @@ description: >-
 
 ## MAINNET
 
+<img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
+
 <img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt="" data-size="line"> [Kichain](mainnet/kichain/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt="" data-size="line"> [Gravity Bridge](mainnet/gravitybridge/)
