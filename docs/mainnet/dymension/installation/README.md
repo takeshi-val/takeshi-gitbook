@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.2-beta 
+**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.0.0
 
 ### Install dependencies
 
@@ -21,10 +21,16 @@ sudo apt -qy upgrade
 #### Install Go
 
 ```bash
+cd $HOME
+ver="1.21.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
+go version
 ```
 
 ### Download and build binaries
@@ -32,13 +38,13 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```bash
 # Clone project repository
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git
+ggit clone https://github.com/dymensionxyz/dymension.git --branch v3.0.0
 cd dymension
-git checkout v1.0.2-beta
 make install
 
 #chek version
-v1.0.2-beta 
+v3.0.0
+
 ```
 
 ### Create a service
@@ -71,25 +77,25 @@ sudo systemctl enable dymd
 
 ```bash
 # Set node configuration
-dymd config chain-id froopyland_100-1
+dymd config chain-id dymension_1100-1
 
 
 # Initialize the node
-dymd init node --chain-id froopyland_100-1
+dymd init node --chain-id dymension_1100-1
 
 # Download genesis 
 wget -O $HOME/.dymension/config/genesis.json "https://raw.githubusercontent.com/dymensionxyz/testnets/main/dymension-hub/froopyland/genesis.json"
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"b78dd0e25e28ec0b43412205f7c6780be8775b43@dym.seed.takeshi.team:10356\"|" $HOME/.dymension/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"284313184f63d9f06b218a67a0e2de126b64258d@seeds.silknodes.io:25155\"|" $HOME/.dymension/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025udym\"|" $HOME/.dymension/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"20000000000adym\"|" $HOME/.dymension/config/app.toml
 
 # Set pruning
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "10000"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.dymension/config/app.toml

@@ -4,7 +4,7 @@
 
 Dymension is a home for easily deployable and lightning fast app-chains, called RollApps.
 
-**Chain ID**: froopyland_100-1 | **Latest Version Tag**: v1.0.2-beta | **Wasm**: OFF
+**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.0.0 | **Wasm**: OFF
 
 [Website](https://dymension.xyz/) | [Discord](https://discord.gg/dymension) | [Twitter](https://twitter.com/dymensionXYZ)
 
@@ -35,6 +35,6 @@ curl -Ls https://snapshots.takeshi.team/dymension-testnet/addrbook.json > $HOME/
 
 **live-peers** 
 ```bash
-peers="b473a649e58b49bc62b557e94d35a2c8c0ee9375@95.214.53.46:36656"
+peers="09b1a88148c16a3cc629b7cfc12fb369d7a3399a@65.108.233.90:26656,39c335604e9e9323eb177ef8c33f8ab4a4317498@85.215.125.37:26656,fb7a8f69270a7de8a3c1b1e79e194a407d305c63@84.203.117.234:26691"
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$peers\"|" $HOME/.dymension/config/config.toml
 ```
