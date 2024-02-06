@@ -38,7 +38,7 @@ go version
 ```bash
 # Clone project repository
 cd $HOME
-ggit clone https://github.com/dymensionxyz/dymension.git --branch v3.0.0
+git clone https://github.com/dymensionxyz/dymension.git --branch v3.0.0
 cd dymension
 make install
 

@@ -14,7 +14,7 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 # Clone project repository
 cd $HOME
 rm -rf dymension
-git clone https://github.com/dymension/dymension-sdk.git dymension
+git clone https://github.com/dymensionxyz/dymension.git
 cd dymension
 git checkout v3.0.0
 make install
