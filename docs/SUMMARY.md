@@ -125,3 +125,8 @@
   * [Upgrade](testnet/elys/upgrade/README.md)
   * [State sync](testnet/elys/state-sync/README.md)
   * [Useful commands](testnet/elys/useful-commands/README.md)
+* [Ojo](testnet/ojo/README.md)
+  * [Installation](testnet/ojo/installation/README.md)
+  * [Upgrade](testnet/ojo/upgrade/README.md)
+  * [State sync](testnet/ojo/state-sync/README.md)
+  * [Useful commands](testnet/ojo/useful-commands/README.md)
