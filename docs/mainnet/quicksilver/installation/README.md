@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.2.17
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.4.7
 ### Setup validator name
 
 {% hint style='info' %}
@@ -22,18 +22,22 @@ MONIKER="YOUR_MONIKER"
 #### Update system and install build tools
 
 ```bash
-sudo apt -q update
+sudo apt update && sudo apt upgrade
 sudo apt -qy install curl git jq lz4 build-essential
-sudo apt -qy upgrade
 ```
 
-#### Install Go
+#### Install Go "1.21.4"
 
 ```bash
+ver="1.21.4"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
 ```
 
 ### Download and build binaries
@@ -44,40 +48,12 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.2.17
+git checkout v1.4.7
 
 # Build binaries
 make install
 
 ```
-
-### Create a service
-
-```bash
-
-# Create service
-sudo tee /etc/systemd/system/quicksilverd.service > /dev/null << EOF
-[Unit]
-Description=quicksilver node service
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$(which quicksilverd) run start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.quicksilverd"
-Environment="DAEMON_NAME=quicksilverd"
-Environment="UNSAFE_SKIP_BACKUP=true"
-
-[Install]
-WantedBy=multi-user.target
-EOF
-sudo systemctl daemon-reload
-sudo systemctl enable quicksilverd
-```
-
 ### Initialize the node
 
 ```bash
@@ -100,11 +76,35 @@ sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.0001uqck\"|" $HOM
 # Set pruning
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "10000"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.quicksilverd/config/app.toml
 
+```
+### Create a service
+
+```bash
+
+# Create service
+
+sudo tee /etc/systemd/system/quicksilverd.service > /dev/null <<EOF
+[Unit]
+Description=quicksilverd
+After=network.target
+[Service]
+Type=simple
+User=$USER
+ExecStart=$(which quicksilverd) start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable quicksilverd
 ```
 
 ### Start service and check the logs
