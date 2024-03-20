@@ -6,100 +6,89 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: althea_7357-1 | **Latest Version Tag**: v0.3.2 | **Custom Port**: 152
+**Chain ID**: althea_417834-4 | **Latest Version Tag**: v1.0.0-rc2 
 
-### Setup validator name
-
-{% hint style='info' %}
-Replace **YOUR_MONIKER_GOES_HERE** with your validator name
-{% endhint %}
-
-```bash
-MONIKER="YOUR_MONIKER_GOES_HERE"
-```
 
 ### Install dependencies
 
 #### Update system and install build tools
 
 ```bash
-sudo apt -q update
+sudo apt update && sudo apt upgrade
 sudo apt -qy install curl git jq lz4 build-essential
-sudo apt -qy upgrade
 ```
 
 #### Install Go
 
 ```bash
+# Install GO 1.21.4
+ver="1.21.4"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.10.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ### Download and build binaries
 
 ```bash
-# Clone project repository
-cd $HOME
-rm -rf althea-chain
-git clone https://github.com/althea-net/althea-chain.git
-cd althea-chain
-git checkout v0.3.2
+# set vars
+ALTHEA_CHAIN="althea_417834-4"
+ALTHEA_HOME="$HOME/.althea"
 
-# Build binaries
-make build
+# save vars
+echo "
+export ALTHEA_CHAIN=${ALTHEA_CHAIN}
+export ALTHEA_HOME=${ALTHEA_HOME}
+" >> $HOME/.bash_profile
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.althea/cosmovisor/genesis/bin
-mv build/althea $HOME/.althea/cosmovisor/genesis/bin/
-rm -rf build
-
-# Create application symlinks
-sudo ln -s $HOME/.althea/cosmovisor/genesis $HOME/.althea/cosmovisor/current -f
-sudo ln -s $HOME/.althea/cosmovisor/current/bin/althea /usr/local/bin/althea -f
+source $HOME/.bash_profile
 ```
 
-### Install Cosmovisor and create a service
+```bash
+# Clone project repository
+cd $HOME
+wget https://github.com/althea-net/althea-L1/releases/download/v1.0.0-rc2/althea-linux-amd64
+chmod +x althea-linux-amd64
+sudo mv althea-linux-amd64 /usr/sbin/althea
+
+```
+
+### Create a service
 
 ```bash
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
-
 # Create service
-sudo tee /etc/systemd/system/althea.service > /dev/null << EOF
+tee $HOME/althead.service > /dev/null <<EOF
 [Unit]
-Description=althea-testnet node service
+Description=Althea-testnet
 After=network-online.target
-
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+ExecStart=$(which althea) start --home $ALTHEA_HOME
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.althea"
-Environment="DAEMON_NAME=althea"
-Environment="UNSAFE_SKIP_BACKUP=true"
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.althea/cosmovisor/current/bin"
-
 [Install]
 WantedBy=multi-user.target
 EOF
+
+sudo mv $HOME/althead.service /etc/systemd/system/
+
 sudo systemctl daemon-reload
-sudo systemctl enable althea
+sudo systemctl enable althead
 ```
 
 ### Initialize the node
 
 ```bash
 # Set node configuration
-althea config chain-id althea_7357-1
-althea config keyring-backend test
-althea config node tcp://localhost:15257
+althea config chain-id althea_417834-4
 
 # Initialize the node
-althea init $MONIKER --chain-id althea_7357-1
+althea init node --chain-id $ALTHEA_CHAIN
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/althea-testnet/genesis.json > $HOME/.althea/config/genesis.json
@@ -109,7 +98,7 @@ curl -Ls https://snapshots.takeshi.team/althea-testnet/addrbook.json > $HOME/.al
 sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@althea-testnet.rpc.takeshi.team:15259\"|" $HOME/.althea/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ualthea\"|" $HOME/.althea/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0aalthea\"|" $HOME/.althea/config/app.toml
 
 # Set pruning
 sed -i \
@@ -119,20 +108,10 @@ sed -i \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.althea/config/app.toml
 
-# Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:15258\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:15257\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:15260\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:15256\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":15266\"%" $HOME/.althea/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:15217\"%; s%^address = \":8080\"%address = \":15280\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:15290\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:15291\"%; s%:8545%:15245%; s%:8546%:15246%; s%:6065%:15265%" $HOME/.althea/config/app.toml
-```
-
-### Download latest chain snapshot
-
-```bash
-curl -L https://snapshots.takeshi.team/althea-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.althea
-[[ -f $HOME/.althea/data/upgrade-info.json ]] && cp $HOME/.althea/data/upgrade-info.json $HOME/.althea/cosmovisor/genesis/upgrade-info.json
 ```
 
 ### Start service and check the logs
 
 ```bash
-sudo systemctl start althea && sudo journalctl -u althea -f --no-hostname -o cat
+sudo systemctl start althead && sudo journalctl -u althead -f 
 ```
