@@ -1,7 +1,7 @@
 ---
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: perun-1 | **Latest Version Tag**: v1.3.0 
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.3.1 
 
 ### Setup validator name
 
@@ -23,19 +23,21 @@ source $HOME/.bash_profile
 #### Update system and install build tools
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade
 sudo apt install curl git jq lz4 build-essential
-sudo apt upgrade
 ```
 
-#### Install Go 19.3
+#### Install GO 1.21.4
 
 ```bash
-wget https://golang.org/dl/go1.19.3.linux-amd64.tar.gz; \
-rm -rv /usr/local/go; \tar -C /usr/local -xzf go1.19.13.linux-amd64.tar.gz && \
-rm -v go1.19.3.linux-amd64.tar.gz && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-source ~/.bash_profile && \
+ver="1.21.4"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 go version
 ```
 
@@ -43,9 +45,9 @@ go version
 
 ```bash
 cd $HOME
-git clone --depth 1 --branch  v1.3.0  https://github.com/chain4energy/c4e-chain.git
+git clone --depth 1 --branch  v1.3.1  https://github.com/chain4energy/c4e-chain.git
 cd c4e-chain
-git checkout v1.3.0
+git checkout v1.3.1
 
 # Install binaries
 make install
