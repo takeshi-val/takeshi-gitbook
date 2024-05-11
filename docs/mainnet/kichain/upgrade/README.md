@@ -4,9 +4,9 @@ description: Prepare for and the upcomming chain upgrade using Cosmovisor.
 
 # Upgrade
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | 
+**Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 |
 
 ## Download and build upgrade binaries
 
@@ -20,3 +20,4 @@ git checkout v4.2.0
 make install
 
 sudo systemctl start kid && journalctl -u kid -f 
+```

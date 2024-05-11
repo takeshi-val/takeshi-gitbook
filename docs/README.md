@@ -4,9 +4,11 @@ description: >-
   takeshi.team.
 ---
 
-# ⚙ Supported chains
+# ⚙️ Supported chains
 
 ## MAINNET
+
+<img src=".gitbook/assets/althea (1).png" alt="" data-size="line">  [Althea](mainnet/althea/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
 
@@ -28,11 +30,7 @@ description: >-
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](mainnet/quicksilver/)
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt="" data-size="line"> [Composable](mainnet/composable/)
-
 ## TESTNET
-
-<img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt="" data-size="line"> [Althea](testnet/althea/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/andromeda.png" alt="" data-size="line"> [Andromeda](testnet/andromeda/)
 
@@ -47,8 +45,6 @@ description: >-
 <img src="https://github.com/takeshi-val/Logo/raw/main/elys.png" alt="" data-size="line"> [Elys](testnet/elys/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/lava.png" alt="" data-size="line"> [Lava](testnet/lava/)
-
-<img src="https://github.com/takeshi-val/Logo/raw/main/nibiru.png" alt="" data-size="line"> [Nibiru](testnet/nibiru/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](testnet/quicksilver/)
 

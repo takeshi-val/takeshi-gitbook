@@ -4,20 +4,18 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-Snapshots allows a new node to join the network by recovering application state from a backup file. 
-Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, 
-snapshot server is periodically beeing state-synced.
+{% hint style="info" %}
+Snapshots allows a new node to join the network by recovering application state from a backup file. Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, snapshot server is periodically beeing state-synced.
 {% endhint %}
 
 Snapshots are taken automatically every 6 hours starting at **03:45 UTC**
 
 **pruning**: 100/0/19 | **indexer**: null | **version tag**: pleiades2
 
-| BLOCK             | AGE             | DOWNLOAD                                                                                            |
-| ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
+| BLOCK   | AGE     | DOWNLOAD                                                                                    |
+| ------- | ------- | ------------------------------------------------------------------------------------------- |
 | 5626742 | 5 hours | [snapshot (1.08 GB)](https://snapshots.takeshi.team/gravitybridge/snapshot\_latest.tar.lz4) |
 
 ## Instructions

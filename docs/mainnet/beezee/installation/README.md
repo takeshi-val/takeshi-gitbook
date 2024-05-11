@@ -1,17 +1,19 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: beezee-1 | **Latest Version Tag**: v1.0.0 | **Custom Port**: 45
 
 ### Setup validator name
 
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
+{% hint style="info" %}
+Replace **YOUR\_MONIKER** with your validator name
 {% endhint %}
 
 ```bash

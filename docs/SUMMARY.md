@@ -1,6 +1,6 @@
 # Table of contents
 
-* [⚙ Supported chains](README.md)
+* [⚙️ Supported chains](README.md)
 
 ## MAINNET
 

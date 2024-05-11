@@ -1,10 +1,12 @@
 ---
-description: Useful set of commands for node operators. From key management to chain governance.
+description: >-
+  Useful set of commands for node operators. From key management to chain
+  governance.
 ---
 
 # Useful commands
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -219,13 +221,13 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTO
 
 #### Update Indexer
 
-##### Disable indexer
+**Disable indexer**
 
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.quicksilverd/config/config.toml
 ```
 
-##### Enable indexer
+**Enable indexer**
 
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.quicksilverd/config/config.toml
@@ -294,8 +296,8 @@ quicksilverd tendermint unsafe-reset-all --home $HOME/.quicksilverd --keep-addr-
 
 #### Remove node
 
-{% hint style='danger' %}
-Please, before proceeding with the next step! All chain data will be lost! Make sure you have backed up your **priv_validator_key.json**!
+{% hint style="danger" %}
+Please, before proceeding with the next step! All chain data will be lost! Make sure you have backed up your **priv\_validator\_key.json**!
 {% endhint %}
 
 ```bash
