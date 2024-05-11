@@ -1,16 +1,15 @@
 ---
-description: With our state sync services you will be able to catch up latest chain block in matter of minutes
+description: >-
+  With our state sync services you will be able to catch up latest chain block
+  in matter of minutes
 ---
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-State Sync allows a new node to join the network by fetching a snapshot of the application state 
-at a recent height instead of fetching and replaying all historical blocks. Since the 
-application state is generally much smaller than the blocks, and restoring it is much 
-faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
+{% hint style="info" %}
+State Sync allows a new node to join the network by fetching a snapshot of the application state at a recent height instead of fetching and replaying all historical blocks. Since the application state is generally much smaller than the blocks, and restoring it is much faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
 {% endhint %}
 
 ## Instructions
@@ -45,7 +44,7 @@ mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_valida
 
 ### Download latest wasm
 
-{% hint style='info' %}
+{% hint style="info" %}
 Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
 {% endhint %}
 

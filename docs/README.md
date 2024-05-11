@@ -8,9 +8,7 @@ description: >-
 
 ## MAINNET
 
-{% content-ref url="mainnet/althea/" %}
-[althea](mainnet/althea/)
-{% endcontent-ref %}
+<img src=".gitbook/assets/althea.png" alt="" data-size="line"> Althea
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
 
@@ -31,8 +29,6 @@ description: >-
 <img src="https://github.com/takeshi-val/Logo/raw/main/osmosis.png" alt="" data-size="line"> [Osmosis](mainnet/osmosis/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" data-size="line"> [Quicksilver](mainnet/quicksilver/)
-
-<img src="https://github.com/takeshi-val/Logo/raw/main/composable.png" alt="" data-size="line"> [Composable](mainnet/composable/)
 
 ## TESTNET
 

@@ -1,17 +1,19 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/konstellation.png" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: darchub | **Latest Version Tag**: v0.6.2 | **Custom Port**: 13
 
 ### Setup validator name
 
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
+{% hint style="info" %}
+Replace **YOUR\_MONIKER** with your validator name
 {% endhint %}
 
 ```bash

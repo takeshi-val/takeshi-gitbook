@@ -1,17 +1,19 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: pismoA | **Custom Port**: 27
 
 ### Setup validator name
 
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
+{% hint style="info" %}
+Replace **YOUR\_MONIKER** with your validator name
 {% endhint %}
 
 ```bash
@@ -19,7 +21,6 @@ MONIKER="YOUR_MONIKER"
 ```
 
 ### Install dependencies
-
 
 #### Update system and install build tools
 

@@ -4,20 +4,18 @@ description: Catch the latest block faster by using our daily snapshots.
 
 # Snapshot
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/osmosis.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/osmosis.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-Snapshots allows a new node to join the network by recovering application state from a backup file. 
-Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, 
-snapshot server is periodically beeing state-synced.
+{% hint style="info" %}
+Snapshots allows a new node to join the network by recovering application state from a backup file. Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, snapshot server is periodically beeing state-synced.
 {% endhint %}
 
 Snapshots are taken automatically every 6 hours starting at **02:30 UTC**
 
 **pruning**: 100/0/19 | **indexer**: null | **version tag**: v14
 
-| BLOCK             | AGE             | DOWNLOAD                                                                                            |
-| ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
+| BLOCK   | AGE        | DOWNLOAD                                                                               |
+| ------- | ---------- | -------------------------------------------------------------------------------------- |
 | 8070379 | 40 minutes | [snapshot (11.23 GB)](https://snapshots.takeshi.team/osmosis/snapshot\_latest.tar.lz4) |
 
 ## Instructions

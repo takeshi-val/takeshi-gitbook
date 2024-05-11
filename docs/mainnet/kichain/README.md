@@ -1,13 +1,12 @@
-# kichain
+# Kichain
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/kichain.png" alt=""><figcaption></figcaption></figure>
 
-The Ki Foundation’s mission is about bridging the gap
-between traditional wealth and Decentralized Finance.
+The Ki Foundation’s mission is about bridging the gap between traditional wealth and Decentralized Finance.
 
 **Chain ID**: kichain-2 | **Latest Version Tag**: v4.2.0 | **Wasm**: ON
 
-[Website](https://foundation.ki/) | [Discord](https://discord.gg/vqWc7MGd87) | [Twitter](https://twitter.com/Ki_Foundation)
+[Website](https://foundation.ki/) | [Discord](https://discord.gg/vqWc7MGd87) | [Twitter](https://twitter.com/Ki\_Foundation)
 
 ## Chain explorer
 
