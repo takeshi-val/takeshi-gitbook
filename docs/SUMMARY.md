@@ -4,6 +4,11 @@
 
 ## MAINNET
 
+* [Althea](mainnet/althea/README.md)
+  * [Installation](mainnet/althea/installation/README.md)
+  * [Upgrade](mainnet/althea/upgrade/README.md)
+  * [State sync](mainnet/althea/state-sync/README.md)
+  * [Useful commands](mainnet/althea/useful-commands/README.md)
 * [Dymension](mainnet/dymension/README.md)
   * [Installation](mainnet/dymension/installation/README.md)
   * [Upgrade](mainnet/dymension/upgrade/README.md)
@@ -70,11 +75,6 @@
 
 ## TESTNET
 
-* [Althea](testnet/althea/README.md)
-  * [Installation](testnet/althea/installation/README.md)
-  * [Upgrade](testnet/althea/upgrade/README.md)
-  * [State sync](testnet/althea/state-sync/README.md)
-  * [Useful commands](testnet/althea/useful-commands/README.md)
 * [Andromeda](testnet/andromeda/README.md)
   * [Installation](testnet/andromeda/installation/README.md)
   * [Upgrade](testnet/andromeda/upgrade/README.md)

@@ -18,7 +18,7 @@ faster than replaying blocks, this can reduce the time to sync with the network 
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop althea
+sudo systemctl stop althea && journalctl -u althea -f 
 cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
 althea tendermint unsafe-reset-all --keep-addr-book --home $HOME/.althea
 ```
@@ -27,7 +27,6 @@ althea tendermint unsafe-reset-all --keep-addr-book --home $HOME/.althea
 
 ```bash
 STATE_SYNC_RPC=https://althea-testnet.rpc.takeshi.team:443
-STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@althea-testnet.rpc.takeshi.team:15256
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)

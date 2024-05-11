@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: althea_417834-4 | **Latest Version Tag**: v1.0.0-rc2 
+**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.4.0
 
 
 ### Install dependencies
@@ -36,7 +36,7 @@ source $HOME/.bash_profile
 
 ```bash
 # set vars
-ALTHEA_CHAIN="althea_417834-4"
+ALTHEA_CHAIN="althea_258432-1"
 ALTHEA_HOME="$HOME/.althea"
 
 # save vars
@@ -51,7 +51,7 @@ source $HOME/.bash_profile
 ```bash
 # Clone project repository
 cd $HOME
-wget https://github.com/althea-net/althea-L1/releases/download/v1.0.0-rc2/althea-linux-amd64
+wget https://github.com/althea-net/althea-L1/releases/download/v1.4.0/althea-linux-amd64
 chmod +x althea-linux-amd64
 sudo mv althea-linux-amd64 /usr/sbin/althea
 
@@ -63,7 +63,7 @@ sudo mv althea-linux-amd64 /usr/sbin/althea
 # Create service
 tee $HOME/althead.service > /dev/null <<EOF
 [Unit]
-Description=Althea-testnet
+Description=Althea
 After=network-online.target
 [Service]
 User=$USER
@@ -85,17 +85,16 @@ sudo systemctl enable althead
 
 ```bash
 # Set node configuration
-althea config chain-id althea_417834-4
+althea config chain-id $ALTHEA_CHAIN
 
 # Initialize the node
 althea init node --chain-id $ALTHEA_CHAIN
 
-# Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/althea-testnet/genesis.json > $HOME/.althea/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/althea-testnet/addrbook.json > $HOME/.althea/config/addrbook.json
+# Download genesis 
+wget -O $HOME/.althea/config/genesis.json "https://github.com/AltheaFoundation/althea-L1-docs/blob/main/althea-l1-mainnet-genesis.json"
 
 # Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@althea-testnet.rpc.takeshi.team:15259\"|" $HOME/.althea/config/config.toml
+sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@althea-mainnet.rpc.takeshi.team:15259\"|" $HOME/.althea/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0aalthea\"|" $HOME/.althea/config/app.toml
