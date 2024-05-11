@@ -8,7 +8,7 @@ description: >-
 
 ## MAINNET
 
-<img src=".gitbook/assets/althea.png" alt="" data-size="line"> [Althea](mainnet/althea/)
+<img src=".gitbook/assets/althea (1).png" alt="" data-size="line">  [Althea](mainnet/althea/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
 
