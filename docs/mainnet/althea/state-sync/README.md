@@ -26,7 +26,7 @@ althea tendermint unsafe-reset-all --keep-addr-book --home $HOME/.althea
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://althea-testnet.rpc.takeshi.team:443
+STATE_SYNC_RPC=https://althea-rpc.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
