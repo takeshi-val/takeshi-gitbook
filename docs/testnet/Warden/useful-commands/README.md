@@ -59,23 +59,31 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 #### Create new validator
 
 ```bash
-wardend tx staking create-validator \
---amount 1000000uandr \
---pubkey $(wardend tendermint show-validator) \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id galileo-3 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
---commission-max-change-rate 0.01 \
---min-self-delegation 1 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 0.0001uandr \
--y
+ #show your pubkey
+ wardend comet show-validator
+ 
+#create_validatro
+sudo tee validator.json > /dev/null <<EOF
+{
+  "pubkey": <PAST_YOURE_PUBKEY>,
+  "amount": "1000000uward",
+  "moniker": "YOUR_MONIKER",
+  "identity": "123654",
+  "website": "YOUR_SITE",
+  "security": "gmail.com",
+  "details": "about you",
+  "commission-rate": "0.05",
+  "commission-max-rate": "0.5",
+  "commission-max-change-rate": "0.5",
+  "min-self-delegation": "1"
+}
+EOF
+
+
+wardend tx staking create-validator validator.json \
+    --from=$WARDEN_WALLET  \
+    --chain-id=$WARDEN_CHAIN\
+    --fees=500uward
 ```
 
 #### Edit existing validator
