@@ -4,9 +4,9 @@
 
 warden is an application platform layer that connects all  public blockchains in the Cosmos ecosystem. Through our vast  library of no-code smart contracts, users can harness the power of web3.
 
-**Chain ID**: galileo-3 | **Latest Version Tag**: galileo-3-v1.1.0-beta1 | **Wasm**: ON
+**Chain ID**: buenavista-1 | **Latest Version Tag**: v0.3.0 
 
-[Website](https://www.wardenprotocol.io) | [Discord](https://discord.gg/wzM3kSN3sE) | [Twitter](https://twitter.com/warden)
+[Website](https://wardenprotocol.org) | [Discord](https://discord.com/invite/wardenprotocol) | [Twitter](https://twitter.com/wardenprotocol)
 
 
 
