@@ -75,11 +75,11 @@
 
 ## TESTNET
 
-* [Andromeda](testnet/andromeda/README.md)
-  * [Installation](testnet/andromeda/installation/README.md)
-  * [Upgrade](testnet/andromeda/upgrade/README.md)
-  * [State sync](testnet/andromeda/state-sync/README.md)
-  * [Useful commands](testnet/andromeda/useful-commands/README.md)
+* [Warden](testnet/warden/README.md)
+  * [Installation](testnet/warden/installation/README.md)
+  * [Upgrade](testnet/warden/upgrade/README.md)
+  * [State sync](testnet/warden/state-sync/README.md)
+  * [Useful commands](testnet/warden/useful-commands/README.md)
 * [Archway](testnet/archway/README.md)
   * [Installation](testnet/archway/installation/README.md)
   * [Upgrade](testnet/archway/upgrade/README.md)
