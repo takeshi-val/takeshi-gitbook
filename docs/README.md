@@ -32,7 +32,7 @@ description: >-
 
 ## TESTNET
 
-<img src="https://github.com/takeshi-val/Logo/raw/main/andromeda.png" alt="" data-size="line"> [Andromeda](testnet/andromeda/)
+<img src="https://github.com/takeshi-val/Logo/raw/main/warden.png" alt="" data-size="line"> [Warden](testnet/warden/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/archway.png" alt="" data-size="line"> [Archway](testnet/archway/)
 
