@@ -2,7 +2,8 @@
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/warden.png" alt=""><figcaption></figcaption></figure>
 
-warden is an application platform layer that connects all  public blockchains in the Cosmos ecosystem. Through our vast  library of no-code smart contracts, users can harness the power of web3.
+
+    The Warden Protocol is not just a blockchain; it's a revolutionary approach in how we interact with and govern blockchain activities. Warden Protocol is a modular, intent-centric blockchain built on the robust Cosmos-SDK. It's designed to redefine the way users interact with multiple blockchains by enabling the creation and management of key material and its unique ability to understand and enforce users' intents directly on the blockchain. This capability allows for complex, multi-leg transactions and cross-chain activities, all safeguarded by the protocol’s on-chain enforcement mechanisms.
 
 **Chain ID**: buenavista-1 | **Latest Version Tag**: v0.3.0 
 
