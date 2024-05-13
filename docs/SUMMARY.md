@@ -75,8 +75,8 @@
 
 ## TESTNET
 
-* [Warden](testnet/warden/README.md)
-  * [Installation](testnet/warden/installation/README.md)
+* [Warden](testnet/Warden/README.md)
+  * [Installation](testnet/Warden/installation/README.md)
   * [Upgrade](testnet/warden/upgrade/README.md)
   * [State sync](testnet/warden/state-sync/README.md)
   * [Useful commands](testnet/warden/useful-commands/README.md)
