@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.0.0
+**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.1.0
 
 ### Install dependencies
 
@@ -38,12 +38,12 @@ go version
 ```bash
 # Clone project repository
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v3.0.0
+git clone https://github.com/dymensionxyz/dymension.git --branch v3.1.0
 cd dymension
 make install
 
 #chek version
-v3.0.0
+v3.1.0
 
 ```
 
