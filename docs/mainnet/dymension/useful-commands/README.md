@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" width="150"><figcaption></figcaption></figure>
 
-## 🔑 Key management
+## Key management
 
 #### Add new key
 
@@ -52,7 +52,7 @@ dymd keys import wallet wallet.backup
 dymd q bank balances $(dymd keys show wallet -a)
 ```
 
-## 👷 Validator management
+## Validator management
 
 {% hint style="info" %}
 Please make sure you have adjusted **moniker**, **identity**, **details** and **website** to match your values.
@@ -62,13 +62,13 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 
 ```bash
 dymd tx staking create-validator \
---amount=1000000uxki \
+--amount=1000000udym \
 --pubkey=$(dymd tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL" \
---chain-id=35-C \
+--chain-id=dymension_1100-1 \
 --commission-rate=0.05 \
 --commission-max-rate=0.20 \
 --commission-max-change-rate=0.01 \
@@ -76,8 +76,7 @@ dymd tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.025uxki \
--y
+--gas-prices=0.025udym
 ```
 
 #### Edit existing validator
@@ -88,19 +87,19 @@ dymd tx staking edit-validator \
 --identity="YOUR_KEYBASE_ID" \
 --details="YOUR_DETAILS" \
 --website="YOUR_WEBSITE_URL"
---chain-id=35-C \
+--chain-id=dymension_1100-1 \
 --commission-rate=0.05 \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.025uxki \
+--gas-prices=0.025udym \
 -y
 ```
 
 #### Unjail validator
 
 ```bash
-dymd tx slashing unjail --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx slashing unjail --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Jail reason
@@ -132,43 +131,43 @@ dymd q staking validator $(dymd keys show wallet --bech val -a)
 #### Withdraw rewards from all validators
 
 ```bash
-dymd tx distribution withdraw-all-rewards --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx distribution withdraw-all-rewards --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Withdraw commission and rewards from your validator
 
 ```bash
-dymd tx distribution withdraw-rewards $(dymd keys show wallet --bech val -a) --commission --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx distribution withdraw-rewards $(dymd keys show wallet --bech val -a) --commission --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Delegate tokens to yourself
 
 ```bash
-dymd tx staking delegate $(dymd keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx staking delegate $(dymd keys show wallet --bech val -a) 1000000udym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Delegate tokens to validator
 
 ```bash
-dymd tx staking delegate <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx staking delegate <TO_VALOPER_ADDRESS> 1000000udym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Redelegate tokens to another validator
 
 ```bash
-dymd tx staking redelegate $(dymd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000uxki --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx staking redelegate $(dymd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000udym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Unbond tokens from your validator
 
 ```bash
-dymd tx staking unbond $(dymd keys show wallet --bech val -a) 1000000uxki --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx staking unbond $(dymd keys show wallet --bech val -a) 1000000udym --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Send tokens to the wallet
 
 ```bash
-dymd tx bank send wallet <TO_WALLET_ADDRESS> 1000000uxki --from wallet --chain-id 35-C
+dymd tx bank send wallet <TO_WALLET_ADDRESS> 1000000udym --from wallet --chain-id dymension_1100-1
 ```
 
 ## 🗳 Governance
@@ -188,25 +187,25 @@ dymd query gov proposal 1
 #### Vote 'Yes'
 
 ```bash
-dymd tx gov vote 1 yes --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx gov vote 1 yes --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Vote 'No'
 
 ```bash
-dymd tx gov vote 1 no --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx gov vote 1 no --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Vote 'Abstain'
 
 ```bash
-dymd tx gov vote 1 abstain --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx gov vote 1 abstain --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 #### Vote 'NoWithVeto'
 
 ```bash
-dymd tx gov vote 1 nowithveto --from wallet --chain-id 35-C --gas-adjustment 1.4 --gas auto --gas-prices 0.025uxki -y
+dymd tx gov vote 1 nowithveto --from wallet --chain-id dymension_1100-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025udym -y
 ```
 
 ## ⚡️ Utility
@@ -279,7 +278,7 @@ curl -sS http://localhost:27657/net_info | jq -r '.result.peers[] | "\(.node_inf
 #### Set minimum gas price
 
 ```bash
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uxki\"/" $HOME/.dymension/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0udym\"/" $HOME/.dymension/config/app.toml
 ```
 
 #### Enable prometheus
