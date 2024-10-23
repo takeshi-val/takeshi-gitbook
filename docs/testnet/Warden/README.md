@@ -4,7 +4,7 @@
 
 The Warden Protocol is not just a blockchain; it's a revolutionary approach in how we interact with and govern blockchain activities. Warden Protocol is a modular, intent-centric blockchain built on the robust Cosmos-SDK. It's designed to redefine the way users interact with multiple blockchains by enabling the creation and management of key material and its unique ability to understand and enforce users' intents directly on the blockchain. This capability allows for complex, multi-leg transactions and cross-chain activities, all safeguarded by the protocol’s on-chain enforcement mechanisms.
 
-**Chain ID**: buenavista-1 | **Latest Version Tag**: v0.3.0 
+**Chain ID**: chiado_10010-1 | **Latest Version Tag**: v0.5.2
 
 [Website](https://wardenprotocol.org) | [Discord](https://discord.com/invite/wardenprotocol) | [Twitter](https://twitter.com/wardenprotocol)
 
@@ -16,7 +16,7 @@ The Warden Protocol is not just a blockchain; it's a revolutionary approach in h
 
 * api: [https://warden-testnet.api.takeshi.team](https://warden-api.takeshi.team)
 * rpc: [https://warden-testnet.rpc.takeshi.team](https://warden-rpc.takeshi.team)
-* grpc: warden-grpc.takeshi.team:9024
+* grpc: warden-grpc.takeshi.team:9398
 
 ## Peering
 

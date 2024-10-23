@@ -6,13 +6,13 @@
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/warden.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: buenavista-1 | **Latest Version Tag**: v0.3.0 
+**Chain ID**: buenavista-1 | **Latest Version Tag**: v0.5.2 
 
 ### Prepare vars
 
 ```bash
 # set vars
-WARDEN_CHAIN="buenavista-1"
+WARDEN_CHAIN="chiado_10010-1""
 WARDEN_HOME="$HOME/.warden"
 WARDEN_MONIKER="YOUR_MONIKER"
 WARDEN_WALLET="YOUR_WALLET"
@@ -40,7 +40,7 @@ sudo apt -qy upgrade
 
 ```bash
 cd $HOME
-ver="1.21.6"
+ver="1.22.0"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -54,12 +54,27 @@ go version
 ### Download and install binaries
 
 ```bash
-# Install
+# install just
+wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
+
+echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+
+# check
+cat /etc/apt/sources.list.d/prebuilt-mpr.list
+
+sudo apt update && sudo apt install just
+
+just --version
+# just 1.34.0
+
+# install
 cd $HOME
 git clone https://github.com/warden-protocol/wardenprotocol.git
 cd wardenprotocol
-git checkout v0.3.0
-make install
+git checkout v0.5.2
+just wardend install
+
+wardend version
 
 ```
 
@@ -107,7 +122,7 @@ sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025uward\"|" $HOM
 # Set pruning
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "10000"|' \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.wardend/config/app.toml
