@@ -6,13 +6,13 @@
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/warden.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: buenavista-1 | **Latest Version Tag**: v0.5.2 
+**Chain ID**: chiado_10010-1 | **Latest Version Tag**: v0.5.2 
 
 ### Prepare vars
 
 ```bash
 # set vars
-WARDEN_CHAIN="chiado_10010-1""
+WARDEN_CHAIN="chiado_10010-1"
 WARDEN_HOME="$HOME/.warden"
 WARDEN_MONIKER="YOUR_MONIKER"
 WARDEN_WALLET="YOUR_WALLET"
