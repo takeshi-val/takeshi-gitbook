@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-=======
 ---
 description: >-
   Setting up your validator node has never been so easy. Get your validator
   running in minutes by following step by step instructions.
 ---
->>>>>>> 30a68dd9b8f25cb753e4c5b84c41195b46e7ce66
 
+# Installation
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" alt="" width="150"><figcaption></figcaption></figure>
 
