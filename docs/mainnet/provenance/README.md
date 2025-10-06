@@ -1,6 +1,6 @@
 # Konstellation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/PB Logo_Color_Vertical.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" alt=""><figcaption></figcaption></figure>
 
 The provenance Protocol is a fast, scalable, and secure blockchain that empowers individuals, developers, and enterprises to increase their data privacy and cybersecurity posture without sacrificing ease of use. This protocol strives to offer world-class applications to protect the planet's most important data–your data.
 
