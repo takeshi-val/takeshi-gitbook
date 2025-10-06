@@ -4,7 +4,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
 
 **Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.0 | 
 

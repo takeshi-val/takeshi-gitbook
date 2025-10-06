@@ -4,7 +4,7 @@ description: Useful set of commands for node operators. From key management to c
 
 # Useful commands
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 

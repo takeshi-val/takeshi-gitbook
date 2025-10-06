@@ -12,9 +12,9 @@ Snapshot contains compressed copy of chain data directory. To keep backup files 
 snapshot server is periodically beeing state-synced.
 {% endhint %}
 
-Snapshots are taken automatically every 6 hours starting at **00:45 UTC**
+Snapshots are taken automatically every 4 hours starting at **00:45 UTC**
 
-**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.1.2-hotfix
+**pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.25.0
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
