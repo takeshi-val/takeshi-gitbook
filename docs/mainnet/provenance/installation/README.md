@@ -1,8 +1,4 @@
----
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
----
 
-# Installation
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
 
