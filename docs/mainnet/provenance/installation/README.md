@@ -1,16 +1,19 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" alt="" width="150"><figcaption></figcaption></figure>
 
-**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.0 | 
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.0 |
 
 ### Install dependencies
 
 **Update system and install build tools**
+
 ```bash
 sudo apt -q update
 sudo apt -qy install curl git jq lz4 build-essential
@@ -18,6 +21,8 @@ sudo apt -qy upgrade
 ```
 
 **Install Go**
+
+{% code overflow="wrap" %}
 ```bash
 cd $HOME
 ver="1.23.3"
@@ -28,8 +33,10 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
+{% endcode %}
 
 **Download and build binaries**
+
 ```bash
 export PIO_HOME=~/.provenanced
 git clone https://github.com/provenance-io/provenance
@@ -39,6 +46,8 @@ make install
 ```
 
 **Initialize the node**
+
+{% code overflow="wrap" fullWidth="true" %}
 ```bash
 # Set node configuration
 provenanced config chain-id pio-mainnet-1
@@ -59,14 +68,20 @@ sed -i \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.provenance/config/app.toml
-  ```
+```
+{% endcode %}
+
 **Download genesis and addrbook**
+
+{% code overflow="wrap" %}
 ```bash
 wget -O $HOME/.provenanced/config/genesis.json "https://snapshots.takeshi.team/provenance/genesis.json"
 wget -O $HOME/.provenanced/config/addrbook.json "https://snapshots.takeshi.team/provenance/addrbook.json"
 ```
+{% endcode %}
 
 **Create a service**
+
 ```bash
 sudo tee /etc/systemd/system/provenanced.service > /dev/null << EOF
 [Unit]
