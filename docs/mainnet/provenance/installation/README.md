@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenance.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.15.0 | **Custom Port**: 37
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.0 | 
 
 ### Setup validator name
 
@@ -31,21 +31,25 @@ sudo apt -qy upgrade
 #### Install Go
 
 ```bash
+cd $HOME
+ver="1.23.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ### Download and build binaries
 
 ```bash
 # Clone project repository
-cd $HOME
-rm -rf provenance
-git clone https://github.com/provenance-io/provenance.git
+export PIO_HOME=~/.provenanced
+git clone https://github.com/provenance-io/provenance
 cd provenance
-git checkout v1.15.0
+git checkout v1.25.0
+
 
 # Build binaries
 make install
@@ -87,8 +91,8 @@ provenanced config chain-id pio-mainnet-1
 provenanced init $MONIKER --chain-id pio-mainnet-1
 
 # Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/provenance/genesis.json > $HOME/.provenance/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/provenance/addrbook.json > $HOME/.provenance/config/addrbook.json
+wget -O $HOME/.provenanced/config/addrbook.json "https://snapshots.takeshi.team/provenance/genesis.json"
+wget -O $HOME/.provenanced/config/addrbook.json "https://snapshots.takeshi.team/provenance/addrbook.json"
 
 # Add seeds
 sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@provenance-seed.takeshi.team:10556\"|" $HOME/.provenance/config/config.toml
@@ -112,8 +116,20 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:37317\"
 ### Download latest chain snapshot
 
 ```bash
-curl -L https://snapshots.takeshi.team/provenance/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.provenance
-[[ -f $HOME/.provenance/data/upgrade-info.json ]] && cp $HOME/.provenance/data/upgrade-info.json $HOME/.provenance/cosmovisor/genesis/upgrade-info.json
+
+# Backup validator
+cp $HOME/.provenanced/data/priv_validator_state.json $HOME/.provenanced/priv_validator_state.json.backup
+
+# Remove old data
+rm -rf $HOME/.provenanced/data
+rm -rf $HOME/.provenanced/wasm
+
+# Download and extract the latest snapshot
+curl -L https://snapshots.takeshi.team/provenance/provenance_latest.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.provenanced
+
+# Restore validator
+mv $HOME/.provenanced/priv_validator_state.json.backup $HOME/.provenanced/data/priv_validator_state.json
+
 ```
 
 ### Start service and check the logs
