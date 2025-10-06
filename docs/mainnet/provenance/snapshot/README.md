@@ -18,7 +18,7 @@ Snapshots are taken automatically every 6 hours starting at **00:45 UTC**
 
 | BLOCK             | AGE             | DOWNLOAD                                                                                            |
 | ----------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| 1330988 | 2 hours | [snapshot (0.99 GB)](https://snapshots.takeshi.team/provenance/snapshot\_latest.tar.lz4) |
+| 1330988 | 2 hours | [snapshot (0.99 GB)](https://snapshots.takeshi.team/provenance/provenance_latest.tar.lz4) |
 
 ## Instructions
 
