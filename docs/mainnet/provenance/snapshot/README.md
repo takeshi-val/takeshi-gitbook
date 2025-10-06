@@ -12,7 +12,7 @@ Snapshots allows a new node to join the network by recovering application state 
 
 Snapshots are taken automatically every 4 hours
 
-## Instructions
+**Instructions**
 
 ```bash
 cd $HOME
@@ -56,7 +56,7 @@ mv $HOME/.provenanced/priv_validator_state.json.backup $HOME/.provenanced/data/p
 ```
 {% endcode %}
 
-### Download latest snapshot
+**Download latest snapshot**
 
 {% code overflow="wrap" %}
 ```bash
@@ -77,6 +77,6 @@ wget -O $HOME/.provenanced/config/addrbook.json "https://snapshots.takeshi.team/
 
 {% code overflow="wrap" %}
 ```bash
-sudo systemctl start provenanced && jsudo journalctl -u provenanced -f --no-hostname -o cat
+sudo systemctl start provenanced && sudo journalctl -u provenanced -f --no-hostname -o cat
 ```
 {% endcode %}
