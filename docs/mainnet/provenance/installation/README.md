@@ -55,7 +55,7 @@ provenanced init MONIKER --chain-id pio-mainnet-1
 sed -i -e "s|^seeds *=.*|seeds = \"a85a651a3cf1746694560c5b6f76d566c04ca581@provenance-seed.takeshi.team:10556\"|" $HOME/.provenance/config/config.toml
 
 # Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.002ujkl\"|" $HOME/.provenance/config/app.toml
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"1905nhash\"|" $HOME/.provenance/config/app.toml
 
 # Set pruning
 sed -i \
