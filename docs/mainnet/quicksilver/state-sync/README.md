@@ -1,30 +1,32 @@
 ---
-description: With our state sync services you will be able to catch up latest chain block in matter of minutes
+description: >-
+  With our state sync services you will be able to catch up latest chain block
+  in matter of minutes
 ---
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" alt="" width="150"><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-State Sync allows a new node to join the network by fetching a snapshot of the application state 
-at a recent height instead of fetching and replaying all historical blocks. Since the 
-application state is generally much smaller than the blocks, and restoring it is much 
-faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
+{% hint style="info" %}
+State Sync allows a new node to join the network by fetching a snapshot of the application state at a recent height instead of fetching and replaying all historical blocks. Since the application state is generally much smaller than the blocks, and restoring it is much faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
 {% endhint %}
 
 ## Instructions
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop quicksilverd
 cp $HOME/.quicksilverd/data/priv_validator_state.json $HOME/.quicksilverd/priv_validator_state.json.backup
 quicksilverd tendermint unsafe-reset-all --home $HOME/.quicksilverd
 ```
+{% endcode %}
 
 ### Get and configure the state sync information
 
+{% code overflow="wrap" %}
 ```bash
 STATE_SYNC_RPC=https://rpc-quicksilver.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
@@ -41,9 +43,12 @@ sed -i \
 
 mv $HOME/.quicksilverd/priv_validator_state.json.backup $HOME/.quicksilverd/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl start quicksilverd && sudo journalctl -u quicksilverd -f --no-hostname -o cat
 ```
+{% endcode %}
