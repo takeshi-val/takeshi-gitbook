@@ -6,16 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/quicksilver.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.4.7
-### Setup validator name
-
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
-{% endhint %}
-
-```bash
-MONIKER="YOUR_MONIKER"
-```
+**Chain ID**: quicksilver-2 | **Latest Version Tag**: v1.8.1
 
 ### Install dependencies
 
@@ -26,11 +17,11 @@ sudo apt update && sudo apt upgrade
 sudo apt -qy install curl git jq lz4 build-essential
 ```
 
-#### Install Go "1.21.4"
+#### Install GO 1.23.3
 
 ```bash
-ver="1.21.4"
 cd $HOME
+ver="1.23.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -48,7 +39,7 @@ cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver.git
 cd quicksilver
-git checkout v1.4.7
+git checkout v1.8.1
 
 # Build binaries
 make install
@@ -61,7 +52,7 @@ make install
 quicksilverd config chain-id quicksilver-2
 
 # Initialize the node
-quicksilverd init $MONIKER --chain-id quicksilver-2
+quicksilverd init MONIKER --chain-id quicksilver-2
 
 # Download genesis and addrbook
 curl -Ls https://snapshots.takeshi.team/quicksilver/genesis.json > $HOME/.quicksilverd/config/genesis.json
