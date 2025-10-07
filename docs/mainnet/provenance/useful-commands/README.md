@@ -1,10 +1,12 @@
 ---
-description: Useful set of commands for node operators. From key management to chain governance.
+description: >-
+  Useful set of commands for node operators. From key management to chain
+  governance.
 ---
 
 # Useful commands
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" alt="" width="150"><figcaption></figcaption></figure>
 
 ## 🔑 Key management
 
@@ -60,7 +62,7 @@ Please make sure you have adjusted **moniker**, **identity**, **details** and **
 
 ```bash
 provenanced tx staking create-validator \
---amount=1000000ujkl \
+--amount=1000000uhash \
 --pubkey=$(provenanced tendermint show-validator) \
 --moniker="YOUR_MONIKER_NAME" \
 --identity="YOUR_KEYBASE_ID" \
@@ -74,7 +76,7 @@ provenanced tx staking create-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.002ujkl \
+--gas-prices=0.002uhash \
 -y
 ```
 
@@ -91,15 +93,17 @@ provenanced tx staking edit-validator \
 --from=wallet \
 --gas-adjustment=1.4 \
 --gas=auto \
---gas-prices=0.002ujkl \
+--gas-prices=0.002uhash \
 -y
 ```
 
 #### Unjail validator
 
+{% code overflow="wrap" %}
 ```bash
-provenanced tx slashing unjail --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
+provenanced tx slashing unjail --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002uhash -y
 ```
+{% endcode %}
 
 #### Jail reason
 
@@ -109,15 +113,19 @@ provenanced query slashing signing-info $(provenanced tendermint show-validator)
 
 #### List all active validators
 
+{% code overflow="wrap" %}
 ```bash
 provenanced q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### List all inactive validators
 
+{% code overflow="wrap" %}
 ```bash
 provenanced q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### View validator details
 
@@ -129,9 +137,11 @@ provenanced q staking validator $(provenanced keys show wallet --bech val -a)
 
 #### Withdraw rewards from all validators
 
+{% code overflow="wrap" %}
 ```bash
 provenanced tx distribution withdraw-all-rewards --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
+{% endcode %}
 
 #### Withdraw commission and rewards from your validator
 
@@ -185,47 +195,59 @@ provenanced query gov proposal 1
 
 #### Vote 'Yes'
 
+{% code overflow="wrap" %}
 ```bash
 provenanced tx gov vote 1 yes --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
+{% endcode %}
 
 #### Vote 'No'
 
+{% code overflow="wrap" %}
 ```bash
 provenanced tx gov vote 1 no --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
+{% endcode %}
 
 #### Vote 'Abstain'
 
+{% code overflow="wrap" %}
 ```bash
 provenanced tx gov vote 1 abstain --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
+{% endcode %}
 
 #### Vote 'NoWithVeto'
 
+{% code overflow="wrap" %}
 ```bash
 provenanced tx gov vote 1 nowithveto --from wallet --chain-id pio-mainnet-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.002ujkl -y
 ```
+{% endcode %}
 
 ## ⚡️ Utility
 
 #### Update ports
 
+{% code overflow="wrap" %}
 ```bash
 CUSTOM_PORT=10
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.provenance/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.provenance/config/app.toml
 ```
+{% endcode %}
 
 #### Update Indexer
 
-##### Disable indexer
+**Disable indexer**
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.provenance/config/config.toml
 ```
+{% endcode %}
 
-##### Enable indexer
+**Enable indexer**
 
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.provenance/config/config.toml
@@ -233,6 +255,7 @@ sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.provenance/config/config.toml
 
 #### Update pruning
 
+{% code overflow="wrap" %}
 ```bash
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
@@ -241,6 +264,7 @@ sed -i \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.provenance/config/app.toml
 ```
+{% endcode %}
 
 ## 🚨 Maintenance
 
@@ -258,33 +282,43 @@ provenanced status 2>&1 | jq .SyncInfo
 
 #### Get node peer
 
+{% code overflow="wrap" %}
 ```bash
 echo $(provenanced tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.provenance/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
+{% endcode %}
 
 #### Check if validator key is correct
 
+{% code overflow="wrap" %}
 ```bash
 [[ $(provenanced q staking validator $(provenanced keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(provenanced status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
+{% endcode %}
 
 #### Get live peers
 
+{% code overflow="wrap" %}
 ```bash
 curl -sS http://localhost:37657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
+{% endcode %}
 
 #### Set minimum gas price
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ujkl\"/" $HOME/.provenance/config/app.toml
 ```
+{% endcode %}
 
 #### Enable prometheus
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.provenance/config/config.toml
 ```
+{% endcode %}
 
 #### Reset chain data
 
@@ -294,8 +328,8 @@ provenanced tendermint unsafe-reset-all --home $HOME/.provenance --keep-addr-boo
 
 #### Remove node
 
-{% hint style='danger' %}
-Please, before proceeding with the next step! All chain data will be lost! Make sure you have backed up your **priv_validator_key.json**!
+{% hint style="danger" %}
+Please, before proceeding with the next step! All chain data will be lost! Make sure you have backed up your **priv\_validator\_key.json**!
 {% endhint %}
 
 ```bash
