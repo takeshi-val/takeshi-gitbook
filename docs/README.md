@@ -2,13 +2,32 @@
 description: >-
   Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
   takeshi.team.
+cover: .gitbook/assets/Gemini_Generated_Image_gme9hqgme9hqgme9.png
+coverY: 33.97157056150476
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # ⚙️ Supported chains
 
 ## MAINNET
 
-<img src=".gitbook/assets/althea (1).png" alt="" data-size="line">  [Althea](mainnet/althea/)
+<img src=".gitbook/assets/althea (1).png" alt="" data-size="line"> [Althea](mainnet/althea/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
 
