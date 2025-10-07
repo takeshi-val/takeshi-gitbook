@@ -1,30 +1,32 @@
 ---
-description: With our state sync services you will be able to catch up latest chain block in matter of minutes
+description: >-
+  With our state sync services you will be able to catch up latest chain block
+  in matter of minutes
 ---
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/provenanced_logo_name.png" alt="" width="150"><figcaption></figcaption></figure>
 
-{% hint style='info' %}
-State Sync allows a new node to join the network by fetching a snapshot of the application state 
-at a recent height instead of fetching and replaying all historical blocks. Since the 
-application state is generally much smaller than the blocks, and restoring it is much 
-faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
+{% hint style="info" %}
+State Sync allows a new node to join the network by fetching a snapshot of the application state at a recent height instead of fetching and replaying all historical blocks. Since the application state is generally much smaller than the blocks, and restoring it is much faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
 {% endhint %}
 
 ## Instructions
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop provenanced
 cp $HOME/.provenance/data/priv_validator_state.json $HOME/.provenance/priv_validator_state.json.backup
 provenanced tendermint unsafe-reset-all --home $HOME/.provenance
 ```
+{% endcode %}
 
 ### Get and configure the state sync information
 
+{% code overflow="wrap" %}
 ```bash
 STATE_SYNC_RPC=https://rpc-provenance.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
@@ -42,16 +44,19 @@ sed -i \
 
 mv $HOME/.provenance/priv_validator_state.json.backup $HOME/.provenance/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Download latest wasm
 
-{% hint style='info' %}
+{% hint style="info" %}
 Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
 {% endhint %}
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/provenance/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.provenance
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 
