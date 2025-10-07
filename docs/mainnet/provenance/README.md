@@ -16,7 +16,7 @@ The provenance Protocol is a fast, scalable, and secure blockchain that empowers
 
 * api: [https://api-provenance.takeshi.team](https://api-provenance.takeshi.team)
 * rpc: [https://rpc-provenance.takeshi.team](https://rpc-provenance.takeshi.team)
-* grpc: [https://grpc-provenance.takeshi.team](https://grpc-provenance.takeshi.team)
+* grpc: [grpc-provenance.takeshi.team](grpc-provenance.takeshi.team)
 
 ## Peering
 
