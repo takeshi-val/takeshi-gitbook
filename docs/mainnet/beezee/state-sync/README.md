@@ -16,14 +16,17 @@ State Sync allows a new node to join the network by fetching a snapshot of the a
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop bzed
 cp $HOME/.bze/data/priv_validator_state.json $HOME/.bze/priv_validator_state.json.backup
 bzed tendermint unsafe-reset-all --home $HOME/.bze
 ```
+{% endcode %}
 
 ### Get and configure the state sync information
 
+{% code overflow="wrap" %}
 ```bash
 STATE_SYNC_RPC=https://beezee.rpc.takeshi.team:443
 STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@beezee.rpc.takeshi.team:45656
@@ -41,6 +44,7 @@ sed -i \
 
 mv $HOME/.bze/priv_validator_state.json.backup $HOME/.bze/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Download latest wasm
 
@@ -48,9 +52,11 @@ mv $HOME/.bze/priv_validator_state.json.backup $HOME/.bze/data/priv_validator_st
 Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
 {% endhint %}
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/beezee/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.bze
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 

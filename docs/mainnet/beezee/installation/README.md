@@ -32,6 +32,7 @@ sudo apt -qy upgrade
 
 #### Install Go
 
+{% code overflow="wrap" %}
 ```bash
 cd $HOME
 ver="1.23.3"
@@ -42,9 +43,11 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
+{% endcode %}
 
 ### Download and build binaries
 
+{% code overflow="wrap" %}
 ```bash
 # Clone project repository
 cd $HOME
@@ -57,9 +60,11 @@ git checkout v1.0.0
 make install
 
 ```
+{% endcode %}
 
 ### Create a service
 
+{% code overflow="wrap" %}
 ```bash
 # Create service
 sudo tee /etc/systemd/system/bzed.service > /dev/null << EOF
@@ -84,9 +89,11 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable bzed
 ```
+{% endcode %}
 
 ### Initialize the node
 
+{% code overflow="wrap" %}
 ```bash
 # Set node configuration
 bzed config chain-id beezee-1
@@ -118,13 +125,16 @@ sed -i \
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:45658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:45657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:45060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:45656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":45660\"%" $HOME/.bze/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:45317\"%; s%^address = \":8080\"%address = \":45080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:45090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:45091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:45545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:45546\"%" $HOME/.bze/config/app.toml
 ```
+{% endcode %}
 
 ### Download latest chain snapshot
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/beezee/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bze
 [[ -f $HOME/.bze/data/upgrade-info.json ]] && cp $HOME/.bze/data/upgrade-info.json $HOME/.bze/cosmovisor/genesis/upgrade-info.json
 ```
+{% endcode %}
 
 ### Start service and check the logs
 

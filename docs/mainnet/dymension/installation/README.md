@@ -1,12 +1,14 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" width="150"><figcaption></figcaption></figure>
 
-**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.2.0
+**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.1.0
 
 ### Install dependencies
 
@@ -75,6 +77,7 @@ sudo systemctl enable dymd
 
 ### Initialize the node
 
+{% code overflow="wrap" %}
 ```bash
 # Set node configuration
 dymd config chain-id dymension_1100-1
@@ -104,6 +107,7 @@ sed -i \
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:27658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:27657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:27060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:27656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":27660\"%" $HOME/.dymension/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:27317\"%; s%^address = \":8080\"%address = \":27080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:27090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:27091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:27545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:27546\"%" $HOME/.dymension/config/app.toml
 ```
+{% endcode %}
 
 ### Start service and check the logs
 

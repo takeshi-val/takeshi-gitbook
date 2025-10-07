@@ -1,12 +1,14 @@
 ---
-description: Setting up your validator node has never been so easy. Get your validator running in minutes by following step by step instructions.
+description: >-
+  Setting up your validator node has never been so easy. Get your validator
+  running in minutes by following step by step instructions.
 ---
 
 # Installation
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.5.0
+**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.4.0
 
 
 ### Install dependencies
@@ -48,6 +50,7 @@ export ALTHEA_HOME=${ALTHEA_HOME}
 source $HOME/.bash_profile
 ```
 
+{% code overflow="wrap" %}
 ```bash
 # Clone project repository
 cd $HOME
@@ -56,6 +59,7 @@ chmod +x althea-linux-amd64
 sudo mv althea-linux-amd64 /usr/sbin/althea
 
 ```
+{% endcode %}
 
 ### Create a service
 
@@ -83,6 +87,7 @@ sudo systemctl enable althead
 
 ### Initialize the node
 
+{% code overflow="wrap" %}
 ```bash
 # Set node configuration
 althea config chain-id $ALTHEA_CHAIN
@@ -108,6 +113,7 @@ sed -i \
   $HOME/.althea/config/app.toml
 
 ```
+{% endcode %}
 
 ### Start service and check the logs
 

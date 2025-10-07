@@ -14,6 +14,7 @@ Since we are using Cosmovisor, it makes it very easy to prepare for upcomming up
 
 ## Download and build upgrade binaries
 
+{% code overflow="wrap" %}
 ```bash
 # Clone project repository
 cd $HOME
@@ -30,5 +31,6 @@ mkdir -p $HOME/.knstld/cosmovisor/upgrades/v0.6.2/bin
 mv build/knstld $HOME/.knstld/cosmovisor/upgrades/v0.6.2/bin/
 rm -rf build
 ```
+{% endcode %}
 
 _Thats it! Now when upgrade block height is reached, Cosmovisor will handle it automatically!_

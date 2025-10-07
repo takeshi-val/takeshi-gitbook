@@ -16,14 +16,17 @@ State Sync allows a new node to join the network by fetching a snapshot of the a
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop knstld
 cp $HOME/.knstld/data/priv_validator_state.json $HOME/.knstld/priv_validator_state.json.backup
 knstld tendermint unsafe-reset-all --home $HOME/.knstld
 ```
+{% endcode %}
 
 ### Get and configure the state sync information
 
+{% code overflow="wrap" %}
 ```bash
 STATE_SYNC_RPC=https://konstellation.rpc.takeshi.team:443
 STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@konstellation.rpc.takeshi.team:13656
@@ -41,6 +44,7 @@ sed -i \
 
 mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Download latest wasm
 
@@ -48,9 +52,11 @@ mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_valida
 Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
 {% endhint %}
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/konstellation/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.knstld
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 

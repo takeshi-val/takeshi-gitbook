@@ -99,9 +99,11 @@ knstld tx staking edit-validator \
 
 #### Unjail validator
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx slashing unjail --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Jail reason
 
@@ -111,15 +113,19 @@ knstld query slashing signing-info $(knstld tendermint show-validator)
 
 #### List all active validators
 
+{% code overflow="wrap" %}
 ```bash
 knstld q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### List all inactive validators
 
+{% code overflow="wrap" %}
 ```bash
 knstld q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### View validator details
 
@@ -131,45 +137,59 @@ knstld q staking validator $(knstld keys show wallet --bech val -a)
 
 #### Withdraw rewards from all validators
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx distribution withdraw-all-rewards --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Withdraw commission and rewards from your validator
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx distribution withdraw-rewards $(knstld keys show wallet --bech val -a) --commission --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Delegate tokens to yourself
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx staking delegate $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Delegate tokens to validator
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx staking delegate <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Redelegate tokens to another validator
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx staking redelegate $(knstld keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Unbond tokens from your validator
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx staking unbond $(knstld keys show wallet --bech val -a) 1000000ukuji --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Send tokens to the wallet
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx bank send wallet <TO_WALLET_ADDRESS> 1000000ukuji --from wallet --chain-id darchub
 ```
+{% endcode %}
 
 ## 🗳 Governance
 
@@ -187,51 +207,65 @@ knstld query gov proposal 1
 
 #### Vote 'Yes'
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx gov vote 1 yes --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Vote 'No'
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx gov vote 1 no --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Vote 'Abstain'
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx gov vote 1 abstain --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 #### Vote 'NoWithVeto'
 
+{% code overflow="wrap" %}
 ```bash
 knstld tx gov vote 1 nowithveto --from wallet --chain-id darchub --gas-adjustment 1.4 --gas auto --gas-prices 0.00119ukuji -y
 ```
+{% endcode %}
 
 ## ⚡️ Utility
 
 #### Update ports
 
+{% code overflow="wrap" %}
 ```bash
 CUSTOM_PORT=10
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.knstld/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.knstld/config/app.toml
 ```
+{% endcode %}
 
 #### Update Indexer
 
 **Disable indexer**
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.knstld/config/config.toml
 ```
+{% endcode %}
 
 **Enable indexer**
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.knstld/config/config.toml
 ```
+{% endcode %}
 
 #### Update pruning
 

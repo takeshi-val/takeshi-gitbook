@@ -24,23 +24,28 @@ MONIKER="YOUR_MONIKER"
 
 #### Update system and install build tools
 
+{% code overflow="wrap" %}
 ```bash
 sudo apt -q update
 sudo apt -qy install curl git jq lz4 build-essential
 sudo apt -qy upgrade
 ```
+{% endcode %}
 
 #### Install Go
 
+{% code overflow="wrap" %}
 ```bash
 sudo rm -rf /usr/local/go
 curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
+{% endcode %}
 
 ### Download and build binaries
 
+{% code overflow="wrap" %}
 ```bash
 # Clone project repository
 cd $HOME
@@ -61,9 +66,11 @@ rm -rf build
 ln -s $HOME/.knstld/cosmovisor/genesis $HOME/.knstld/cosmovisor/current
 sudo ln -s $HOME/.knstld/cosmovisor/current/bin/knstld /usr/local/bin/knstld
 ```
+{% endcode %}
 
 ### Install Cosmovisor and create a service
 
+{% code overflow="wrap" %}
 ```bash
 # Download and install Cosmovisor
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
@@ -90,9 +97,11 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable knstld
 ```
+{% endcode %}
 
 ### Initialize the node
 
+{% code overflow="wrap" %}
 ```bash
 # Set node configuration
 knstld config chain-id darchub
@@ -124,13 +133,16 @@ sed -i \
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:13658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:13657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:13060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:13656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":13660\"%" $HOME/.knstld/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:13317\"%; s%^address = \":8080\"%address = \":13080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:13090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:13091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:13545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:13546\"%" $HOME/.knstld/config/app.toml
 ```
+{% endcode %}
 
 ### Download latest chain snapshot
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/konstellation/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.knstld
 [[ -f $HOME/.knstld/data/upgrade-info.json ]] && cp $HOME/.knstld/data/upgrade-info.json $HOME/.knstld/cosmovisor/genesis/upgrade-info.json
 ```
+{% endcode %}
 
 ### Start service and check the logs
 

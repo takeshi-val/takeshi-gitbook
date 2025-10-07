@@ -14,26 +14,30 @@ Snapshots are taken automatically every 6 hours starting at **06:00 UTC**
 
 **pruning**: 100/0/19 | **indexer**: null | **version tag**: v1.0.0
 
-| BLOCK | AGE     | DOWNLOAD                                                                             |
-| ----- | ------- | ------------------------------------------------------------------------------------ |
-| 8129  | 3 hours | [snapshot (0.25 GB)](https://snapshots.takeshi.team/beezee/snapshot\_latest.tar.lz4) |
+| BLOCK | AGE     | DOWNLOAD                                                                            |
+| ----- | ------- | ----------------------------------------------------------------------------------- |
+| 8129  | 3 hours | [snapshot (0.25 GB)](https://snapshots.takeshi.team/beezee/snapshot_latest.tar.lz4) |
 
 ## Instructions
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop bzed
 cp $HOME/.bze/data/priv_validator_state.json $HOME/.bze/priv_validator_state.json.backup
 rm -rf $HOME/.bze/data
 ```
+{% endcode %}
 
 ### Download latest snapshot
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/beezee/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.bze
 mv $HOME/.bze/priv_validator_state.json.backup $HOME/.bze/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 

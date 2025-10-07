@@ -99,9 +99,11 @@ bzed tx staking edit-validator \
 
 #### Unjail validator
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx slashing unjail --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Jail reason
 
@@ -111,15 +113,19 @@ bzed query slashing signing-info $(bzed tendermint show-validator)
 
 #### List all active validators
 
+{% code overflow="wrap" %}
 ```bash
 bzed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### List all inactive validators
 
+{% code overflow="wrap" %}
 ```bash
 bzed q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
 ```
+{% endcode %}
 
 #### View validator details
 
@@ -131,45 +137,59 @@ bzed q staking validator $(bzed keys show wallet --bech val -a)
 
 #### Withdraw rewards from all validators
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx distribution withdraw-all-rewards --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Withdraw commission and rewards from your validator
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx distribution withdraw-rewards $(bzed keys show wallet --bech val -a) --commission --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Delegate tokens to yourself
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx staking delegate $(bzed keys show wallet --bech val -a) 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Delegate tokens to validator
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx staking delegate <TO_VALOPER_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Redelegate tokens to another validator
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx staking redelegate $(bzed keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Unbond tokens from your validator
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx staking unbond $(bzed keys show wallet --bech val -a) 1000000ubze --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Send tokens to the wallet
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx bank send wallet <TO_WALLET_ADDRESS> 1000000ubze --from wallet --chain-id beezee-1
 ```
+{% endcode %}
 
 ## 🗳 Governance
 
@@ -187,37 +207,47 @@ bzed query gov proposal 1
 
 #### Vote 'Yes'
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx gov vote 1 yes --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Vote 'No'
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx gov vote 1 no --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Vote 'Abstain'
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx gov vote 1 abstain --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 #### Vote 'NoWithVeto'
 
+{% code overflow="wrap" %}
 ```bash
 bzed tx gov vote 1 nowithveto --from wallet --chain-id beezee-1 --gas-adjustment 1.4 --gas auto --gas-prices 0ubze -y
 ```
+{% endcode %}
 
 ## ⚡️ Utility
 
 #### Update ports
 
+{% code overflow="wrap" %}
 ```bash
 CUSTOM_PORT=10
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}660\"%" $HOME/.bze/config/config.toml
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}091\"%" $HOME/.bze/config/app.toml
 ```
+{% endcode %}
 
 #### Update Indexer
 
@@ -260,33 +290,43 @@ bzed status 2>&1 | jq .SyncInfo
 
 #### Get node peer
 
+{% code overflow="wrap" %}
 ```bash
 echo $(bzed tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.bze/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 ```
+{% endcode %}
 
 #### Check if validator key is correct
 
+{% code overflow="wrap" %}
 ```bash
 [[ $(bzed q staking validator $(bzed keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(bzed status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
+{% endcode %}
 
 #### Get live peers
 
+{% code overflow="wrap" %}
 ```bash
 curl -sS http://localhost:45657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
+{% endcode %}
 
 #### Set minimum gas price
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ubze\"/" $HOME/.bze/config/app.toml
 ```
+{% endcode %}
 
 #### Enable prometheus
 
+{% code overflow="wrap" %}
 ```bash
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.bze/config/config.toml
 ```
+{% endcode %}
 
 #### Reset chain data
 

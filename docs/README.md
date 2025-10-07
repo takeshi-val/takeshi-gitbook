@@ -2,13 +2,32 @@
 description: >-
   Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
   takeshi.team.
+cover: .gitbook/assets/Золотой логотип TAKESHI на тёмном фоне(1).png
+coverY: -83.75652810801634
+layout:
+  width: default
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # ⚙️ Supported chains
 
 ## MAINNET
 
-<img src=".gitbook/assets/althea (1).png" alt="" data-size="line">  [Althea](mainnet/althea/)
+<img src=".gitbook/assets/althea (1).png" alt="" data-size="line"> [Althea](mainnet/althea/)
 
 <img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" data-size="line"> [Dymension](mainnet/dymension/)
 
