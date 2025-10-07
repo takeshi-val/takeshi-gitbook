@@ -2,8 +2,8 @@
 description: >-
   Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
   takeshi.team.
-cover: .gitbook/assets/Gemini_Generated_Image_gme9hqgme9hqgme9.png
-coverY: 33.97157056150476
+cover: .gitbook/assets/Gemini_Generated_Image_qlkr6zqlkr6zqlkr (1).png
+coverY: -162.76681052128822
 layout:
   width: default
   cover:
