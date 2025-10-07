@@ -8,7 +8,7 @@ description: >-
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/beezee.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: beezee-1 | **Latest Version Tag**: v1.0.0 | **Custom Port**: 45
+**Chain ID**: beezee-1 | **Latest Version Tag**: v7.2.1 | **Custom Port**: 45
 
 ### Setup validator name
 
@@ -33,10 +33,14 @@ sudo apt -qy upgrade
 #### Install Go
 
 ```bash
+cd $HOME
+ver="1.23.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ### Download and build binaries

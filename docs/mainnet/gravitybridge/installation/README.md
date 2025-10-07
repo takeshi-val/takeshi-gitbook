@@ -6,17 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/gravitybridge.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: gravity-bridge-3 | **Latest Version Tag**: v1.10.0 | **Custom Port**: 26
-
-### Setup validator name
-
-{% hint style='info' %}
-Replace **YOUR_MONIKER** with your validator name
-{% endhint %}
-
-```bash
-MONIKER="YOUR_MONIKER"
-```
+**Chain ID**: gravity-bridge-3 | **Latest Version Tag**: v1.13.3 | 
 
 ### Install dependencies
 
@@ -31,21 +21,51 @@ sudo apt -qy upgrade
 #### Install Go
 
 ```bash
+cd $HOME
+ver="1.23.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.19.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ### Download and build binaries
 
 ```bash
-# Download project binaries
-mkdir -p $HOME/.gravity/cosmovisor/genesis/bin
-wget -O $HOME/.gravity/cosmovisor/genesis/bin/gravityd https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.10.0/gravity-linux-amd64
-wget -O $HOME/.gravity/cosmovisor/genesis/bin/gbt https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.10.0/gbt
-chmod +x $HOME/.gravity/cosmovisor/genesis/bin/*
+cd $HOME
+git clone https://github.com/Gravity-Bridge/Gravity-Bridge
+mv Gravity-Bridge gravity
+cd $HOME/gravity/module
+git pull
+git reset --hard
+git checkout v1.13.3
+make install
+```
+### Initialize the node
 
+```bash
+# Initialize the node
+gravityd init $MONIKER --chain-id gravity-bridge-3
+
+# Download genesis and addrbook
+curl -Ls https://snapshots.takeshi.team/gravitybridge/genesis.json > $HOME/.gravity/config/genesis.json
+curl -Ls https://snapshots.takeshi.team/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
+
+# Add seeds
+sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.takeshi.team:26659\"|" $HOME/.gravity/config/config.toml
+
+# Set minimum gas price
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ugraviton\"|" $HOME/.gravity/config/app.toml
+
+# Set pruning
+sed -i \
+  -e 's|^pruning *=.*|pruning = "custom"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
+  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
+  $HOME/.gravity/config/app.toml
 
 ```
 
@@ -76,34 +96,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable gravityd
 ```
 
-### Initialize the node
 
-```bash
-# Initialize the node
-gravityd init $MONIKER --chain-id gravity-bridge-3
-
-# Download genesis and addrbook
-curl -Ls https://snapshots.takeshi.team/gravitybridge/genesis.json > $HOME/.gravity/config/genesis.json
-curl -Ls https://snapshots.takeshi.team/gravitybridge/addrbook.json > $HOME/.gravity/config/addrbook.json
-
-# Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@gravitybridge.rpc.takeshi.team:26659\"|" $HOME/.gravity/config/config.toml
-
-# Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ugraviton\"|" $HOME/.gravity/config/app.toml
-
-# Set pruning
-sed -i \
-  -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
-  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
-  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.gravity/config/app.toml
-
-# Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:26658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:26657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:26060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:26656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":26660\"%" $HOME/.gravity/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:26317\"%; s%^address = \":8080\"%address = \":26080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:26090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:26091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:26545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:26546\"%" $HOME/.gravity/config/app.toml
-```
 
 ### Download latest chain snapshot
 

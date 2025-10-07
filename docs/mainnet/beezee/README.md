@@ -4,7 +4,7 @@
 
 beezee is a credit protocol for the future: non-custodial, open-source, transparent, algorithmic and community-governed.
 
-**Chain ID**: beezee-1 | **Latest Version Tag**: v1.0.0 | **Wasm**: ON
+**Chain ID**: beezee-1 | **Latest Version Tag**: v7.2.1 | **Wasm**: OFF
 
 [Website](https://beezeeprotocol.io) | [Discord](https://discord.gg/beezeeprotocol) | [Twitter](https://twitter.com/beezee\_protocol)
 

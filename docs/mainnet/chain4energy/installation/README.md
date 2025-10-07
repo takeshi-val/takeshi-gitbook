@@ -1,7 +1,7 @@
 ---
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/chain4energy.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: perun-1 | **Latest Version Tag**: v1.3.1 
+**Chain ID**: perun-1 | **Latest Version Tag**: v1.4.3
 
 ### Setup validator name
 
@@ -30,15 +30,14 @@ sudo apt install curl git jq lz4 build-essential
 #### Install GO 1.21.4
 
 ```bash
-ver="1.21.4"
 cd $HOME
+ver="1.23.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
-go version
 ```
 
 ### Download and build binaries

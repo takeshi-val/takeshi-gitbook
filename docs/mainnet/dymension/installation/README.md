@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.1.0
+**Chain ID**: dymension_1100-1 | **Latest Version Tag**: v3.2.0
 
 ### Install dependencies
 
@@ -22,7 +22,7 @@ sudo apt -qy upgrade
 
 ```bash
 cd $HOME
-ver="1.21.3"
+ver="1.23.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -38,7 +38,7 @@ go version
 ```bash
 # Clone project repository
 cd $HOME
-git clone https://github.com/dymensionxyz/dymension.git --branch v3.1.0
+git clone https://github.com/dymensionxyz/dymension.git --branch v3.2.0
 cd dymension
 make install
 

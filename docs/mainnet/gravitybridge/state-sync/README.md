@@ -17,20 +17,21 @@ State Sync allows a new node to join the network by fetching a snapshot of the a
 ### Stop the service and reset the data
 
 ```bash
-sudo systemctl stop gravityd
+sudo systemctl stop gravity-node sudo journalctl -u gravity-node -f
 cp $HOME/.gravity/data/priv_validator_state.json $HOME/.gravity/priv_validator_state.json.backup
-gravityd tendermint unsafe-reset-all --home $HOME/.gravity
+gravity tendermint unsafe-reset-all --home $HOME/.gravity
 ```
 
 ### Get and configure the state sync information
 
 ```bash
-STATE_SYNC_RPC=https://gravitybridge.rpc.takeshi.team:443
-STATE_SYNC_PEER=d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@gravitybridge.rpc.takeshi.team:26656
+STATE_SYNC_RPC=https://rpc-gravitybridge.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
+echo $LATEST_HEIGHT $SYNC_BLOCK_HEIGHT $SYNC_BLOCK_HASH
+```
+```bash
 sed -i \
   -e "s|^enable *=.*|enable = true|" \
   -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
@@ -45,5 +46,5 @@ mv $HOME/.gravity/priv_validator_state.json.backup $HOME/.gravity/data/priv_vali
 ### Restart the service and check the log
 
 ```bash
-sudo systemctl start gravityd && sudo journalctl -u gravityd -f --no-hostname -o cat
+sudo systemctl start gravity-node && sudo journalctl -u gravity-node -f --no-hostname -o cat
 ```

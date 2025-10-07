@@ -6,7 +6,7 @@ description: Setting up your validator node has never been so easy. Get your val
 
 <figure><img src="https://github.com/takeshi-val/Logo/raw/main/althea.png" alt=""><figcaption></figcaption></figure>
 
-**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.4.0
+**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.5.0
 
 
 ### Install dependencies
@@ -21,9 +21,9 @@ sudo apt -qy install curl git jq lz4 build-essential
 #### Install Go
 
 ```bash
-# Install GO 1.21.4
-ver="1.21.4"
+# Install GO 1.23.3
 cd $HOME
+ver="1.23.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -51,7 +51,7 @@ source $HOME/.bash_profile
 ```bash
 # Clone project repository
 cd $HOME
-wget https://github.com/althea-net/althea-L1/releases/download/v1.4.0/althea-linux-amd64
+wget https://github.com/althea-net/althea-L1/releases/download/v1.5.0/althea-linux-amd64
 chmod +x althea-linux-amd64
 sudo mv althea-linux-amd64 /usr/sbin/althea
 

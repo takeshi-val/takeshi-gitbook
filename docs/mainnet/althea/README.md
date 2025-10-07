@@ -4,7 +4,7 @@
 
 Althea's unique cooperative vision for the internet  brings peering from the data center to the field
 
-**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.4.0 | **Wasm**: OFF
+**Chain ID**: althea_258432-1 | **Latest Version Tag**: v1.5.0 | **Wasm**: OFF
 
 [Website](https://www.althea.net) | [Discord](https://discord.gg/ZTKWfpDs) | [Twitter](https://twitter.com/altheanetwork)
 
