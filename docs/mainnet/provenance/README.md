@@ -20,15 +20,9 @@ The provenance Protocol is a fast, scalable, and secure blockchain that empowers
 
 ## Peering
 
-**state-sync**
-
-```
-1fcb1fe676876087d0c641ad6476417dcccb396f@provenance-seed.takeshi.team:10656
-```
-
 **seed-node**
 
-```
+```bash
 1fcb1fe676876087d0c641ad6476417dcccb396f@provenance-seed.takeshi.team:10656
 ```
 
