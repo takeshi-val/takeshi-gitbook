@@ -10,7 +10,7 @@ The provenance Protocol is a fast, scalable, and secure blockchain that empowers
 
 ## Chain explorer
 
-[https://explorer.takeshi.team/provenance](https://explorer.takeshi.team/provenance)
+[https://explorer.provenance.io/dashboard](https://explorer.provenance.io/dashboard)
 
 ## Public endpoints
 
