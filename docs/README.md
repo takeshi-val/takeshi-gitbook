@@ -2,13 +2,13 @@
 description: >-
   Base tools API, RPC, Snap Shots, State Sync contributed to the projects by
   takeshi.team.
-cover: .gitbook/assets/Gemini_Generated_Image_qlkr6zqlkr6zqlkr (1).png
-coverY: -162.76681052128822
+cover: .gitbook/assets/Золотой логотип TAKESHI на тёмном фоне(1).png
+coverY: -83.75652810801634
 layout:
   width: default
   cover:
     visible: true
-    size: full
+    size: hero
   title:
     visible: true
   description:
