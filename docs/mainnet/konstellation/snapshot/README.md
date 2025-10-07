@@ -14,26 +14,30 @@ Snapshots are taken automatically every 6 hours starting at **00:15 UTC**
 
 **pruning**: 100/0/19 | **indexer**: null | **version tag**: v0.6.2
 
-| BLOCK   | AGE     | DOWNLOAD                                                                                    |
-| ------- | ------- | ------------------------------------------------------------------------------------------- |
-| 7733196 | 3 hours | [snapshot (1.78 GB)](https://snapshots.takeshi.team/konstellation/snapshot\_latest.tar.lz4) |
+| BLOCK   | AGE     | DOWNLOAD                                                                                   |
+| ------- | ------- | ------------------------------------------------------------------------------------------ |
+| 7733196 | 3 hours | [snapshot (1.78 GB)](https://snapshots.takeshi.team/konstellation/snapshot_latest.tar.lz4) |
 
 ## Instructions
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop knstld
 cp $HOME/.knstld/data/priv_validator_state.json $HOME/.knstld/priv_validator_state.json.backup
 rm -rf $HOME/.knstld/data
 ```
+{% endcode %}
 
 ### Download latest snapshot
 
+{% code overflow="wrap" %}
 ```bash
 curl -L https://snapshots.takeshi.team/konstellation/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.knstld
 mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 

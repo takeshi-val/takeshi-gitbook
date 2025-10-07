@@ -1,23 +1,28 @@
 ---
-description: With our state sync services you will be able to catch up latest chain block in matter of minutes
+description: >-
+  With our state sync services you will be able to catch up latest chain block
+  in matter of minutes
 ---
 
 # State sync
 
-<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" width="150" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://github.com/takeshi-val/Logo/raw/main/dymension.png" alt="" width="150"><figcaption></figcaption></figure>
 
 ## Instructions
 
 ### Stop the service and reset the data
 
+{% code overflow="wrap" %}
 ```bash
 sudo systemctl stop dymd
 cp $HOME/.dymension/data/priv_validator_state.json $HOME/.dymension/priv_validator_state.json.backup
 dymd tendermint unsafe-reset-all --keep-addr-book --home $HOME/.dymension
 ```
+{% endcode %}
 
 ### Get and configure the state sync information
 
+{% code overflow="wrap" %}
 ```bash
 STATE_SYNC_RPC=https://dymension-rpc.takeshi.team:443
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
@@ -35,6 +40,7 @@ sed -i \
 
 mv $HOME/.dymension/priv_validator_state.json.backup $HOME/.dymension/data/priv_validator_state.json
 ```
+{% endcode %}
 
 ### Restart the service and check the log
 
