@@ -17,7 +17,7 @@ rm -rf provenance
 git clone https://github.com/provenance-io/provenance.git
 cd provenance
 git reset --hard
-git checkout v1.25.0
+git checkout v1.25.1
 
 # Build binaries
 make install

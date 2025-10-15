@@ -4,7 +4,7 @@
 
 The provenance Protocol is a fast, scalable, and secure blockchain that empowers individuals, developers, and enterprises to increase their data privacy and cybersecurity posture without sacrificing ease of use. This protocol strives to offer world-class applications to protect the planet's most important data–your data.
 
-**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.0 | **Wasm**: ON
+**Chain ID**: pio-mainnet-1 | **Latest Version Tag**: v1.25.1 | **Wasm**: ON
 
 [Website](https://provenance.io) | [Discord](https://discord.gg/kNZC8nwCFP) | [Twitter](https://twitter.com/provenancefdn)
 
